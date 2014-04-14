@@ -1,4 +1,1 @@
-angular-ember-compare
-=====================
-
-A comparison of AngularJs and EmberJs
+# A comparison of AngularJs and EmberJs
