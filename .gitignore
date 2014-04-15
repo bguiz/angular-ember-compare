@@ -18,3 +18,5 @@ build/Release
 node_modules
 
 dist
+
+content/img
