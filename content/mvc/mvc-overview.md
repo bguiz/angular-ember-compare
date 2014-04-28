@@ -16,13 +16,15 @@ Model-View-Controller (MVC) is a common software architecture pattern that is po
 
 In the early days of the web, all web sites made one request to the server,
 and the server responded with the entire web page to be displayed.
-Query parameters, cookies, and HTTP request headers were about as much variation and interactivity as one could achieve.
+Query parameters, cookies, and request headers were just about all a web developer had
+in his or her toolkit with with interactivity could be accomlished.
 Web servers did all the grunt work rendering dynamic web pages.
 
-Then Microsoft came up with XMLHttpRequest,
-a means to send a request to the server and receive the request,
-entirely using Javascript run within a web page.
-Quite often, this was used to swap the contents of one `<div>` on the page verbatim with the returned response.
+This all changed when Microsoft [released IE5 with `XMLHttpRequest`](http://en.wikipedia.org/wiki/XMLHttpRequest#Support_in_Internet_Explorer_versions_5.2C_5.5.2C_and_6),
+which was a means to send a request to the server and receive the request.
+This was the first time that this could be done entirely using Javascript run within a web page.
+
+At first, this was used to swap the contents of one `<div>` on the page verbatim with the returned response.
 Responses were originally HTML fragments to be used as such.
 This then evolved to XML to represent data that would be parsed by Javascript in the browser.
 This went by the name of *Asynchronous Javascript and XML*, or AJAX.
@@ -80,4 +82,25 @@ it merely was the first to gain widespread popularity.
 There a currently a [plethora of different frameworks](http://todomvc.com) looking to take its place,
 two of which are AngularJs and EmberJs.
 
+### MVC in single-page application frameworks
 
+Prior to single-page applications,
+logic for web apps was coded almost entirely on the server - thin-client, thick-server.
+However, with single-page applications, 
+a lot of this logic has been shifted to the client,
+and the front end developer now needs to be well versed in this pattern.
+
+Most single-page application frameworks are designed around the MVC pattern, or variations of it.
+These variations are usually referred to as MV&lowast;frameworks.
+
+Models, views, and controllers form the core parts of most single-page application frameworks, but they optionally may include a few more -
+namely templates, routing, and components.
+
+## Discussion
+
+We have taken a very brief (and selective) look at the parts of web development history,
+which have contributed ideas toward - and eventually led to -
+the rise of single-page applications, and their relationship to the MVC pattern.
+
+In the following posts, we will take a closer look at the MVC pattern,
+and what working with it is like in AngularJs and EmberJs.
