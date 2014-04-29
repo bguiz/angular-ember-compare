@@ -86,7 +86,7 @@ two of which are AngularJs and EmberJs.
 
 Prior to single-page applications,
 logic for web apps was coded almost entirely on the server - thin-client, thick-server.
-However, with single-page applications, 
+However, with single-page applications,
 a lot of this logic has been shifted to the client,
 and the front end developer now needs to be well versed in this pattern.
 
