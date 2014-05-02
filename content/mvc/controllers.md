@@ -31,7 +31,6 @@ That is:
 	   if those parts of the view are bound to parts of the model,
 	   those parts of the model are changed.
 
-
 ### Controllers in AngularJs
 
 Controllers in AngularJs are not, strictly speaking, controllers.
@@ -90,7 +89,7 @@ The model listens for the change in the view,
 and when the input field is modified,
 it detects a change and updates the model.
 The `<p>` tag, of course, is still bound to the model,
-and it listens for a change on the model, 
+and it listens for a change on the model,
 and updates its contents, as it did before.
 This is two-way bidning in action,
 with the first sequence from view to model,
@@ -113,6 +112,60 @@ These techniques, however, ar beyond the scope of this comparison.
 I would suggest this article [on performance tuning](http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/)
 as further reading on this technique, and several others.
 
+### Controllers in EmberJs
+
+EmberJs controllers conform to the pure MVC definition of them.
+
+Syntax:
+
+App.FooController = Ember.Controller.extend({
+    someProperty: 'More exclamation marks',
+    actions: {
+        someAction: function() {
+            this.set('someProperty', this.get('someProperty') + '!');
+        }
+    }
+});
+
+EmberJs enforces a clean separation between properties and actions
+within a controller -
+all actions are grouped into a single hash.
+
+Another things worth pointing out here,
+is that unlike AngularJs,
+EmberJs distinguishes between properties set on the controller,
+and models used by the controller.
+Models are typically created and passed in a controller by a `Ember.Route` object,
+which we shall take a look at when we look at routing.
+This is because there is only one instance of any controller instantiated,
+and thus its state does *not* get reset each time.
+This is can be confusing when working with EmberJs for the first time.
+
+Another thing worth noting is that we had to name this controller `FooController`.
+In ANgularJs, we were free to name our controller anything we wished to -
+`BarCtrl` would have worked jsut as well as `FooCtrl`.
+In EmberJs, however, we must take care to name our controllers -
+and most other types of objects -
+according to the specified naming convention.
+This is a common beginner's gotcha, and takes getting used to.
+Until then, do not hesitate to refer to the handy tables,
+in the [naming conventions guide](http://emberjs.com/guides/concepts/naming-conventions/)
+as a reference.
+A completely customised naming strategy is also possible,
+by extending (or replacing) EmberJs' [default resolver](http://emberjs.com/api/classes/Ember.DefaultResolver.html).
+However, this is often more effort than it is worth,
+and most developers will choose to stick to the default resolver.
+
+### Two-way binding in EmberJs
+
+Syntax:
+
+        <div>
+            <button {{action 'someAction'}}>Exclaim harder</button>
+            <p>{{someProperty}}</p>
+            {{input type="text' value=someProperty}}
+        </div>
+
 ### Discussion
 
 When developing apps with [BackboneJs](http://backbonejs.org/),
@@ -128,7 +181,7 @@ that one of these change propagations would be missed due to oversight,
 and lead to much head scratching down the road.
 
 What was missing is that BackboneJs did *not* provide a means to define a
-single-source of truth - 
+single-source of truth -
 quite often that the models and views would stray, and get out of sync.
 With two-way binding, however, the models are indeed the single source of truth,
 changes to the models made anywhere -
