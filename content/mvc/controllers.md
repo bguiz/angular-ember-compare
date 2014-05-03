@@ -188,6 +188,28 @@ there is an `{{input}}` Handlebars helper that does this for us.
 The implication of this is that getting two-way binding to work in EmberJs
 can be quite complicated, as there is more syntax to learn.
 
+### Imperative vs Declarative Syntax in Two-way Binding
+
+In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
+between models and views is through declarative syntax in the templates.
+We simply state what we properties we want to be bound in the template,
+and let the framework figure out the how -
+as a developer using either framework,
+we do not need to figure out the code necessary for this to work.
+
+By contrast, the lack of two-way binding in some other SPA frameworks,
+such as BackboneJs, means that the developer has to code all the sequences of
+actions for each property which he/ she wishes to be bound.
+This is the opposite of the declarative style enabled by AngularJs and EmberJs -
+it is an imperative style.
+
+Some developers prefer an imperative style of programming,
+and other developers prefer a declarative style of programming.
+It is up to you to pick which works best.
+The vast majority of those developing SPAs however,
+prefer to use two-way binding,
+and opt out of it in exceptional cases.
+
 ### Discussion
 
 When developing apps with [BackboneJs](http://backbonejs.org/),
