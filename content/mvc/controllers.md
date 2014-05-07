@@ -210,6 +210,66 @@ The vast majority of those developing SPAs however,
 prefer to use two-way binding,
 and opt out of it in exceptional cases.
 
+### Imperative vs Declarative Syntax in Controllers
+
+Properties on AngularJs controllers are defined imperatively.
+
+Properties on EmberJs controllers can be defined either imperatively or declaratively.
+
+		var FoosController = Ember.ArrayController.extend({
+			//this is an imperatively defined property
+			filterText: '',
+
+			//this is a declaratively defined property
+			filteredModel: function() {
+				var foos = this.get('model');
+				var filterText = this.get('filterText');
+				return foos.filter(function(foo) {
+					return foo.name.indexOf('filterText') >= 0;
+				});
+			}.property('model', 'filterText')
+		});
+
+Here EmberJs makes use of `Function.prototype.property()`
+to define which properties are dependent upon changes on other properties.
+What EmberJs does behind the scenes is create a
+[Digraph](http://en.wikipedia.org/wiki/Directed_graph),
+and whenever one of the watched properties changes,
+traverses the graph to recompute all the other affected properties.
+Pretty neat!
+
+Noteworthy as well is that we can define computed properties as functions,
+and when these are referred to elsewhere -
+either in the templates or a `.get()` on the controller -
+we simply refer to it by name, and not call the function.
+In our example, we would use, in the templates:
+
+		{{#each foo in filteredModel}}
+		<p>{{foo.name}}</p>
+		{{/each}}
+
+Instead of:
+
+		{{#each foo in filteredModel()}}
+		<p>{{foo.name}}</p>
+		{{/each}}
+
+&hellip; which is different from AngularJs.
+This happens because we have marked that function as being a property;
+and is a great example of the
+[uniform access principle](http://en.wikipedia.org/wiki/Uniform_access_principle).
+
+In AngularJs, the way a computed property is defined is to create a function
+on the scope.
+If this property is used in a template, it gets called in every digest cycle.
+
+EmberJs' way of specifying computed properties is a lot more succinct than 
+the way it is done in AngularJs.
+This is also a lot more efficient than AngularJs' approach,
+as it very neatly side steps the need to recompute them in each digest cycle.
+While this can also be accomplished in AngularJs using `$watch`,
+it is rather nice for the SPA framework to support this out of the box.
+
 ### Discussion
 
 When developing apps with [BackboneJs](http://backbonejs.org/),
@@ -235,3 +295,19 @@ Getting two-way binding out of the box,
 as we do with both AngularJs and EmberJs,
 is a great boon to productivity in developing
 web apps - I cannot emphasise this enough.
+
+We also took a look at some software enginnering paradigms,
+like imperative versus declarative styles of programming,
+and the different approaches each framework takes on computed properties;
+and their impact upon computational effiency,
+and ease to work with.
+
+We have now covered the trifecta of the parts of both AngularJs and EmberJs
+that allow us to organise code according to the MVC pattern.
+Both frameworks excel at supporting the MVC pattern,
+providing an excellent infrasructure upon which to build these.
+
+While MVC lies at the core of developing a single page app,
+that is not all there is to it.
+Next we will take a look at two more crucial parts of the framework,
+routing and components.
