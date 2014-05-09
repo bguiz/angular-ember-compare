@@ -3,5 +3,6 @@
 	* [Models](mvc/models.md)
 	* [Views and Templates](mvc/views-templates.md)
 	* [Controllers](mvc/controllers.md)
-* [Router](adv/router.md)
+* [Routing](adv/routing-overview.md)
+	* [Routers](adv/router.md)
 * [Components](adv/components.md)
