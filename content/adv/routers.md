@@ -25,13 +25,13 @@ but we shall go through it nonetheless.
 
 AngularJs comes with a built-in module,
 [`$routeProvider`](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider,
-which is in charge of handling routing functionality in the app.
+which is in charge of handling routing functionality in the application.
 This module merely needs to be configured by the developer.
 
-The `$routeProvider` module should be configured before the app is initialised,
-and any other code is run, and therefore this needs to be run during the app's
+The `$routeProvider` module should be configured before the application is initialised,
+and any other code is run, and therefore this needs to be run during the application's
 [configuration phase](http://www.angularjshub.com/examples/modules/configurationrunphases/)
-of the app's lifecycle.
+of the application's life cycle.
 
 The configuration consists of pairs of routing information,
 where each pair consists of a URL path, an an object from which an MVC state can be derived.
@@ -39,13 +39,13 @@ These pairs are passed in by calling `.when()` on the `$routeProvider` object.
 The first parameter being the URL path, and the second parameter an object,
 which should give AngularJs enough information to derive an MVC state.
 Typically this would mean defining a controller and a template:
-a view is generated from a temlate,
+a view is generated from a template,
 and the controller knows how to fetch or construct a model.
 
 ### Finite State Machine in AngularJs' Router
 
 AngularJs' choice of a finite state machine places a significant impact on
-its routing capabilty.
+its routing capability.
 
 In traditional websites, most pages would share common sections,
 such as the header, footer, navigation menu, and side bars.
@@ -58,12 +58,12 @@ Similarly, all the "Stories" pages would share a certain section,
 that would not be present in any of the "Games" pages.
 
 In AngularJs, you may apply the `ngView` directive to a DOM element.
-When the URL changes, the router determines the new MVC state of the app,
+When the URL changes, the router determines the new MVC state of the application,
 and the contents of the `ngView` element are removed,
 and rendered using the new new MVC state.
 
 Since the router is driven by a *finite* state machine under the hood,
-there can only be one `ngView` rendered within the app at any time.
+there can only be one `ngView` rendered within the application at any time.
 This, of course, precludes us from implementing the scenario above,
 with the "Games" and "Stories" sections in the scenario described above.
 
@@ -73,7 +73,7 @@ AngularJs developers get around this in one of two ways:
   for the states with shared content
 - Do not use AngularJs' router, and instead use a 3rd party library,
   [ui-router](https://github.com/angular-ui/ui-router),
-  which provides an alternative router that uses a bhierarchical state machine.
+  which provides an alternative router that uses a hierarchical state machine.
 
 Some from the AngularJs core team have identified this as a problem,
 and have drafted this proposal for
@@ -87,12 +87,12 @@ future versions, as there is community support for this.
 The EmberJs router, and its associated routing concepts,
 are significantly more complex than those of AngularJs:
 
-- Supports heirarchical routing, using a hierarchical state machine
+- Supports hierarchical routing, using a hierarchical state machine
 - Need to learning naming conventions
 - Split of routing responsibility between `Router` and `Route` objects
 
 This added complexity makes for a steeper learning curve at first,
-but pays off afterward, as it supports a richer set of features.
+but pays off afterwards, as it supports a richer set of features.
 
 Syntax:
 
@@ -111,11 +111,11 @@ and in particular, its naming conventions.
 
 ### Convention over Configuration in EmberJs
 
-When you instantiate a new EmberJs app using
+When you instantiate a new EmberJs application using
 
         var App = Ember.Application.create({});
 
-The framework will creater a `Router` object.
+The framework will create a `Router` object.
 This is the first or many naming conventions to come!
 
 We then call the `Router.map()` function,
@@ -130,7 +130,7 @@ and this guide serves as a good primer:
 [EmberJs routes guide](http://emberjs.com/guides/routing/defining-your-routes/).
 
 The key take away here is that the router object may be thought of as a
-*king* object in any EmberJs app.
+*king* object in any EmberJs application.
 Whatever names it uses for its routes determine the names of
 all the other types of EmberJs objects.
 When starting out in EmberJs for the first time,
@@ -153,12 +153,12 @@ be frustrating to any developer;
 but only up until the point that you get used to it.
 Once that happens, it becomes less of a hindrance,
 and more of a boon to productivity,
-as it does, by definiteion, mean lesscookie cutter code that needs to be written.
+as it does, by definition, mean less cookie cutter code that needs to be written.
 
-### Hierachical State Machine in EmberJs' Router
+### Hierarchical State Machine in EmberJs' Router
 
 EmberJs uses a hierarchical state machine in its router implementation.
-This is evident when insepcting the code that we use to configure the router:
+This is evident when inspecting the code that we use to configure the router:
 In AngularJs all the calls to `.when()` on `$routeProvider` are at the same level.
 However, in EmberJs, within `.map()` we call `.resource()` and `.route()`,
 in a nested manner - and this is how we configure the hierarchical states.
@@ -179,14 +179,14 @@ For example:
             });
         });
 
-While assembling a URL like this is pretty easy - just string concatentation -
+While assembling a URL like this is pretty easy - just string concatenation -
 assembling a composite MVC state from a hierarchy of routes is not quite that easy.
 Thankfully, EmberJs does this all for us, however,
 as developers it is important for us to understand what it does here,
 so as to use it correctly.
 
-First let us go back to hierarchical statre machines.
-Recall that a hierarchical state machine is a finitte state machine,
+First let us go back to hierarchical state machines.
+Recall that a hierarchical state machine is a finite state machine,
 where each state is allowed to contain, within it,
 an entire finite state machine of its own,
 and this is allowed to recur to produce multiple levels of hierarchy.
@@ -226,25 +226,25 @@ and sets up those that have been entered.
 
 The developer does not really have much control over this behaviour,
 and should be aware of when these actions occur,
-and add code to be executed upon lifecycle hooks of each of them when necessary.
-[Lifecycle Hooks in Views](http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_lifecycle-hooks)
-Controllers are only instantiated once, and their lifecycle is managed by
+and add code to be executed upon life cycle hooks of each of them when necessary.
+[Life cycle Hooks in Views](http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_lifecycle-hooks)
+Controllers are only instantiated once, and their life cycle is managed by
 `Route` objects - via
 [`model`, `beforeModel`, and `afterModel`](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_aborting-transitions-within-code-model-code-code-beforemodel-code-code-aftermodel-code),  `setupController`, and
 [`willTransition`](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_preventing-transitions-via-code-willtransition-code).
 
-Templates, being defined using markup instead of Javascript,
+Templates, being defined using markup instead of JavaScript,
 are quite different.
-For multiple temapltes to be active at once, in a hierarchy,
+For multiple templates to be active at once, in a hierarchy,
 each template must define where within it its child template should be placed.
-This is accomplished using the `{{outlet}}` Handlbars helper.
+This is accomplished using the `{{outlet}}` Handlebars helper.
 Think of it as telling the template that,
 when there is a child state that is active on the current route,
 this is where it should be rendered.
 While this is a very simple thing to do,
 when combined with the power of EmberJs' routing,
 it can be used to accomplish some types of layouts that would be otherwise hard to do,
-inclding the master-detail pattern, where the UI displays a list of item,
+including the master-detail pattern, where the UI displays a list of item,
 with perhaps just the name in one section of the page (the master),
 and when each of these is clicked on,
 all the information about that item is displayed in another section of the page (the detail).
@@ -257,22 +257,22 @@ the concept of view hierarchies.
 
 I have put together this JsBin to
 [demonstrate hierarchical routing in EmberJs](http://jsbin.com/wiyin/4/edit?html,js,output),
-so as the short inline code examples do not really do this justice.
+so as the short in-line code examples do not really do this justice.
 
 ### Routes in EmberJs
 
 Routing in EmberJs is implemented through one `Router` object,
 and multiple `Route` objects.
 The primary functions of a `Route` object are to fetch or construct
-the MVC state of the app when activated.
+the MVC state of the application when activated.
 Typically this would involve fetching the model,
 then passing the model to the controller,
 and finally telling the view to render its template.
 
 The default implementation of the `Route` object does all of these things,
-out of the box, without the developer hqaving to do anything.
+out of the box, without the developer having to do anything.
 The model however, will simply be empty.
-In msot cases, we want our routes to have models,
+In most cases, we want our routes to have models,
 and fetch these models from a server.
 Thus, typically the default routes are extended
 to implement a custom `model` hook.
@@ -284,7 +284,7 @@ to implement a custom `model` hook.
         });
 
 That controller always returns an array with hard-coded contents.
-Useful for stubbing or prototyping, but for apps in production,
+Useful for stubbing or prototyping, but for applications in production,
 most likely we will want to retrieve data from an external data source,
 such as an API server:
 
@@ -303,7 +303,7 @@ AJAX requests, are, of course, asynchronous,
 and thus they need to be dealt with using either callbacks or promises.
 In EmberJs, the `model` hook of any route is expected to return one of two types:
 
-- a plain ol' Javascript object (POJSO)
+- a plain ol' JavaScript object (POJSO)
 - a promise
 
 If a POJSO is returned, EmberJS uses that value immediately.
@@ -313,11 +313,11 @@ and only then does it continue (initialise the controller and pass the model to 
 
 Above we need to wrap the promise-like object returned by `jQuery.getJSON()`
 using `Ember.RSVP.resolve()` in order to obtain a promise object that EmberJs
-knows how to use correclty.
-This is yet another stumbling block for anytone starting with EmberJs,
-because it quite often means that the app does not work as expected.
+knows how to use correctly.
+This is yet another stumbling block for anyone starting with EmberJs,
+because it quite often means that the application does not work as expected.
 It would be great if this is better documented in EmberJs,
-or better still, if EmberJs ships with its own AJAX contructs,
+or better still, if EmberJs ships with its own AJAX constructs,
 as AngularJs does with its `$http` modules.
 
 ### Discussion
@@ -330,10 +330,10 @@ for those just starting out,
 and a lot of that stems from not yet being familiar with the naming system.
 Once past that hurdle, there is yet more additional complexity inherent in
 understanding hierarchical state machines and applying that
-when designing the structure of the routes (and therefore the rest of the app).
+when designing the structure of the routes (and therefore the rest of the application).
 
 AngularJs, on the other hand, provide a much simpler and easier means
-to define routing for the app.
-If the app does not require all that added complexity,
+to define routing for the application.
+If the application does not require all that added complexity,
 such as hierarchical views,
 then this offers a much better proposition.

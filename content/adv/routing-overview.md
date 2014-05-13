@@ -1,8 +1,8 @@
 ## Routing
 
 Routing is a mechanism which keeps the state of a web application in sync with its URL.
-That is, when its URL changes, the app is notified that it should transition to a new state.
-Conversely, when the app transitions to a new state, it updates the URL.
+That is, when its URL changes, the application is notified that it should transition to a new state.
+Conversely, when the application transitions to a new state, it updates the URL.
 
 If this sounds like familiar territory, that is because it is!
 Whenever using a traditional website -
@@ -23,13 +23,13 @@ and why it continues to be relevant with the advent of single page applications.
   while browsing web sites
 - URL sharing: We have an expectation that by copying the URL from the browser's
   address bar, and sharing that with others, when they open that URL,
-  they go to a similar state within the web app. Also known as deep linking.
-- Deep linking for packaged apps: SPAs can be packaged into native apps,
-  using tools such as Phonegap. If a SPA that is packaged within an app
-  supports routing, we can deep link to specific parts of that app.
+  they go to a similar state within the web application. Also known as deep linking.
+- Deep linking for packaged applications: SPAs can be packaged into native applications,
+  using tools such as Phonegap. If a SPA that is packaged within an application
+  supports routing, we can deep link to specific parts of that application.
 
 Thus we can see that it is important for us to support routing,
-as its absence will detract from the experience and expectations set by existing apps.
+as its absence will detract from the experience and expectations set by existing applications.
 Before we take a look at how routing is implemented in AngularJs and EmberJs,
 let us look at URLs in single-page applications
 
@@ -38,18 +38,18 @@ let us look at URLs in single-page applications
 In single-page applications, the URL is technically always the same,
 because technically, we are always on the same page.
 We *pretend* to navigate between different pages,
-by using Javascript to replace large sections of the DOM.
+by using JavaScript to replace large sections of the DOM.
 
-However, this would mean that we would lose  the benfits of our app being URL-driven.
+However, this would mean that we would lose  the benefits of our application being URL-driven.
 Thankfully there are a couple of different techniques to enable routing to occur.
 
 #### Method 1: Hash Fragments
 
 Hash fragments have been around since the early days of the Internet,
-predating single-page applications, and even Javascript!
+pre-dating single-page applications, and even JavaScript!
 
 Their usage was very simple though.
-When you had a webpage that was rather long, and you wished to link to a different
+When you had a web page that was rather long, and you wished to link to a different
 section on the same page, rather than to a different page,
 you would do something like this, in your HTML:
 
@@ -94,7 +94,7 @@ For example: `#/foo/123` or `#/bar/123/edit`
 #### Method 2: History API
 
 More recently, however, browsers have started implementing the HTML5 specification.
-The History API is part of this spec.
+The History API is part of this specification.
 
 It accomplishes something very similar to the hash fragment method,
 except that the `#` symbol is no longer present in the URL.
@@ -104,14 +104,14 @@ not without firing up the developer's console in a browser anyway.
 
 How the [History API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history)
 accomplishes this is for the server to serve the same file -
-the `index.html` of the single page app -
+the `index.html` of the single page application -
 for all URL paths that match its routes.
 Subsequently the SPA itself will use the functions in the
 History API to alter the the URL in the address bar,
 *without* reloading the page.
 It also also listens for changes in the URL in the address bar,
 and intercept them *before* a new request is made on the server.
-This is a little tricky to make work with a single page app,
+This is a little tricky to make work with a single page application,
 but we do not need to re-invent the wheel,
 as both AngularJs and EmberJs come with this built in.
 
@@ -137,8 +137,8 @@ in the context of single page applications:
 and [hierarchical state machines](http://en.wikipedia.org/wiki/UML_state_machine#Hierarchically_nested_states).
 
 A Finite State Machine is one that defines a number of states that
-an app (the *machine*), can be in.
-The app is only allowed to be in one state at any point of time.
+an application (the *machine*), can be in.
+The application is only allowed to be in one state at any point of time.
 The finite state machine also must define a series of transitions,
 between one state and another, and the triggering conditions for each of them.
 
@@ -154,12 +154,12 @@ However, if this state contains a finite state machine of its own,
 amongst its child states, one of them is allowed to be active as well.
 
 This is all rather theoretical - what is the application of
-state machines to single page apps?
+state machines to single page applications?
 
 Routers are objects that provide routing functionality.
 Both AngularJs and EmberJs have implemented their routers using state machines.
 
-The router objects store the URL and MVC state for each route in the app
+The router objects store the URL and MVC state for each route in the application
 in a state machine.
 
 The state machine is particularly useful in managing transitions between one
@@ -174,31 +174,31 @@ grunt work that happens behind the scenes that would be very tedious
 Tedious,  but extremely important.
 It ensures that the state is correctly in one or another,
 and not in some indeterminate or in between state that could be hard to recover from.
-It also ensures that the app is performant, and does not suffer from things
-such as memory leaks due to stale event listeners for DOM elemtns that no longer exist.
+It also ensures that the application is performant, and does not suffer from things
+such as memory leaks due to stale event listeners for DOM elements that no longer exist.
 
 ### Data Retrieval: Callbacks and Promises
 
-Whe  we retireve data over the network in a single page application,
-we use AJAX (asynchronous Javasctip and XML).
+When we retrieve data over the network in a single page application,
+we use AJAX (asynchronous JavaScript and XML).
 The `XMLHttpRequest` global object,
 implemented natively in all browsers since IE5,
 provides the AJAX functions.
-Using the raw `XMLHttpRequest` objects, however, is rather unwiedly,
+Using the raw `XMLHttpRequest` objects, however, is rather unwieldy,
 and in order to avoid having to repeating a lot of cruft code each time
 this needs to be done, we use wrapper objects.
 AngularJs defines a the `$http` module that fills this role,
 while EmberJs uses `jQuery`'s AJAX functions.
 
-Javscript, however, is has been single threaded<sup>&lowast;</sup> from the get-go,
+JavaScript, however, is has been single threaded<sup>&lowast;</sup> from the get-go,
 and this poses a fundamental problem for AJAX, due to its asynchronous nature.
-If we were to block execution of the main Javscript thread
-until AJAX requests returned, we would be in for a pretty laggy experience on the web.
+If we were to block execution of the main JavaScript thread
+until AJAX requests returned, we would be in for a rather laggy experience on the web.
 There is thus a need to be be able to execute code asynchronously.
 There are two ways in which this is solved: callbacks and promises.
 
-Callbacks are the de facto way to run Javascript asynchrnonously.
-As functions are first class objects in Javascript,
+Callbacks are the de facto way to run JavaScript asynchronously.
+As functions are first class objects in JavaScript,
 we simply pass in a function that should get executed when the asynchronous code
 returns.
 That function is referred to as the callback function.
@@ -216,15 +216,15 @@ characterised by its shape - it looks like a triangle on its side.
 Promises overcome this limitation,
 by wrapping callback function in promise objects, making it easier to reason
 about them in sequences or other types of series and groups.
-THe more modern Javascript libraries have embraced promises
+The more modern JavaScript libraries have embraced promises
 as the go to means of dealing with asynchronous code.
 AggularJs contains its own promise module,
 [`$q`](https://docs.angularjs.org/api/ng/service/$q);
 and EmberJs has its own promise library,
 [`RSVP`](http://emberjs.com/api/classes/Ember.RSVP.html).
-Both implmentations follow a common specification, the
+Both implementations follow a common specification, the
 [Promises/A+ spec](http://promises-aplus.github.io/promises-spec/),
-thus their syntax is almsot identical.
+thus their syntax is almost identical.
 
 <sup>&lowast;</sup> The next edition of the ECMAScript specification, ES6 Harmony,
 includes a [proposal for concurrency](http://wiki.ecmascript.org/doku.php?id=strawman:concurrency),
