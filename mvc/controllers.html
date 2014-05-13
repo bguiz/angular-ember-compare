@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1399986322474">
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1399992002300">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -232,18 +232,18 @@ That is:</p>
    those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model are changed.
 </code></pre><h3 id="controllers-in-angularjs">Controllers in AngularJs</h3>
 <p>Controllers in AngularJs are not, strictly speaking, controllers.
-In fact Angular does not call itself an MVC framework,
+In fact AngularJs does not call itself an MVC framework,
 <a href="http://plus.google.com/+AngularJS/posts/aZNVhj355G2" target="_blank">it calls itself an MVW (model-view-whatever) framework</a> instead.
 That being said, that is only true from a academic purist&#39;s point of view;
 through a practical lens, they most certainly are.</p>
 <p>Syntax:</p>
-<pre><code>    angular.module(<span class="hljs-string">'app'</span>, []).controller(<span class="hljs-string">'FooCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$scope</span>)</span> {</span>
+<pre><code>    angular.module(<span class="hljs-string">'application'</span>, []).controller(<span class="hljs-string">'FooCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$scope</span>)</span> {</span>
         <span class="hljs-variable">$scope</span>.someProperty = <span class="hljs-string">'More exclamation marks'</span>;
         <span class="hljs-variable">$scope</span>.someAction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
             <span class="hljs-variable">$scope</span>.someProperty += <span class="hljs-string">'!'</span>;
         };
     });
-</code></pre><p>The <code>$scope</code> object is <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">proptypically inherited</a> from its parent&#39;s
+</code></pre><p>The <code>$scope</code> object is <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">prototypically inherited</a> from its parent&#39;s
 <code>$scope</code> object - in this case the main application object.
 It is made available through AngularJs&#39; dependency injection framework.
 This in itself is a fascinating topic that warrants a discussion of its own,
@@ -253,7 +253,7 @@ Unfortunately, this is not one of the criteria for comparison.
 I would however, suggest this article on
 <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">understanding dependency injection</a>
 for a primer on the basics;
-and this article on <a href="http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/" target="_blank">inheritance paterns</a>
+and this article on <a href="http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/" target="_blank">inheritance patterns</a>
 as further reading.</p>
 <h3 id="two-way-binding-in-angularjs">Two-way binding in AngularJs</h3>
 <p>Syntax:</p>
@@ -263,7 +263,7 @@ as further reading.</p>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"</span></span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
 </code></pre><p>The template above is not a very useful one,
-by providing two different ways to modify the same propertyon the controller&#39;s
+by providing two different ways to modify the same property on the controller&#39;s
 <code>$scope</code>, however, it is a succinct demonstration of two-way binding.</p>
 <p>When the button is clicked, the controller modifies the model.
 The template contains a <code>&lt;p&gt;</code> tag whose contents are bound to the model,
@@ -280,11 +280,11 @@ it detects a change and updates the model.
 The <code>&lt;p&gt;</code> tag, of course, is still bound to the model,
 and it listens for a change on the model,
 and updates its contents, as it did before.
-This is two-way bidning in action,
+This is two-way binding in action,
 with the first sequence from view to model,
 and the second sequence from model back to view.</p>
 <p>This magic that happens behind the scenes does come at a cost though.
-As apps become more complex, it becomes more important to know
+As applications become more complex, it becomes more important to know
 how two-way binding works.
 The canonical use case for when this becomes especially important
 occurs when you have extremely large or complex properties on the <code>$scope</code> -
@@ -296,21 +296,21 @@ and then manually notify the controller whenever the property has been updated.
 This is accomplished through <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" target="_blank"><code>$watch</code></a> and <code>$apply</code>,
 and using them correctly is contingent upon understanding
 how two-way binding works, and how it works together with the digest cycle.
-These techniques, however, ar beyond the scope of this comparison.
+These techniques, however, are beyond the scope of this comparison.
 I would suggest this article <a href="http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/" target="_blank">on performance tuning</a>
 as further reading on this technique, and several others.</p>
 <h3 id="controllers-in-emberjs">Controllers in EmberJs</h3>
 <p>EmberJs controllers conform to the pure MVC definition of them.</p>
 <p>Syntax:</p>
-<p>App.FooController = Ember.Controller.extend({
-    someProperty: &#39;More exclamation marks&#39;,
-    actions: {
-        someAction: function() {
-            this.set(&#39;someProperty&#39;, this.get(&#39;someProperty&#39;) + &#39;!&#39;);
+<pre><code>    App.FooController = Ember.Controller.extend({
+        someProperty: <span class="hljs-string">'More exclamation marks'</span>,
+        actions: {
+            someAction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">this</span>.<span class="hljs-keyword">set</span>(<span class="hljs-string">'someProperty'</span>, <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'someProperty'</span>) + <span class="hljs-string">'!'</span>);
+            }
         }
-    }
-});</p>
-<p>EmberJs enforces a clean separation between properties and actions
+    });
+</code></pre><p>EmberJs enforces a clean separation between properties and actions
 within a controller -
 all actions are grouped into a single hash.</p>
 <p>Another things worth pointing out here,
@@ -323,8 +323,8 @@ This is because there is only one instance of any controller instantiated,
 and thus its state does <em>not</em> get reset each time.
 This is can be confusing when working with EmberJs for the first time.</p>
 <p>Another thing worth noting is that we had to name this controller <code>FooController</code>.
-In ANgularJs, we were free to name our controller anything we wished to -
-<code>BarCtrl</code> would have worked jsut as well as <code>FooCtrl</code>.
+In AngularJs, we were free to name our controller anything we wished to -
+<code>BarCtrl</code> would have worked just as well as <code>FooCtrl</code>.
 In EmberJs, however, we must take care to name our controllers -
 and most other types of objects -
 according to the specified naming convention.
@@ -361,7 +361,7 @@ As this is a very common use case for <code>&lt;input&gt;</code> tags,
 there is an <code>{{input}}</code> Handlebars helper that does this for us.</p>
 <p>The implication of this is that getting two-way binding to work in EmberJs
 can be quite complicated, as there is more syntax to learn.</p>
-<h3 id="imperative-vs-declarative-syntax-in-two-way-binding">Imperative vs Declarative Syntax in Two-way Binding</h3>
+<h3 id="imperative-versus-declarative-syntax-in-two-way-binding">Imperative versus Declarative Syntax in Two-way Binding</h3>
 <p>In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
 between models and views is through declarative syntax in the templates.
 We simply state what we properties we want to be bound in the template,
@@ -379,7 +379,7 @@ It is up to you to pick which works best.
 The vast majority of those developing SPAs however,
 prefer to use two-way binding,
 and opt out of it in exceptional cases.</p>
-<h3 id="imperative-vs-declarative-syntax-in-controllers">Imperative vs Declarative Syntax in Controllers</h3>
+<h3 id="imperative-versus-declarative-syntax-in-controllers">Imperative versus Declarative Syntax in Controllers</h3>
 <p>Properties on AngularJs controllers are defined imperatively.</p>
 <p>Properties on EmberJs controllers can be defined either imperatively or declaratively.</p>
 <pre><code>    <span class="hljs-keyword">var</span> FoosController = Ember.ArrayController.extend({
@@ -428,12 +428,12 @@ as it very neatly side steps the need to recompute them in each digest cycle.
 While this can also be accomplished in AngularJs using <code>$watch</code>,
 it is rather nice for the SPA framework to support this out of the box.</p>
 <h3 id="discussion">Discussion</h3>
-<p>When developing apps with <a href="http://backbonejs.org/" target="_blank">BackboneJs</a>,
+<p>When developing applications with <a href="http://backbonejs.org/" target="_blank">BackboneJs</a>,
 the lack of two-way binding capability was the single biggest drain in productivity.
 One had to specify in the templates where the models were to be rendered.
 Subsequently one had to specify listeners for each change on the model,
 and each change on the view,
-and write codeto handle the change to propagate model changes to the view,
+and write code to handle the change to propagate model changes to the view,
 and view changes to the model.
 This was tedious, but the main problem that this created was not its verbosity.
 It was that there always was a chance of oversight,
@@ -449,17 +449,17 @@ will be propagated correctly.
 Getting two-way binding out of the box,
 as we do with both AngularJs and EmberJs,
 is a great boon to productivity in developing
-web apps - I cannot emphasise this enough.</p>
-<p>We also took a look at some software enginnering paradigms,
+web applications - I cannot emphasise this enough.</p>
+<p>We also took a look at some software engineering paradigms,
 like imperative versus declarative styles of programming,
 and the different approaches each framework takes on computed properties;
-and their impact upon computational effiency,
+and their impact upon computational efficiency,
 and ease to work with.</p>
 <p>We have now covered the trifecta of the parts of both AngularJs and EmberJs
 that allow us to organise code according to the MVC pattern.
 Both frameworks excel at supporting the MVC pattern,
-providing an excellent infrasructure upon which to build these.</p>
-<p>While MVC lies at the core of developing a single page app,
+providing an excellent infrastructure upon which to build these.</p>
+<p>While MVC lies at the core of developing a single page application,
 that is not all there is to it.
 Next we will take a look at two more crucial parts of the framework,
 routing and components.</p>

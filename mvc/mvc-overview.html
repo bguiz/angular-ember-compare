@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="2" data-basepath=".." data-revision="1399986322474">
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="2" data-basepath=".." data-revision="1399992002300">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -218,17 +218,17 @@
 <p>In the early days of the web, all web sites made one request to the server,
 and the server responded with the entire web page to be displayed.
 Query parameters, cookies, and request headers were just about all a web developer had
-in his or her toolkit with with interactivity could be accomlished.
+in his or her toolkit with with interactivity could be accomplished.
 Web servers did all the grunt work rendering dynamic web pages.</p>
 <p>This all changed when Microsoft <a href="http://en.wikipedia.org/wiki/XMLHttpRequest#Support_in_Internet_Explorer_versions_5.2C_5.5.2C_and_6" target="_blank">released IE5 with <code>XMLHttpRequest</code></a>,
 which was a means to send a request to the server and receive the request.
-This was the first time that this could be done entirely using Javascript run within a web page.</p>
+This was the first time that this could be done entirely using JavaScript run within a web page.</p>
 <p>At first, this was used to swap the contents of one <code>&lt;div&gt;</code> on the page verbatim with the returned response.
 Responses were originally HTML fragments to be used as such.
-This then evolved to XML to represent data that would be parsed by Javascript in the browser.
-This went by the name of <em>Asynchronous Javascript and XML</em>, or AJAX.
-Processing XML in Javascript was a little unwieldy,
-and it was much easier to transmit Javacript object literals instead.
+This then evolved to XML to represent data that would be parsed by JavaScript in the browser.
+This went by the name of <em>Asynchronous JavaScript and XML</em>, or AJAX.
+Processing XML in JavaScript was a little unwieldy,
+and it was much easier to transmit JavaScript object literals instead.
 Douglas Crockford <a href="http://en.wikipedia.org/wiki/JSON#History" target="_blank">specified the JSON format</a>,
 which gained rapid following.
 Most AJAX nowadays uses JSON instead of XML, so we should really be calling in AJAJ, but the original name stuck.</p>
@@ -236,19 +236,19 @@ Most AJAX nowadays uses JSON instead of XML, so we should really be calling in A
 and created an explosion in the amount of interactivity possible on a page.</p>
 <p>Web developers did exactly that, making their sites very interactive,
 and thus was born the era of &quot;Web 2.0&quot; web sites.
-However the client-side Javascript quite often ended up becoming a tangled mess of unstructured Javascript -
+However the client-side JavaScript quite often ended up becoming a tangled mess of unstructured JavaScript -
 and later on a tangled mess of jQuery -
 whenever the sites tried to do something complex.</p>
 <p>However, server side developers had been using the MVC pattern for some time now,
 and there was no reason to not do so client side as well.
 After all, since web sites were no longer thin-clients,
-Javascript was being used for more than a few simple updates to the DOM,
+JavaScript was being used for more than a few simple updates to the DOM,
 it was taking over some or all of the core logic of the web site.
-It thus became necessary to add some organisation and structure to the Javascript.</p>
-<p>The thing about Javascript is that it is a strange beast.
+It thus became necessary to add some organisation and structure to the JavaScript.</p>
+<p>The thing about JavaScript is that it is a strange beast.
 It has weird quirks that make it behave quite unexpectedly,
 such as <a href="http://bonsaiden.github.io/JavaScript-Garden/#core.semicolon" target="_blank">automatic semicolon insertion</a>,
-and an <a href="http://dorey.github.io/JavaScript-Equality-Table/unified/" target="_blank">unpreditable equality operator</a>.
+and an <a href="http://dorey.github.io/JavaScript-Equality-Table/unified/" target="_blank">unpredictable equality operator</a>.
 It also has some really advanced concepts like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures" target="_blank">closures</a> and
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain" target="_blank">prototypical inheritance</a>,
 which make it very powerful, but also make attaining true mastery a longer journey.
@@ -256,7 +256,7 @@ Lastly, it supports both imperative and functional programming paradigms.</p>
 <p>With all these actors stewing in the same broth,
 there were many many different ways to accomplish the same things.
 There were many way to accomplish very similar things.
-Addy Osmani&#39;s <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#designpatternsjavascript" target="_blank">Javascript Design Patterns</a> captures the most popular amongst them.
+Addy Osmani&#39;s <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#designpatternsjavascript" target="_blank">JavaScript Design Patterns</a> captures the most popular amongst them.
 This ultimately resulted in a &quot;Wild West&quot;, where everyone did their own thing.</p>
 <p>Building complex user interfaces and interfacing with a server is indeed an onerous task.
 It increasingly became important to use a framework when developing web applications.
@@ -265,8 +265,8 @@ Take a look at the source code of <a href="https://github.com/jashkenas/backbone
 <a href="https://github.com/emberjs/ember.js/" target="_blank">EmberJs</a>,
 to get a feel for how much work would be involved if rolling your own.</p>
 <p>There were several frameworks to come out before, but BackboneJs really nailed it.
-It combined the use of AJAX with MVC patterns in a Javascript library that allowed front end developers to create a single-page application;
-an app where every page was simply Javascript used to re-render (most of) the visible page in the client, and none of the requests navigated you away from <code>index.html</code>.</p>
+It combined the use of AJAX with MVC patterns in a JavaScript library that allowed front end developers to create a single-page application;
+an application where every page was simply JavaScript used to re-render (most of) the visible page in the client, and none of the requests navigated you away from <code>index.html</code>.</p>
 <p>This combination of AJAX and the MVC pattern is the cornerstone of single-page application frameworks.
 BackboneJs is certainly not the only single-page application framework,
 it merely was the first to gain widespread popularity.
@@ -274,7 +274,7 @@ There a currently a <a href="http://todomvc.com" target="_blank">plethora of dif
 two of which are AngularJs and EmberJs.</p>
 <h3 id="mvc-in-single-page-application-frameworks">MVC in single-page application frameworks</h3>
 <p>Prior to single-page applications,
-logic for web apps was coded almost entirely on the server - thin-client, thick-server.
+logic for web applications was coded almost entirely on the server - thin-client, thick-server.
 However, with single-page applications,
 a lot of this logic has been shifted to the client,
 and the front end developer now needs to be well versed in this pattern.</p>

@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="4" data-basepath=".." data-revision="1399986322474">
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="4" data-basepath=".." data-revision="1399992002300">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -206,30 +206,30 @@
                         <h2 id="components">Components</h2>
 <p>Browsers used to display documents -
 that is content that had text formatting and images.
-Web pages used to be simplay what you could create using a word processor,
+Web pages used to be simply what you could create using a word processor,
 or see printed on a newspaper,
 expect that it was delivered over the Internet,
 and displayed on a computer screen.
 They are much more than that now, however.
-Web pages are interactive, and can repsond to the user in ways
+Web pages are interactive, and can respond to the user in ways
 that a newspaper cannot.
 Some are so advanced in these types of interactions that the phrase,
 &quot;web page&quot; no longer seems an apt description -
-we call them <em>web applications</em>, or <em>web apps</em>.</p>
+we call them <em>web applications</em>, or <em>web applications</em>.</p>
 <p>The typical thing that we create with AngularJs and EmberJs are most certainly
 not web pages any longer,
-and fall squarely into the web app category.
-That being said, the HTML that we implement our apps in is still very much
+and fall squarely into the web application category.
+That being said, the HTML that we implement our applications in is still very much
 designed around syntax used to describe <em>document</em>s.
 This makes things tricky for the developer,
 because over the years, we have created workaround after workaround
 to continue making this document-oriented syntax continue working for us.</p>
 <p>Thankfully, the standards body that governs HTML recognises this,
-and is evolving the spec to keep up with how HTML is being used.
+and is evolving its specifications to keep up with how HTML is being used.
 The <a href="http://www.w3.org/TR/components-intro/" target="_blank">Web Components Specification</a>
 is a draft specification, which describes a way in which we can
 create <em>components</em> that can be thought of as a building block,
-which contains a HTML template, CSS styles, and Javascript behaviour.</p>
+which contains a HTML template, CSS styles, and JavaScript behaviour.</p>
 <p>Web components, however, are not yet available -
 but both AngularJs and EmberJs provide their own ways to create components
 that behave very similarly to web components,</p>
@@ -238,10 +238,10 @@ that behave very similarly to web components,</p>
 It does, however, provide a lower-level construct - directives -
 which can be used to create them.</p>
 <p>Directives in AngularJs can be used to define they ways in which
-Javascript application code interacts with the DOM.
+JavaScript application code interacts with the DOM.
 We have already seen some of these in action in the previous articles:
 <code>ngModel</code>, <code>ngController</code>, and <code>ngClick</code>.
-The templates know where code for these directives shoulod be applied,
+The templates know where code for these directives should be applied,
 by inspecting DOM elements for the dasherised versions of directives&#39; names:
 <code>ng-model</code>, <code>ng-controller</code>, and <code>ng-click</code>.</p>
 <p>These are all built-in directives, that ship with AngularJs.
@@ -279,9 +279,9 @@ and lacks a few features that we would expect of one.</p>
 </code></pre><p>Setting <code>restrict</code> to <code>E</code> means that AngularJs will allow this directive
 to be recognised <em>only</em> when the directive name is specified as an element.
 Setting it in an attribute, or as a comment, will no longer work.</p>
-<p>As a side note: Beware of the sel-closing tag!
+<p>As a side note: Beware of the self-closing tag!
 While <code>&lt;div /&gt;</code> is perfectly legal HTML,
-<code>&lt;foo-component /&gt;</code> is not, and AngularJs&#39; temaplting engine will
+<code>&lt;foo-component /&gt;</code> is not, and AngularJs&#39; templating engine will
 not be able to parse it.
 Self-closing tags, also known as void tags,
 are not allowed when defining custom element tags.</p>
@@ -298,13 +298,13 @@ are not allowed when defining custom element tags.</p>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-transclude</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Foo component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre><p>Do not let the word translude scare you -
+</code></pre><p>Do not let the word transclude scare you -
 I think of it, simply, as <em>include with an outside transfer</em>.
 All it really means is that we can now do this in the DOM:</p>
 <pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">foo-component</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some text included from outside the component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">foo-component</span>&gt;</span>
-</code></pre><p>And <code>&lt;p&gt;</code> tag cointaining &quot;Some text included from outside the component&quot;,
+</code></pre><p>And <code>&lt;p&gt;</code> tag containing &quot;Some text included from outside the component&quot;,
 will get rendered within the <code>&lt;div&gt;</code> tag with the <code>ng-transclude</code> attribute.</p>
 <p>The final step, and likely the most important one, is of scope isolation.
 In any AngularJs template, the default behaviour is for the scope available
@@ -328,7 +328,7 @@ that component should define exactly what it needs to be in its scope.</p>
             templateUrl: <span class="hljs-string">'components/foo.html'</span>
         };
     });
-</code></pre><p>Setting <code>scope</code> to  <code>true</code> simplay indicates that this directive will use its own
+</code></pre><p>Setting <code>scope</code> to  <code>true</code> simply indicates that this directive will use its own
 scope, that is brand new, and thus isolated from its parent&#39;s scope.
 This is not very useful,
 unless the template for this directive does not need to bind to anything.
@@ -379,7 +379,7 @@ according to the naming conventions:</p>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>The Foo<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
 </code></pre><p>The naming convention is that they be prefixed with <code>components/</code>,
-and the name must contain at least one hypen (<code>-</code>).</p>
+and the name must contain at least one hyphen (<code>-</code>).</p>
 <p>In the DOM, we use a Handlebars helper with the same name as the component:</p>
 <pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-variable">the-foo</span>}}</span><span class="xml"></span>
 </code></pre><p>All this does however, is render one template within another -not very useful!
@@ -428,7 +428,7 @@ and harder to learn - than its AngularJs counterpart.
 With components, however, the opposite is true,
 with the learning curve for creating custom components in AngularJs
 being far steeper than for creating custom components in EmberJs.
-This is is because AngularJs&#39; offering is low-level, and more flexible.
+This is because AngularJs&#39; offering is low-level, and more flexible.
 In EmberJs, most decision have been made for you -
 they can be thought of as
 <a href="http://docs.google.com/presentation/d/1e0z1pT9JuEh8G5DOtib6XFDHK0GUFtrZrU3IfxJynaA/present?slide=id.g177e4bd2b_0400" target="_blank">&quot;element-restricted, isolate-scoped, transcluded directives&quot;</a>.</p>
@@ -441,16 +441,16 @@ However, the developer is also free to do something else entirely,
 and combine them in a different way, or treat some as optional,
 and this flexibility allows for more specific needs to be catered to.</p>
 <p>EmberJs components, on the other hand,
-provide soemthing very close to the web components spec out of the box,
-and the develper merely has to extend <code>Ember.Component</code>
+provide something very close to the web components specification out of the box,
+and the developer merely has to extend <code>Ember.Component</code>
 to get all this functionality.</p>
 <p>Both AngularJs and EmberJs have plans to make their frameworks support the
 web components specifications, when it comes out of draft status.
 Miško Hevery has written about plans to <a href="https://groups.google.com/forum/#!msg/polymer-dev/4RSYaKmbtEk/uYnY3900wpIJ" target="_blank">make web components work seamlessly with AngularJs directives</a>.
 Yehuda Katz, <a href="https://gist.github.com/wycats/9144666b0c606d1838be" target="_blank">describes plans for Web Components in EmberJs</a>,
 and a concrete plan for &quot;how Ember could adopt semantics similar to web components.&quot;</p>
-<p>Knowing that both frameworks are aligned with the spec is good,
-because apps that are developed with these frameworks will themselves
+<p>Knowing that both frameworks are aligned with the specifications is good,
+because applications that are developed with these frameworks will themselves
 will already be largely compliant with these standards,
 and gain the benefits from inherent from being so,
 such as future cross-browser support and portability.</p>
