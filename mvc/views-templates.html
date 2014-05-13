@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Views and Templates | Angular-ember-compare</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="bguiz">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../mvc/controllers.html" />
+        
+        
+        <link rel="prev" href="../mvc/models.html" />
+        
+
+        <meta property="og:title" content="Views and Templates | Angular-ember-compare">
+        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/bguiz">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.2" data-basepath=".." data-revision="1399986322474">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Angular-ember-compare</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/bguiz" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/views-templates.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="intro/criteria.html">
+                
+                <a href="../intro/criteria.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="mvc/mvc-overview.html">
+                
+                <a href="../mvc/mvc-overview.html">
+                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="mvc/models.html">
+                            
+                            <a href="../mvc/models.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="mvc/views-templates.html">
+                            
+                            <a href="../mvc/views-templates.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="mvc/controllers.html">
+                            
+                            <a href="../mvc/controllers.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="adv/routing-overview.html">
+                
+                <a href="../adv/routing-overview.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="adv/routers.html">
+                            
+                            <a href="../adv/routers.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="adv/components.html">
+                
+                <a href="../adv/components.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Components
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="roundup/roundup.html">
+                
+                <a href="../roundup/roundup.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 44.44444444444444%;min-width: 33.333333333333336%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../intro/criteria.html" title="Criteria" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../mvc/mvc-overview.html" title="MVC" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../mvc/models.html" title="Models" class="chapter done " data-progress="2.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../mvc/views-templates.html" title="Views and Templates" class="chapter done " data-progress="2.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../mvc/controllers.html" title="Controllers" class="chapter  " data-progress="2.3" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../adv/routing-overview.html" title="Routing" class="chapter  new-chapter" data-progress="3" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../adv/routers.html" title="Routers" class="chapter  " data-progress="3.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../adv/components.html" title="Components" class="chapter  new-chapter" data-progress="4" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../roundup/roundup.html" title="Round Up" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_9">
+                    
+                        <h2 id="views-and-templates">Views and Templates</h2>
+<p>Models, views, and controllers are the <em>M</em>, <em>V</em> and <em>C</em> of MVC,
+and most SPA frameworks use these concepts to help developers structure
+and organise their code.</p>
+<h3 id="templates">Templates</h3>
+<p>However, almost all of them include one more feature in the same vein:
+the template.
+Templating, strictly speaking, is one of the responsibilities of a view in MVC,
+however, they are large and complex enough to warrant a discussion on their own.
+This is because all web apps - both traditional and single page -
+ultimately need to render HTML, which is a document format.</p>
+<p>Templates are essentially files with special syntax that allow the developer
+to specify the logic with which to render the HTML.
+This template typically has two inputs, one static, and the other dynamic.
+The static inputs to the template are the bits that render HTML without any
+change in between no matter the context.
+The dynamic inputs to the template are the bits that render HTML differently
+based on context.</p>
+<p>In both AngularJs and EmberJs, the static inputs are pure HTML -
+write them as you would a regular HTML document.
+Similarly, in both frameworks, the dynamic inputs are identified as any parts
+in between <code>{{</code> and <code>}}</code> (double squiggly brackets). <super>&lowast;</super></p>
+<super>&lowast;</super> With AngularJs, in addition to this,
+some dynamic input may be identified by <code>ng-*</code> attributes,
+and any custom designed directives added by the developer.
+
+### Views
+
+So if templates handle all the rendering, what is left for the view to do?
+
+As it turns out, in both AngularJs and EmberJs,
+the developer will rarely ever have to touch the views.
+This is because they are &quot;batteries included&quot;,
+taking care of most of the heavy lifting for us:
+
+- Deciding when to render the templates
+- Two-way binding
+- Event handling/ proxying/ bubbling
+
+However, the developer will have to use views when they are doing something
+more advanced, such as:
+
+- Integrating with a 3rd party library that does not provide a AngularJs or EmberJs wrapper
+- Do something specific upon completion of rendering
+- Inheriting or using mixins to share code between several views or other classes
+
+We shall take a brief look at views, and then focus on templates.
+
+### Views in AngularJs
+
+In AngularJs, you never see any Javascript for views.
+Instead, you simply invoke the <code>ngView</code> directive in the template.
+Any custom view logic must be implemented in the controller in charge of it.
+
+### Views in EmberJs
+
+In EmberJs, you may customise a view in Javascript.
+As mentioned above, one reason we would want to do this is to
+integrate with the 3rd party libary that does not necessarily understand Ember.
+
+        var myFooView = Ember.View.extend({
+            didInsertElement: function() {
+                this._super.apply(this, arguments);
+                var svg = this.$(&#39;svg&#39;).get()[0];
+                d3.select(svg); //do something with d3 and the <svg> element
+            }
+        });
+
+Here, we have overridden the <code>didInsertElement</code> function on the view,
+since it gets triggered after the view has rendered its contents,
+and told it to trigger some manipulation of an element within it
+once this has happened.
+
+Doing this elsewhere would not have worked,
+because <code>d3</code> does not understand when it should (or should not) perform its
+actions, since it is not aware of EmberJs.
+
+### Back to Templates
+
+Templates are where most of the presentation logic occurs.
+Templates in AngularJs and EmberJs can look very similar -
+they are both HTML, with the dynamic parts escaped using double squiggly brackets. <super>&lowast;</super>
+
+<p>However, that is a superficial similarity -
+the underlying approach taken by each is fundamentally different.</p>
+<p><super>&lowast;</super> With AngularJs, in addition to this,
+some dynamic input may be identified by <code>ng-*</code> attributes,
+and any custom designed directives added by the developer.</p>
+<h3 id="templates-in-angularjs">Templates in AngularJs</h3>
+<p>Syntax:</p>
+<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"FooController"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"foo"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bar"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"changeFoo()"</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">buttonText</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span></span>
+</code></pre><p>AngularJs uses a DOM-based templating mechanism.
+This means that the templates are the rendered HTML.
+When the app runs, the elements are rendered with
+the original contents of the template.
+Subsequently, AngularJs kicks in, and traverse the entire DOM tree,
+inspecting for special decorations,
+and then modifies the DOM according to the desired behaviour.
+In fact, if you are quick - or set some break points -
+you will notice a flicker between the two.</p>
+<p>The special decorations that it looks out for are:</p>
+<ul>
+<li>Directives<ul>
+<li>Elements or attributes that link to modules known to AngularJs</li>
+<li>AngularJs comes with several built indirectives,
+and all of them are prefixed with <code>ng-*</code></li>
+<li>THe developer may also define his own custom directives</li>
+</ul>
+</li>
+<li>Markup<ul>
+<li>Any part of the markup whcih appears between double squiggly braces,
+<code>{{like this}}</code></li>
+<li>AngularJs evaluates the expression within these braces,
+and substitutes it for the result</li>
+</ul>
+</li>
+</ul>
+<p>AngularJs allows for an extremely expressive syntax to be added to the
+expressions within the templates,
+including Javascript expression,
+and filters using a UNIX-style pipe (<code>|</code>) syntax.</p>
+<h3 id="templates-in-emberjs">Templates in EmberJs</h3>
+<p>Syntax:</p>
+<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">type</span>='<span class="hljs-variable">text</span> <span class="hljs-variable">value</span>=<span class="hljs-variable">model.foo</span>'}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> </span></span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">action</span></span> '<span class="hljs-variable">changeText</span>'}}</span><span class="xml"><span class="hljs-tag">&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">model.buttonText</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span></span>
+</code></pre><p>Ember uses a templating language, <a href="http://handlebarsjs.com/" target="_blank">Handlebars</a>.
+Its approach is fundamentally different to that of AngularJs&#39;,
+as it uses a string-based templating mechanism,
+as opposed to a DOM-based templating mechanism.
+This means that it parses the entire tempalte beforehand,
+and generates a series of functions that contain
+the static inputs to the templates inline,
+and accept parameters for the dynamic inputs to the templates.</p>
+<p>That explanation would be awfully hard to follow without context -
+so here is the compiled function that EmberJs + Handlebars would geenrate
+for the template sepcified above.</p>
+<pre><code>    function anonymous(Handlebars,depth0,helpers,partials,data) {
+      this.compilerInfo = [<span class="hljs-number">4</span>,<span class="hljs-string">'&gt;= 1.0.0'</span>];
+      helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+      var buffer = <span class="hljs-string">''</span>, stack1, <span class="hljs-built_in">hash</span>Contexts, <span class="hljs-built_in">hash</span>Types, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+      <span class="hljs-built_in">hash</span>Contexts = {<span class="hljs-string">'type'</span>: depth0};
+      <span class="hljs-built_in">hash</span>Types = {<span class="hljs-string">'type'</span>: <span class="hljs-string">"STRING"</span>};
+      options = {<span class="hljs-built_in">hash</span>:{
+        <span class="hljs-string">'type'</span>: (<span class="hljs-string">"text value=model.foo"</span>)
+      },contexts:[],types:[],<span class="hljs-built_in">hash</span>Contexts:<span class="hljs-built_in">hash</span>Contexts,<span class="hljs-built_in">hash</span>Types:<span class="hljs-built_in">hash</span>Types,data:data};
+      data.buffer.push(escapeExpression(((stack1 = helpers.input || depth0.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, <span class="hljs-string">"input"</span>, options))));
+      data.buffer.push(<span class="hljs-string">"\n&lt;button "</span>);
+      <span class="hljs-built_in">hash</span>Types = {};
+      <span class="hljs-built_in">hash</span>Contexts = {};
+      data.buffer.push(escapeExpression(helpers.action.call(depth0, <span class="hljs-string">"changeText"</span>, {<span class="hljs-built_in">hash</span>:{},contexts:[depth0],types:[<span class="hljs-string">"STRING"</span>],<span class="hljs-built_in">hash</span>Contexts:<span class="hljs-built_in">hash</span>Contexts,<span class="hljs-built_in">hash</span>Types:<span class="hljs-built_in">hash</span>Types,data:data})));
+      data.buffer.push(<span class="hljs-string">"&gt;"</span>);
+      <span class="hljs-built_in">hash</span>Types = {};
+      <span class="hljs-built_in">hash</span>Contexts = {};
+      data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, <span class="hljs-string">"model.buttonText"</span>, {<span class="hljs-built_in">hash</span>:{},contexts:[depth0],types:[<span class="hljs-string">"ID"</span>],<span class="hljs-built_in">hash</span>Contexts:<span class="hljs-built_in">hash</span>Contexts,<span class="hljs-built_in">hash</span>Types:<span class="hljs-built_in">hash</span>Types,data:data})));
+      data.buffer.push(<span class="hljs-string">"&lt;/button&gt;\n"</span>);
+      <span class="hljs-keyword">return</span> buffer;
+    }
+</code></pre><p>Do not worry if that looks like gibberish to you -
+simply look how it alternatiely does <code>data.buffer.push(&quot;some string&quot;);</code>
+and <code>data.buffer.push(/* some expression */);</code>.
+Those are the static and dynamic inputs respectively.
+Ultimately, this function builds a string,
+and that string is added to the rendered DOM.</p>
+<p>The difference between DOM-based templating mechanisms
+and string-based templating mechanisms may be thought of as
+an outside-in approach versus an inside-out approach.</p>
+<p>The string-based templating mechanism has some pros and cons:</p>
+<ul>
+<li>Pros:<ul>
+<li>Since templates are pre-compiled they render quickly</li>
+<li>No flickering on screen as first render is already populated
+with the dynamic values</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Requires an extra compilation step</li>
+<li>In order for two-way bindings to work,
+<a href="http://emberjs.com/guides/understanding-ember/keeping-templates-up-to-date/" target="_blank">additional DOM nodes need to be inserted</a> - etamorph <code>&lt;script&gt;</code> tags in this case</li>
+</ul>
+</li>
+</ul>
+<p>All of these are pretty minor considerations,\
+except for additional DOM nodes being inserted.
+Litering the DOM with numerous <code>&lt;script&gt;</code> tags makes it quite cluttered and ugly,
+and makes inspecting it less fun.
+It makes one wonder, surely, there must be a better way to do this!</p>
+<p>The other implication of this is that two-way binding to <em>attributes</em>
+is simply not possible, using this syntax.
+Ember gets around this by defining a special alternative syntax, <code>{{bind-attr}}</code>.
+All this put together makes it feel more like something tacked together,
+rather than a well engineered, elegant, solution.</p>
+<p>Separately, the syntax allowed for expression within Handlebars templates
+is quite restrictive.
+Properties may only be looked up and output as-is.
+If any processing or formatting is required,
+the only way to do this is by defining properties on a controller,
+or by <a href="http://emberjs.com/guides/templates/writing-helpers/" target="_blank">registering Handlebars helper functions</a>.</p>
+<h3 id="considerations-for-designers">Considerations for Designers</h3>
+<p>Developing a web app using a SPA framework requires skills in both
+Javascript programming and HTML + CSS design.
+Sometimes, these are the same person, but quite often, they are not,
+and peopel with different skill sets do need to collaborate.</p>
+<p>Templates are where most of the overlap is, and thus where the collaboration,
+between programers and designers needs to occur.</p>
+<p>In an AngularJs app, the framework lets you put as much logic as you put your
+logic right into the template.
+In an EmberJs app, the templating engine, Handlebars,
+does not allow you to put any logic into the templates,
+and you are forced to extract this into the Javascript code.</p>
+<p>Thus with EmberJs, the decision about where the separation occurs
+has already been made.
+However, with AngularJs, the decision on where to to draw the line
+is left up to the programmers and designers to work out themselves.</p>
+<h3 id="additonal-libraries">Additonal Libraries</h3>
+<p>AngularJs has got a solid templating engine going for it,
+and thus there is no need to use any addtional libraries for rendering.</p>
+<p>EmberJs with Handlebars, on the other hand,
+has an offering that has several drawbacks,
+and naturally, some have tried to write their own.</p>
+<p>The most promising amongst them is a new library,
+<a href="https://github.com/tildeio/htmlbars" target="_blank">HTMLbars</a>,
+which solves many of the problems mentioned above:
+It is DOM-aware, supports expressions, supports piping,
+and does all this without cluttering the DOM with <code>&lt;script&gt;</code> tags.</p>
+<p><a href="http://gist.github.com/wycats/8116673" target="_blank">wycats on how HTMLbars improves on handlebars</a>
+<a href="http://talks.erikbryn.com/htmlbars/#/6" target="_blank">ebryn - HTMLbars is a DOM-aware handlebars</a></p>
+<p>Unfortunately, HTMLBars is not yet ready,
+and we still have to use Handlebars for now.</p>
+<h3 id="discussion">Discussion</h3>
+<p>In both AngularJs and EmberJs,
+the developer only touches views on the odd occasion.
+This is because both frameworks have such powerful view classes built in.</p>
+<p>Most of the view logic is encapsulated within templates,
+and this is where developers will spend most of their time.
+Interestingly, this is also the area where programmers and designers will
+require the most collaboration.</p>
+<p>AngularJs and EmberJs take very different approaches towards templating,
+with the former using DOM-based temaplting,
+and the latter using string-based templating;
+and thus having a number of big limitations.</p>
+<p>We have looked at both the <em>M</em> and the <em>V</em> in MVC,
+and next we will take a look at controllers,
+the things that bind the models and the views together.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../mvc/models.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../mvc/controllers.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

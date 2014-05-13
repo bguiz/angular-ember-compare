@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Routers | Angular-ember-compare</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="bguiz">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../adv/components.html" />
+        
+        
+        <link rel="prev" href="../adv/routing-overview.html" />
+        
+
+        <meta property="og:title" content="Routers | Angular-ember-compare">
+        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/bguiz">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="3.1" data-basepath=".." data-revision="1399986322474">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Angular-ember-compare</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/bguiz" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/adv/routers.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="intro/criteria.html">
+                
+                <a href="../intro/criteria.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="mvc/mvc-overview.html">
+                
+                <a href="../mvc/mvc-overview.html">
+                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="mvc/models.html">
+                            
+                            <a href="../mvc/models.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="mvc/views-templates.html">
+                            
+                            <a href="../mvc/views-templates.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="mvc/controllers.html">
+                            
+                            <a href="../mvc/controllers.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="adv/routing-overview.html">
+                
+                <a href="../adv/routing-overview.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="adv/routers.html">
+                            
+                            <a href="../adv/routers.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="adv/components.html">
+                
+                <a href="../adv/components.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Components
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="roundup/roundup.html">
+                
+                <a href="../roundup/roundup.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 77.77777777777777%;min-width: 66.66666666666667%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../intro/criteria.html" title="Criteria" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../mvc/mvc-overview.html" title="MVC" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../mvc/models.html" title="Models" class="chapter done " data-progress="2.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../mvc/views-templates.html" title="Views and Templates" class="chapter done " data-progress="2.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../mvc/controllers.html" title="Controllers" class="chapter done " data-progress="2.3" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../adv/routing-overview.html" title="Routing" class="chapter done new-chapter" data-progress="3" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../adv/routers.html" title="Routers" class="chapter done " data-progress="3.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../adv/components.html" title="Components" class="chapter  new-chapter" data-progress="4" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../roundup/roundup.html" title="Round Up" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_3">
+                    
+                        <h2 id="routers">Routers</h2>
+<h3 id="routing-in-angularjs">Routing in AngularJs</h3>
+<p>Setting up a router - the object responsible for providing routing capability -
+is extremely easy in AngularJs:</p>
+<pre><code>    App.config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$routeProvider</span>)</span> {</span>
+        <span class="hljs-variable">$routeProvider</span>
+            .when(<span class="hljs-string">'/foo'</span>, {
+                controller: <span class="hljs-string">'FooCtrl'</span>,
+                templateUrl: <span class="hljs-string">'foo.template.html'</span>
+            })
+            .when(<span class="hljs-string">'/bar'</span>, {
+                controller: <span class="hljs-string">'BarCtrl'</span>,
+                templateUrl: <span class="hljs-string">'bar.template.html'</span>
+            })
+            .otherwise({
+                redirectTo: <span class="hljs-string">'/foo'</span>
+            });
+    });
+</code></pre><p>The syntax explains itself (a very good indicator of great design),
+but we shall go through it nonetheless.</p>
+<p>AngularJs comes with a built-in module,
+[<code>$routeProvider</code>](<a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider" target="_blank">https://docs.angularjs.org/api/ngRoute/provider/$routeProvider</a>,
+which is in charge of handling routing functionality in the app.
+This module merely needs to be configured by the developer.</p>
+<p>The <code>$routeProvider</code> module should be configured before the app is initialised,
+and any other code is run, and therefore this needs to be run during the app&#39;s
+<a href="http://www.angularjshub.com/examples/modules/configurationrunphases/" target="_blank">configuration phase</a>
+of the app&#39;s lifecycle.</p>
+<p>The configuration consists of pairs of routing information,
+where each pair consists of a URL path, an an object from which an MVC state can be derived.
+These pairs are passed in by calling <code>.when()</code> on the <code>$routeProvider</code> object.
+The first parameter being the URL path, and the second parameter an object,
+which should give AngularJs enough information to derive an MVC state.
+Typically this would mean defining a controller and a template:
+a view is generated from a temlate,
+and the controller knows how to fetch or construct a model.</p>
+<h3 id="finite-state-machine-in-angularjs-router">Finite State Machine in AngularJs&#39; Router</h3>
+<p>AngularJs&#39; choice of a finite state machine places a significant impact on
+its routing capabilty.</p>
+<p>In traditional websites, most pages would share common sections,
+such as the header, footer, navigation menu, and side bars.
+The more complex ones shared more than that -
+perhaps the site had several pages dedicated to &quot;Games&quot;,
+and several pages dedicated to &quot;Stories&quot;.
+All the &quot;Games&quot; pages would share a certain section,
+that would not be present in the &quot;Stories&quot; pages.
+Similarly, all the &quot;Stories&quot; pages would share a certain section,
+that would not be present in any of the &quot;Games&quot; pages.</p>
+<p>In AngularJs, you may apply the <code>ngView</code> directive to a DOM element.
+When the URL changes, the router determines the new MVC state of the app,
+and the contents of the <code>ngView</code> element are removed,
+and rendered using the new new MVC state.</p>
+<p>Since the router is driven by a <em>finite</em> state machine under the hood,
+there can only be one <code>ngView</code> rendered within the app at any time.
+This, of course, precludes us from implementing the scenario above,
+with the &quot;Games&quot; and &quot;Stories&quot; sections in the scenario described above.</p>
+<p>AngularJs developers get around this in one of two ways:</p>
+<ul>
+<li>Simply repeat the content in the templates, and code in the controllers,
+for the states with shared content</li>
+<li>Do not use AngularJs&#39; router, and instead use a 3rd party library,
+<a href="https://github.com/angular-ui/ui-router" target="_blank">ui-router</a>,
+which provides an alternative router that uses a bhierarchical state machine.</li>
+</ul>
+<p>Some from the AngularJs core team have identified this as a problem,
+and have drafted this proposal for
+<a href="https://groups.google.com/forum/#!topic/angular-dev/mO6jmYhvsMk" target="_blank">router design in AngularJs 2.0</a>.
+It draws inspiration from <code>ui-router</code>, EmberJs&#39; router, and a few others.
+Thus it appears that the AngularJs may have support for this in
+future versions, as there is community support for this.</p>
+<h3 id="routing-in-emberjs">Routing in EmberJs</h3>
+<p>The EmberJs router, and its associated routing concepts,
+are significantly more complex than those of AngularJs:</p>
+<ul>
+<li>Supports heirarchical routing, using a hierarchical state machine</li>
+<li>Need to learning naming conventions</li>
+<li>Split of routing responsibility between <code>Router</code> and <code>Route</code> objects</li>
+</ul>
+<p>This added complexity makes for a steeper learning curve at first,
+but pays off afterward, as it supports a richer set of features.</p>
+<p>Syntax:</p>
+<pre><code>    App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foos'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'foo'</span>, { path: <span class="hljs-string">'/:foo_id'</span> });
+        });
+        <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'bar'</span>);
+    });
+</code></pre><p>You might be wondering, but where are the controllers, views, and models named?
+To make sense of the syntax for the router,
+it is first necessary to understand EmberJs&#39; philosophy on
+<a href="http://en.wikipedia.org/wiki/Convention_over_configuration" target="_blank">convention over configuration</a> -
+and in particular, its naming conventions.</p>
+<h3 id="convention-over-configuration-in-emberjs">Convention over Configuration in EmberJs</h3>
+<p>When you instantiate a new EmberJs app using</p>
+<pre><code>    var App = Ember.Application.<span class="hljs-operator"><span class="hljs-keyword">create</span>({});</span>
+</code></pre><p>The framework will creater a <code>Router</code> object.
+This is the first or many naming conventions to come!</p>
+<p>We then call the <code>Router.map()</code> function,
+and pass in a function that defines a hierarchy of routes,
+using <code>this.resource</code> for routes that have child nodes,
+and <code>this.route</code> for leaf nodes.
+Both <code>.resource()</code> and <code>.route()</code> take in a string as their first parameter,
+and it is the value of this string that EmberJs uses to determine which
+<code>Route</code>, <code>Controller</code>, <code>View</code>, and template objects it shall use.
+The way it works these out are not immediately obvious,
+and this guide serves as a good primer:
+<a href="http://emberjs.com/guides/routing/defining-your-routes/" target="_blank">EmberJs routes guide</a>.</p>
+<p>The key take away here is that the router object may be thought of as a
+<em>king</em> object in any EmberJs app.
+Whatever names it uses for its routes determine the names of
+all the other types of EmberJs objects.
+When starting out in EmberJs for the first time,
+this can be incredibly frustrating,
+as it takes a little getting used to at first,
+and until then a name that is slightly wrong means that EmberJs does not detect
+it at all, and simply falls back on using a default or generic implementation
+of that object.
+For example naming a controller <code>FooBarCtrl</code> instead of <code>FooBarController</code>,
+or naming a template <code>foo-bar</code> instead of <code>foo/bar</code>.</p>
+<p>Know that you are not alone when you are left scratching your head,
+thinking why your code does not appear to have any effect -
+instead refer to the
+<a href="http://emberjs.com/guides/routing/defining-your-routes/" target="_blank">routes guide</a>
+once more and double check that all the naming conventions have been adhered to.</p>
+<p>Convention over configuration can, and most likely will,
+be frustrating to any developer;
+but only up until the point that you get used to it.
+Once that happens, it becomes less of a hindrance,
+and more of a boon to productivity,
+as it does, by definiteion, mean lesscookie cutter code that needs to be written.</p>
+<h3 id="hierachical-state-machine-in-emberjs-router">Hierachical State Machine in EmberJs&#39; Router</h3>
+<p>EmberJs uses a hierarchical state machine in its router implementation.
+This is evident when insepcting the code that we use to configure the router:
+In AngularJs all the calls to <code>.when()</code> on <code>$routeProvider</code> are at the same level.
+However, in EmberJs, within <code>.map()</code> we call <code>.resource()</code> and <code>.route()</code>,
+in a nested manner - and this is how we configure the hierarchical states.</p>
+<p>The first argument in each <code>.resource()</code> and <code>.route()</code> is a string,
+and by default, the URL for any <code>resource</code> or <code>route</code> is obtained by
+joining these strings together, in all nodes down the hierarchy.
+For example:</p>
+<pre><code>    App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-comment">// URL is /foo</span>
+        <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-comment">// URL is /foo/bar</span>
+            <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foo.bar'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-comment">// URL is /foo/bar/baz</span>
+                <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'baz'</span>);
+            });
+        });
+    });
+</code></pre><p>While assembling a URL like this is pretty easy - just string concatentation -
+assembling a composite MVC state from a hierarchy of routes is not quite that easy.
+Thankfully, EmberJs does this all for us, however,
+as developers it is important for us to understand what it does here,
+so as to use it correctly.</p>
+<p>First let us go back to hierarchical statre machines.
+Recall that a hierarchical state machine is a finitte state machine,
+where each state is allowed to contain, within it,
+an entire finite state machine of its own,
+and this is allowed to recur to produce multiple levels of hierarchy.
+Using the following hierarchy as an example:</p>
+<ul>
+<li>info</li>
+<li>games<ul>
+<li>pacman</li>
+<li>snake</li>
+</ul>
+</li>
+<li>stories<ul>
+<li>watchmen</li>
+<li>holes</li>
+</ul>
+</li>
+</ul>
+<p>In this case, the top level finite states are <code>info</code>, <code>games</code>, and <code>stories</code>.
+Both of <code>games</code> and <code>stories</code> contain child states.
+When switching between top level states,
+or child states that belong to the same top level state,
+such as <code>info --&gt; games</code> or <code>games.pacman --&gt; games.snake</code>,
+we are moving within the same finite state machine,
+and thus the behaviour is not very complex.</p>
+<p>When moving across different finite state machines, however,
+the process is a little more complex.
+For example <code>games.pacman --&gt; stories.watchmen</code> means that three different
+transitions need to occur:</p>
+<ol>
+<li>exit state <code>games.pacman</code></li>
+<li>exit state <code>games</code> and enter state <code>stories</code></li>
+<li>enter state <code>stories.pacman</code></li>
+</ol>
+<p>It is important to visualise which states are active,
+before and after moving between one route and another.
+EmberJs keeps all the current routes, models, views, templates, and controllers,
+for all the state that do not change before and after the transition intact,
+tears down those that have been exited from,
+and sets up those that have been entered.</p>
+<p>The developer does not really have much control over this behaviour,
+and should be aware of when these actions occur,
+and add code to be executed upon lifecycle hooks of each of them when necessary.
+<a href="http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_lifecycle-hooks" target="_blank">Lifecycle Hooks in Views</a>
+Controllers are only instantiated once, and their lifecycle is managed by
+<code>Route</code> objects - via
+<a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_aborting-transitions-within-code-model-code-code-beforemodel-code-code-aftermodel-code" target="_blank"><code>model</code>, <code>beforeModel</code>, and <code>afterModel</code></a>,  <code>setupController</code>, and
+<a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_preventing-transitions-via-code-willtransition-code" target="_blank"><code>willTransition</code></a>.</p>
+<p>Templates, being defined using markup instead of Javascript,
+are quite different.
+For multiple temapltes to be active at once, in a hierarchy,
+each template must define where within it its child template should be placed.
+This is accomplished using the <code>{{outlet}}</code> Handlbars helper.
+Think of it as telling the template that,
+when there is a child state that is active on the current route,
+this is where it should be rendered.
+While this is a very simple thing to do,
+when combined with the power of EmberJs&#39; routing,
+it can be used to accomplish some types of layouts that would be otherwise hard to do,
+inclding the master-detail pattern, where the UI displays a list of item,
+with perhaps just the name in one section of the page (the master),
+and when each of these is clicked on,
+all the information about that item is displayed in another section of the page (the detail).</p>
+<p>This article by UX Magazine on
+<a href="http://uxmag.com/articles/rich-internet-application-screen-design" target="_blank">application screen design</a>
+lists quite a number of the most common screen layouts in user interfaces.
+Many of these are only possible when the software rendering them supports
+the concept of view hierarchies.</p>
+<p>I have put together this JsBin to
+<a href="http://jsbin.com/wiyin/4/edit?html,js,output" target="_blank">demonstrate hierarchical routing in EmberJs</a>,
+so as the short inline code examples do not really do this justice.</p>
+<h3 id="routes-in-emberjs">Routes in EmberJs</h3>
+<p>Routing in EmberJs is implemented through one <code>Router</code> object,
+and multiple <code>Route</code> objects.
+The primary functions of a <code>Route</code> object are to fetch or construct
+the MVC state of the app when activated.
+Typically this would involve fetching the model,
+then passing the model to the controller,
+and finally telling the view to render its template.</p>
+<p>The default implementation of the <code>Route</code> object does all of these things,
+out of the box, without the developer hqaving to do anything.
+The model however, will simply be empty.
+In msot cases, we want our routes to have models,
+and fetch these models from a server.
+Thus, typically the default routes are extended
+to implement a custom <code>model</code> hook.</p>
+<pre><code>    App.FoosRoute = Ember.Route.extend({
+        model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> [{name: <span class="hljs-string">'f1'</span>}, {name: <span class="hljs-string">'f2'</span>}, {name: <span class="hljs-string">'f3'</span>}];
+        }
+    });
+</code></pre><p>That controller always returns an array with hard-coded contents.
+Useful for stubbing or prototyping, but for apps in production,
+most likely we will want to retrieve data from an external data source,
+such as an API server:</p>
+<pre><code>    App.FoosRoute = Ember.Route.extend({
+        model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">var</span> req = Ember.RSVP.resolve(Ember.$.getJSON(<span class="hljs-string">'/api/foos'</span>));
+            <span class="hljs-keyword">return</span> req.then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resolve</span><span class="hljs-params">(response)</span> {</span>
+                <span class="hljs-keyword">return</span> response.foos;
+            });
+        }
+    });
+</code></pre><p>Here we use <a href="http://api.jquery.com/jquery.getjson/" target="_blank"><code>jQuery.getJSON()</code></a>
+to perform the AJAX request.
+AJAX requests, are, of course, asynchronous,
+and thus they need to be dealt with using either callbacks or promises.
+In EmberJs, the <code>model</code> hook of any route is expected to return one of two types:</p>
+<ul>
+<li>a plain ol&#39; Javascript object (POJSO)</li>
+<li>a promise</li>
+</ul>
+<p>If a POJSO is returned, EmberJS uses that value immediately.
+If, on the other hand, a promise is returned,
+EmberJs waits until the promise resolves or rejects,
+and only then does it continue (initialise the controller and pass the model to it).</p>
+<p>Above we need to wrap the promise-like object returned by <code>jQuery.getJSON()</code>
+using <code>Ember.RSVP.resolve()</code> in order to obtain a promise object that EmberJs
+knows how to use correclty.
+This is yet another stumbling block for anytone starting with EmberJs,
+because it quite often means that the app does not work as expected.
+It would be great if this is better documented in EmberJs,
+or better still, if EmberJs ships with its own AJAX contructs,
+as AngularJs does with its <code>$http</code> modules.</p>
+<h3 id="discussion">Discussion</h3>
+<p>When it comes to routing, the solution offered by EmberJs is far more powerful
+than the solution provided by AngularJs.
+This comes at the expense of complexity -
+grokking EmberJs&#39; router and route objects can be extremely exasperating
+for those just starting out,
+and a lot of that stems from not yet being familiar with the naming system.
+Once past that hurdle, there is yet more additional complexity inherent in
+understanding hierarchical state machines and applying that
+when designing the structure of the routes (and therefore the rest of the app).</p>
+<p>AngularJs, on the other hand, provide a much simpler and easier means
+to define routing for the app.
+If the app does not require all that added complexity,
+such as hierarchical views,
+then this offers a much better proposition.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../adv/routing-overview.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../adv/components.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

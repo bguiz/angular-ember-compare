@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Controllers | Angular-ember-compare</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="bguiz">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../adv/routing-overview.html" />
+        
+        
+        <link rel="prev" href="../mvc/views-templates.html" />
+        
+
+        <meta property="og:title" content="Controllers | Angular-ember-compare">
+        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/bguiz">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1399986322474">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Angular-ember-compare</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/bguiz" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/controllers.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="intro/criteria.html">
+                
+                <a href="../intro/criteria.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="mvc/mvc-overview.html">
+                
+                <a href="../mvc/mvc-overview.html">
+                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="mvc/models.html">
+                            
+                            <a href="../mvc/models.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="mvc/views-templates.html">
+                            
+                            <a href="../mvc/views-templates.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="mvc/controllers.html">
+                            
+                            <a href="../mvc/controllers.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="adv/routing-overview.html">
+                
+                <a href="../adv/routing-overview.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="adv/routers.html">
+                            
+                            <a href="../adv/routers.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="adv/components.html">
+                
+                <a href="../adv/components.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Components
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="roundup/roundup.html">
+                
+                <a href="../roundup/roundup.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 55.55555555555556%;min-width: 44.44444444444444%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../intro/criteria.html" title="Criteria" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../mvc/mvc-overview.html" title="MVC" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../mvc/models.html" title="Models" class="chapter done " data-progress="2.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../mvc/views-templates.html" title="Views and Templates" class="chapter done " data-progress="2.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../mvc/controllers.html" title="Controllers" class="chapter done " data-progress="2.3" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../adv/routing-overview.html" title="Routing" class="chapter  new-chapter" data-progress="3" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../adv/routers.html" title="Routers" class="chapter  " data-progress="3.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../adv/components.html" title="Components" class="chapter  new-chapter" data-progress="4" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../roundup/roundup.html" title="Round Up" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_6">
+                    
+                        <h2 id="controllers">Controllers</h2>
+<p>Controllers are the final piece of the MVC puzzle.
+They are the glue that binds models to views/ templates.
+Their responsibilities include manipulating models,
+as well as responding to user interactions on the view.</p>
+<p>Now when performed separately, these are not particularly interesting.
+However, their real utility becomes apparent when they interact with
+both models and views simultaneously.
+For example, the user might click a button rendered by a view,
+that triggers an action on the controller,
+which modifies a model.
+Then some of the attributes that have changed on the model are bound
+by the template, and the view is notified of this change,
+and the relevant section of the DOM is re-rendered.
+In this sequence of events, the controller is what sits in between
+the model and the view, passing the appropriate messages between them,
+enabling all this to happen.</p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/200px-MVC-Process.svg.png" alt="Model-View-Controller interactions"></p>
+<p>Unlike some of their older SPA framework counterparts,
+both AngularJs and EmberJs support two-way binding.
+That is:</p>
+<pre><code><span class="hljs-number">1.</span> When <span class="hljs-operator">the</span> model state changes,
+   <span class="hljs-keyword">if</span> <span class="hljs-keyword">any</span> parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are bound <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> part <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model that has changed,
+   those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are re-rendered.
+<span class="hljs-number">2.</span> When <span class="hljs-operator">the</span> view state changes,
+   <span class="hljs-keyword">if</span> those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are bound <span class="hljs-built_in">to</span> parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model,
+   those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model are changed.
+</code></pre><h3 id="controllers-in-angularjs">Controllers in AngularJs</h3>
+<p>Controllers in AngularJs are not, strictly speaking, controllers.
+In fact Angular does not call itself an MVC framework,
+<a href="http://plus.google.com/+AngularJS/posts/aZNVhj355G2" target="_blank">it calls itself an MVW (model-view-whatever) framework</a> instead.
+That being said, that is only true from a academic purist&#39;s point of view;
+through a practical lens, they most certainly are.</p>
+<p>Syntax:</p>
+<pre><code>    angular.module(<span class="hljs-string">'app'</span>, []).controller(<span class="hljs-string">'FooCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$scope</span>)</span> {</span>
+        <span class="hljs-variable">$scope</span>.someProperty = <span class="hljs-string">'More exclamation marks'</span>;
+        <span class="hljs-variable">$scope</span>.someAction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-variable">$scope</span>.someProperty += <span class="hljs-string">'!'</span>;
+        };
+    });
+</code></pre><p>The <code>$scope</code> object is <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">proptypically inherited</a> from its parent&#39;s
+<code>$scope</code> object - in this case the main application object.
+It is made available through AngularJs&#39; dependency injection framework.
+This in itself is a fascinating topic that warrants a discussion of its own,
+as it is a <em>beautiful</em> piece of software engineering architecture.
+Understanding it lies at core of understanding AngularJs.
+Unfortunately, this is not one of the criteria for comparison.
+I would however, suggest this article on
+<a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">understanding dependency injection</a>
+for a primer on the basics;
+and this article on <a href="http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/" target="_blank">inheritance paterns</a>
+as further reading.</p>
+<h3 id="two-way-binding-in-angularjs">Two-way binding in AngularJs</h3>
+<p>Syntax:</p>
+<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"FooCtrl"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"someAction()"</span>&gt;</span>Press me<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"</span></span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
+</code></pre><p>The template above is not a very useful one,
+by providing two different ways to modify the same propertyon the controller&#39;s
+<code>$scope</code>, however, it is a succinct demonstration of two-way binding.</p>
+<p>When the button is clicked, the controller modifies the model.
+The template contains a <code>&lt;p&gt;</code> tag whose contents are bound to the model,
+and the view listens for the change on the model and updates its contents.
+The template also contains another binding to the same model,
+in the <code>&lt;input&gt;</code> tag&#39;s <code>value</code> attribute,
+and this is also updated, in a similar manner.
+Both of these sequences are one way bindings, from model to view.</p>
+<p>Now, instead of modifying the model, we modify the view instead,
+by typing into the input field.
+The model listens for the change in the view,
+and when the input field is modified,
+it detects a change and updates the model.
+The <code>&lt;p&gt;</code> tag, of course, is still bound to the model,
+and it listens for a change on the model,
+and updates its contents, as it did before.
+This is two-way bidning in action,
+with the first sequence from view to model,
+and the second sequence from model back to view.</p>
+<p>This magic that happens behind the scenes does come at a cost though.
+As apps become more complex, it becomes more important to know
+how two-way binding works.
+The canonical use case for when this becomes especially important
+occurs when you have extremely large or complex properties on the <code>$scope</code> -
+too complex for it to be included in the dirty checking
+which gets performed in each digest cycle.
+So instead of storing these properties on the <code>$scope</code>,
+we we store them outside of it,
+and then manually notify the controller whenever the property has been updated.
+This is accomplished through <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" target="_blank"><code>$watch</code></a> and <code>$apply</code>,
+and using them correctly is contingent upon understanding
+how two-way binding works, and how it works together with the digest cycle.
+These techniques, however, ar beyond the scope of this comparison.
+I would suggest this article <a href="http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/" target="_blank">on performance tuning</a>
+as further reading on this technique, and several others.</p>
+<h3 id="controllers-in-emberjs">Controllers in EmberJs</h3>
+<p>EmberJs controllers conform to the pure MVC definition of them.</p>
+<p>Syntax:</p>
+<p>App.FooController = Ember.Controller.extend({
+    someProperty: &#39;More exclamation marks&#39;,
+    actions: {
+        someAction: function() {
+            this.set(&#39;someProperty&#39;, this.get(&#39;someProperty&#39;) + &#39;!&#39;);
+        }
+    }
+});</p>
+<p>EmberJs enforces a clean separation between properties and actions
+within a controller -
+all actions are grouped into a single hash.</p>
+<p>Another things worth pointing out here,
+is that unlike AngularJs,
+EmberJs distinguishes between properties set on the controller,
+and models used by the controller.
+Models are typically created and passed in a controller by a <code>Ember.Route</code> object,
+which we shall take a look at when we look at routing.
+This is because there is only one instance of any controller instantiated,
+and thus its state does <em>not</em> get reset each time.
+This is can be confusing when working with EmberJs for the first time.</p>
+<p>Another thing worth noting is that we had to name this controller <code>FooController</code>.
+In ANgularJs, we were free to name our controller anything we wished to -
+<code>BarCtrl</code> would have worked jsut as well as <code>FooCtrl</code>.
+In EmberJs, however, we must take care to name our controllers -
+and most other types of objects -
+according to the specified naming convention.
+This is a common beginner&#39;s gotcha, and takes getting used to.
+Until then, do not hesitate to refer to the handy tables,
+in the <a href="http://emberjs.com/guides/concepts/naming-conventions/" target="_blank">naming conventions guide</a>
+as a reference.
+A completely customised naming strategy is also possible,
+by extending (or replacing) EmberJs&#39; <a href="http://emberjs.com/api/classes/Ember.DefaultResolver.html" target="_blank">default resolver</a>.
+However, this is often more effort than it is worth,
+and most developers will choose to stick to the default resolver.</p>
+<h3 id="two-way-binding-in-emberjs">Two-way binding in EmberJs</h3>
+<p>Syntax:</p>
+<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> </span></span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">action</span></span> '<span class="hljs-variable">someAction</span>'}}</span><span class="xml"><span class="hljs-tag">&gt;</span>Exclaim harder<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">type</span>=<span class="hljs-string">"text' value=someProperty}}
+    &lt;/div&gt;</span></span>
+</code></pre><p>Two-way binding in EmberJs works in a very similar fashion to
+the way it works in AngularJs -
+so we will only cover the differences.</p>
+<p>The contents of the <code>&lt;p&gt;</code> tag get bound and behave as expected.
+However, element attributes are problematic -
+we cannot bind any model values to DOM element attributes
+using the usual squiggly bracket syntax.
+The reason for this is that EmberJs inserts <code>&lt;script&gt;</code> tags -
+one before and one after -
+each bound section of the template;
+and of while this works well outside of elements,
+it does not work too well for attributes.</p>
+<p>We need to use the <a href="http://emberjs.com/guides/templates/binding-element-attributes/" target="_blank"><code>{{bind-attr}}</code> Handlebars helper</a>
+instead.
+As this is a very common use case for <code>&lt;input&gt;</code> tags,
+there is an <code>{{input}}</code> Handlebars helper that does this for us.</p>
+<p>The implication of this is that getting two-way binding to work in EmberJs
+can be quite complicated, as there is more syntax to learn.</p>
+<h3 id="imperative-vs-declarative-syntax-in-two-way-binding">Imperative vs Declarative Syntax in Two-way Binding</h3>
+<p>In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
+between models and views is through declarative syntax in the templates.
+We simply state what we properties we want to be bound in the template,
+and let the framework figure out the how -
+as a developer using either framework,
+we do not need to figure out the code necessary for this to work.</p>
+<p>By contrast, the lack of two-way binding in some other SPA frameworks,
+such as BackboneJs, means that the developer has to code all the sequences of
+actions for each property which he/ she wishes to be bound.
+This is the opposite of the declarative style enabled by AngularJs and EmberJs -
+it is an imperative style.</p>
+<p>Some developers prefer an imperative style of programming,
+and other developers prefer a declarative style of programming.
+It is up to you to pick which works best.
+The vast majority of those developing SPAs however,
+prefer to use two-way binding,
+and opt out of it in exceptional cases.</p>
+<h3 id="imperative-vs-declarative-syntax-in-controllers">Imperative vs Declarative Syntax in Controllers</h3>
+<p>Properties on AngularJs controllers are defined imperatively.</p>
+<p>Properties on EmberJs controllers can be defined either imperatively or declaratively.</p>
+<pre><code>    <span class="hljs-keyword">var</span> FoosController = Ember.ArrayController.extend({
+        <span class="hljs-comment">//this is an imperatively defined property</span>
+        filterText: <span class="hljs-string">''</span>,
+
+        <span class="hljs-comment">//this is a declaratively defined property</span>
+        filteredModel: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">var</span> foos = <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'model'</span>);
+            <span class="hljs-keyword">var</span> filterText = <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'filterText'</span>);
+            <span class="hljs-keyword">return</span> foos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(foo)</span> {</span>
+                <span class="hljs-keyword">return</span> foo.name.indexOf(<span class="hljs-string">'filterText'</span>) &gt;= <span class="hljs-number">0</span>;
+            });
+        }.property(<span class="hljs-string">'model'</span>, <span class="hljs-string">'filterText'</span>)
+    });
+</code></pre><p>Here EmberJs makes use of <code>Function.prototype.property()</code>
+to define which properties are dependent upon changes on other properties.
+What EmberJs does behind the scenes is create a
+<a href="http://en.wikipedia.org/wiki/Directed_graph" target="_blank">Digraph</a>,
+and whenever one of the watched properties changes,
+traverses the graph to recompute all the other affected properties.
+Pretty neat!</p>
+<p>Noteworthy as well is that we can define computed properties as functions,
+and when these are referred to elsewhere -
+either in the templates or a <code>.get()</code> on the controller -
+we simply refer to it by name, and not call the function.
+In our example, we would use, in the templates:</p>
+<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> foo <span class="hljs-keyword">in</span> filteredModel</span>}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">foo.name</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
+</code></pre><p>Instead of:</p>
+<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> foo <span class="hljs-keyword">in</span> filteredModel</span>()}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">foo.name</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
+</code></pre><p>&hellip; which is different from AngularJs.
+This happens because we have marked that function as being a property;
+and is a great example of the
+<a href="http://en.wikipedia.org/wiki/Uniform_access_principle" target="_blank">uniform access principle</a>.</p>
+<p>In AngularJs, the way a computed property is defined is to create a function
+on the scope.
+If this property is used in a template, it gets called in every digest cycle.</p>
+<p>EmberJs&#39; way of specifying computed properties is a lot more succinct than 
+the way it is done in AngularJs.
+This is also a lot more efficient than AngularJs&#39; approach,
+as it very neatly side steps the need to recompute them in each digest cycle.
+While this can also be accomplished in AngularJs using <code>$watch</code>,
+it is rather nice for the SPA framework to support this out of the box.</p>
+<h3 id="discussion">Discussion</h3>
+<p>When developing apps with <a href="http://backbonejs.org/" target="_blank">BackboneJs</a>,
+the lack of two-way binding capability was the single biggest drain in productivity.
+One had to specify in the templates where the models were to be rendered.
+Subsequently one had to specify listeners for each change on the model,
+and each change on the view,
+and write codeto handle the change to propagate model changes to the view,
+and view changes to the model.
+This was tedious, but the main problem that this created was not its verbosity.
+It was that there always was a chance of oversight,
+that one of these change propagations would be missed due to oversight,
+and lead to much head scratching down the road.</p>
+<p>What was missing is that BackboneJs did <em>not</em> provide a means to define a
+single-source of truth -
+quite often that the models and views would stray, and get out of sync.
+With two-way binding, however, the models are indeed the single source of truth,
+changes to the models made anywhere -
+be it code within a controller, or user interactions on a view -
+will be propagated correctly.
+Getting two-way binding out of the box,
+as we do with both AngularJs and EmberJs,
+is a great boon to productivity in developing
+web apps - I cannot emphasise this enough.</p>
+<p>We also took a look at some software enginnering paradigms,
+like imperative versus declarative styles of programming,
+and the different approaches each framework takes on computed properties;
+and their impact upon computational effiency,
+and ease to work with.</p>
+<p>We have now covered the trifecta of the parts of both AngularJs and EmberJs
+that allow us to organise code according to the MVC pattern.
+Both frameworks excel at supporting the MVC pattern,
+providing an excellent infrasructure upon which to build these.</p>
+<p>While MVC lies at the core of developing a single page app,
+that is not all there is to it.
+Next we will take a look at two more crucial parts of the framework,
+routing and components.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../mvc/views-templates.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../adv/routing-overview.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

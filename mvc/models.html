@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Models | Angular-ember-compare</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="bguiz">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../mvc/views-templates.html" />
+        
+        
+        <link rel="prev" href="../mvc/mvc-overview.html" />
+        
+
+        <meta property="og:title" content="Models | Angular-ember-compare">
+        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/bguiz">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.1" data-basepath=".." data-revision="1399986322474">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Angular-ember-compare</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/bguiz" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/models.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="intro/criteria.html">
+                
+                <a href="../intro/criteria.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2" data-path="mvc/mvc-overview.html">
+                
+                <a href="../mvc/mvc-overview.html">
+                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="mvc/models.html">
+                            
+                            <a href="../mvc/models.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="mvc/views-templates.html">
+                            
+                            <a href="../mvc/views-templates.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="mvc/controllers.html">
+                            
+                            <a href="../mvc/controllers.html">
+                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="adv/routing-overview.html">
+                
+                <a href="../adv/routing-overview.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="adv/routers.html">
+                            
+                            <a href="../adv/routers.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="adv/components.html">
+                
+                <a href="../adv/components.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Components
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5" data-path="roundup/roundup.html">
+                
+                <a href="../roundup/roundup.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 33.333333333333336%;min-width: 22.22222222222222%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../intro/criteria.html" title="Criteria" class="chapter done new-chapter" data-progress="1" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../mvc/mvc-overview.html" title="MVC" class="chapter done new-chapter" data-progress="2" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../mvc/models.html" title="Models" class="chapter done " data-progress="2.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../mvc/views-templates.html" title="Views and Templates" class="chapter  " data-progress="2.2" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../mvc/controllers.html" title="Controllers" class="chapter  " data-progress="2.3" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../adv/routing-overview.html" title="Routing" class="chapter  new-chapter" data-progress="3" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../adv/routers.html" title="Routers" class="chapter  " data-progress="3.1" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../adv/components.html" title="Components" class="chapter  new-chapter" data-progress="4" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../roundup/roundup.html" title="Round Up" class="chapter  new-chapter" data-progress="5" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_7">
+                    
+                        <h2 id="models">Models</h2>
+<p>Models are objects that represent data that is used by the app.
+The combination of all models define the state of the application.
+SPA frameworks, like AngularJs and EmberJs,
+come with methods to manage and interact with models.
+They also come with means to sync or map their models with
+their counterpart models on servers -
+usually rows in a database via a <a href="http://stackoverflow.com/a/671132/194982" target="_blank">RESTful</a> API.</p>
+<h3 id="models-in-angularjs">Models in AngularJs</h3>
+<p>AngularJs uses plain ol&#39; Javascript objects (POJSOs) for models.</p>
+<p><code>var myModel = { id: 1, name: &#39;foo1&#39; };</code></p>
+<p>Bam! It was as simple as that - you have got yourself an AngularJs model.</p>
+<p>Changing the state of that model is also just as simple,
+as the suyntax is no different from manipulating POJSOs:</p>
+<p><code>myModel.name = &#39;myNewName&#39;;</code></p>
+<p>Likewise, accessing state is just as easy:</p>
+<p><code>myModel.name</code> (evaluates to &quot;myNewName&quot;)</p>
+<p>Can it really be that simple? &hellip; Where is the catch?</p>
+<p>In order to get any use out of these models,
+you will need to set them as a property of the <code>$scope</code> variable in a controller,
+like so:</p>
+<p><code>$scope.myModel = myModel;</code></p>
+<p>(more on <a href="mvc/controllers.md">Controllers</a>)</p>
+<p>&hellip; Simple!</p>
+<p>However, there are implications when usings POJSOs as models,
+when binding data between the models and views.
+It means that we need to do dirty checking -
+keeping a copy of each model in its previous state,
+and checking for differences at a particular interval.
+This incurs a heavy performance penalty when models are numerous,
+or when models get very complex;
+and working around these limitations requires a in-depth understanding of
+<code>$scope</code>, <code>$watch</code>, dirty checking, and run loops.</p>
+<p>That is a rather advanced topic, and you can read more about the implications of
+<a href="http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks" target="_blank">using accessors vs using dirty checking here</a></p>
+<p>That being said, dirty checking is a pretty good value proposition in most cases,
+as the many web apps do not have very many models to deal with at once,
+or have models that are complex enough,
+to incur the performance penalty.</p>
+<h3 id="sync-ing-angularjs-models">Sync&#39;ing AngularJs Models</h3>
+<p>Angular models are just POJSOs,
+thus when you need to sync them with the server,
+you are left to implement the means yourself.</p>
+<p>The following are the most popular ways to accomplish this,
+arranged in order of least to most &quot;managed&quot;.</p>
+<ul>
+<li><code>$http</code><ul>
+<li>An AngularJs directive that is very similar to <code>jQuery.ajax</code>.
+Use this is you wish to sepcify interactions on a per request basis,
+or when you need the most fine-grained level of control.</li>
+</ul>
+</li>
+<li><code>$resource</code><ul>
+<li>An AngularJs directive that wraps <code>$http</code>,
+which allows you to group various <code>$http</code> requests together</li>
+</ul>
+</li>
+<li><a href="https://github.com/mgonto/restangular" target="_blank">restangular</a><ul>
+<li>A 3rd party library that makes it easy to sync models with a RESTful API</li>
+</ul>
+</li>
+</ul>
+<p>We will not go into the syntax of each method here,
+as each is fairly straight forward to use.
+The hardest part of this really lies in deciding which level of abstraction is
+the most appropriate for your app.</p>
+<p>As the developer, this is pretty good,
+as you have several great options to choose from.</p>
+<h3 id="models-in-emberjs">Models in EmberJs</h3>
+<p>In EmberJs, the syntax used to express a model is more complex than in AngularJs,
+as POJSOs may not be used directly,
+and instead must be &quot;wrapped&quot; using an Ember object, like so:</p>
+<pre><code>    <span class="hljs-keyword">var</span> Foo = Ember.<span class="hljs-built_in">Object</span>.extend();
+    <span class="hljs-keyword">var</span> myModel = Foo.create({ id: <span class="hljs-number">1</span>, name: <span class="hljs-string">'foo1'</span> });
+</code></pre><p>Noteworthy here is that we first defined a class for our model, <code>Foo</code>,
+and then created an instance of that class, <code>myModel</code>.
+We needed to do this because models in Ember are expected
+to conform to a certain interface, in order to work with the rest of the framework.
+POJSOs are not going to provide this interface,
+hence we define a class for our model, before instantiating one.</p>
+<p>The most important, and frequently used parts of this interface,
+are accessing and changing porperties:</p>
+<p><code>myModel.set(&#39;name&#39;, &#39;newFooName&#39;);</code> changes the state of the model.</p>
+<p><code>myModel.get(&#39;name&#39;);</code> reads the state of the model.</p>
+<p>A common question asked, is, if AngularJs can use POJSOs for models,
+what is preventing EmberJs from doing the same too?
+One of the main reasons for this is that it is not possible to create
+observers for property changes on POJSOs (yet).
+As such, a wrapper class is used to observe property changes -
+whenever <code>.get()</code> and <code>.set()</code> get called.
+<a href="http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks" target="_blank">Using accessors vs using dirty checking here</a>
+covers this topic in greater detail.
+Essentially wrapper objects with accessors (EmberJs&#39; approach) and
+dirty checking (AngularJs&#39; approach),
+are merely different ways to solve the same problem,
+of observing state changes on models.</p>
+<h3 id="sync-ing-emberjs-models">Sync&#39;ing EmberJs Models</h3>
+<p>The syntax above, was strictly speaking, not exactly a models,
+they are merely objects.
+This egeneral purpose wrapper is sufficient for use as models,
+provided that you are happy to write your own AJAX for all operations.
+This <a href="http://eviltrout.com/2013/03/23/ember-without-data.html" target="_blank">article shows one great way to do this</a>.</p>
+<p>The canonical way to do this, is using Ember Data.
+Ember Data is essentially an <a href="https://en.wikipedia.org/wiki/Object-relational_mapping" target="_blank">ORM</a>
+that gives you the tools to define your models in Ember,
+and synchronise them with your RESTful API backend.</p>
+<p>To define a model, we have:</p>
+<pre><code>    <span class="hljs-keyword">var</span> Foo = DS.Model.extend({
+        name: DS.attr(<span class="hljs-string">'string'</span>)
+    });
+    <span class="hljs-keyword">var</span> myModel = Foo.create({ name: <span class="hljs-string">'foo1'</span> });
+</code></pre><p>The primary difference here is that instead of <code>Ember.Object.extend()</code>,
+use <code>DS.Model.extend()</code>,
+and the attributes that the model is expected to have are defined;
+except for <code>id</code> which is assumed to exist.</p>
+<p>It also provides a means to define relationshsips between the different model classes:</p>
+<pre><code><span class="hljs-keyword">var</span> Foo = DS.Model.extend({
+    name: DS.attr(<span class="hljs-string">'string'</span>),
+    bars: DS.hasMany(<span class="hljs-string">'bar'</span>)
+});
+<span class="hljs-keyword">var</span> Bar = DS.Model.extend({
+    name: DS.attr(<span class="hljs-string">'string'</span>),
+    foo: DS.belongsTo(<span class="hljs-string">'foo'</span>)
+});
+<span class="hljs-comment">//create or fetch some Bar models</span>
+<span class="hljs-keyword">var</span> myModel = Foo.create({
+    name: <span class="hljs-string">'foo1'</span>,
+    bars: [<span class="hljs-number">100</span>, <span class="hljs-number">101</span>] <span class="hljs-comment">//IDs of the Bar models</span>
+});
+</code></pre><p>Ember Data has a <code>RESTAdapter</code> allow you to sync that state
+of these models with the backend via a RESTful API.
+This API must conform to a <a href="http://emberjs.com/guides/models/the-rest-adapter/" target="_blank">strict format</a>
+that is quite similar to <a href="http://jsonapi.org/format/" target="_blank">JSON API</a>;
+notably the way that relationships and sideloading are defined.</p>
+<p>While this sounds like an everything-included solution,
+in reality, it is quite likely not be such a smooth ride.
+The format of the API that Ember Data expects is quite precise,
+and chances are the existing API that you have make your web app talk to
+is going to differ, and break your app.
+Ember Data does provide the ability to customise and even write your own
+adapters, however, things can get very hairy very quickly -
+just take a look at this attempt to make
+<a href="http://mozmonkey.com/2013/12/loading-json-with-embedded-records-into-ember-data-1-0-0-beta/" target="_blank">embedded instead of sideloaded data work with Ember Data</a>.
+If your backend is written in Rails, hwoever, you are in luck,
+as Ember Data includes an <a href="http://emberjs.com/api/data/classes/DS.ActiveModelAdapter.html" target="_blank"><code>ActiveModelAdapter</code></a>
+that will work out of the box.</p>
+<p>For those who are writing apps whose backend is not Rails,
+and are not starting from scratch,
+or are not in a position to change the backend API -
+which I suspect is the majority of all developers -
+what options are available?</p>
+<ul>
+<li><strikethrough>Ember Data</strikethrough></li>
+<li><a href="https://github.com/ebryn/ember-model" target="_blank">Ember Model</a>:
+follows the same syntax as Ember Data, and written by a member of the core team of EmberJs</li>
+<li><a href="https://github.com/endlessinc/ember-restless" target="_blank">Ember RESTless</a>
+also follow the same syntax as Ember Data</li>
+<li><a href="http://eviltrout.com/2013/03/23/ember-without-data.html" target="_blank">Ember without Ember Data</a>
+use <code>Ember.Object</code> and write everything by hand.</li>
+</ul>
+<p>Both Ember Model and Ember RESTless provide good alternatives to Ember Data
+if you want a &quot;managed&quot; approach, but want more flexibility than Ember Data allows.
+The Ember without Ember Data approach works well best when your app
+does not need a &quot;managed&quot; approach at all.</p>
+<p>Overall, when it comes to sync&#39;ing models with a server,
+developers using EmberJs are put in a pretty hard spot.
+Ember Data is the recommended way to do this,
+yet it is <a href="http://emberjs.com/blog/2014/03/18/the-road-to-ember-data-1-0.html" target="_blank">not yet production ready</a> -
+and it has been in <a href="https://github.com/emberjs/data/releases/tag/v1.0.0-beta" target="_blank">&quot;1.0.0 beta&quot; for 8 months now</a>.</p>
+<p>This leaves us to choose from several different 3rd party solutions,
+and fragments the community in terms of the number of different ways that
+a particular feature can be implemented</p>
+<h3 id="how-this-might-change-with-es6">How this might change with ES6</h3>
+<p>There is currently <a href="http://wiki.ecmascript.org/doku.php?id=harmony:observe,
+the standards specification for the next version of Javascript,
+for `Object.observe(" target="_blank">a draft proposal in ECMAScript 6</a>`.
+The specification calls for native methods on all POJSOs to observe for
+changes made to their state.
+This ability will turn the issue of wrapper objects with accessors versus
+dirty checking on its head,
+as both of them will no longer be necessary to listen for changes in models,
+and to accomplish data-binding between models and views.
+This article, even goes as far as to say <a href="http://bocoup.com/weblog/javascript-object-observe/" target="_blank">&quot;Everything you think you know about data binding — and every trick MVC libraries are using to pull it off — is about to be flipped on its head&quot;</a>.</p>
+<p>It is pertinent to remember, that while some browsers, as well as NodeJs,
+have already implemented <code>Object.observe()</code>,
+it is still under discussions, and is still presently a proposal,
+not yet an official specification, so actual implementation variations,
+and adoption across all devices, is still relatively unknown.</p>
+<h3 id="discussion">Discussion</h3>
+<p>We have taken a look at how to use models, and how to sync them with a server,
+in both AngularJs and EmberJs.
+There are quite a few significant differences between them.</p>
+<p>As we will soon see,
+AngularJs and EmberJs have different philosophies regarding opinionation.
+AngularJs leans towards providing many different ways to accomplish a task,
+and let the developer choose which one fits their needs best.
+Providing multiple ways to do sync models with the server is exactly what
+you would expect.</p>
+<p>EmberJs, on the other hand, leans towards choosing the one best,
+or <a href="https://twitter.com/tomdale/status/285821254928322561" title="Omakase (お任せ, o-makase) is a Japanese phrase that means I&#39;ll leave it to you (from Japanese to entrust (任せる, makaseru))." target="_blank"><em>omakase</em></a>,
+way of doing something, and requiring all developers to follow that.
+In most facets of a SPA framework,
+the EmberJs team has come up with this <em>omakase</em> way to do things.
+However, it appears that they are still figuring out the best way
+for how to sync models with the server.
+Having different ways to accomplish this runs orthogonal to this philosophy.</p>
+<p>The most significant difference between AngularJs models and EmberJs models,
+is the mechanism that each framework uses to observe changes on them.
+The pros and cons of the approach chosen by each framework:</p>
+<ul>
+<li>AngularJs uses dirty checking:<ul>
+<li>Dead simple syntax (identical to POJSOs)</li>
+<li>Incurs a heavy performance penalty when number of models ofr model complexity becomes large</li>
+</ul>
+</li>
+<li>EmberJs uses wrapper objects with accessors<ul>
+<li>More complex, verbose syntax</li>
+<li>Incurs a much lighter performance penalty when number of models ofr model complexity becomes large</li>
+</ul>
+</li>
+</ul>
+<p>When the draft specification for <code>Object.observe()</code> gets formalised,
+we will expect all of this to change,
+as it will obviate the need for both wrapper objects with acessors, and dirty checking.</p>
+<p>Models, however, are not very useful on their own.
+Users cannot interact with them.
+In order to display models, we need views, the <em>V</em> in MVC,
+and we will be taking a look at them next.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../mvc/mvc-overview.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../mvc/views-templates.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>
