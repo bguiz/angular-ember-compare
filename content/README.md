@@ -11,7 +11,7 @@ This series of posts takes a look at two of the most popular ones:
 
 ## The back story
 
-While developing apps using BackboneJs, I have been itching to use a newer Javascript single-page application (SPA) framework;
+While developing applications using BackboneJs, I have been itching to use a newer JavaScript single-page application (SPA) framework;
 if at least to find out if the tried-and-tested, battle proven,
 but often verbose and feature lacking,
 [BackboneJs](http://backbonejs.org/) is indeed worth continuing to develop with.

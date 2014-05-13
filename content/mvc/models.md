@@ -1,6 +1,6 @@
 ## Models
 
-Models are objects that represent data that is used by the app.
+Models are objects that represent data that is used by the application.
 The combination of all models define the state of the application.
 SPA frameworks, like AngularJs and EmberJs,
 come with methods to manage and interact with models.
@@ -10,14 +10,14 @@ usually rows in a database via a [RESTful](http://stackoverflow.com/a/671132/194
 
 ### Models in AngularJs
 
-AngularJs uses plain ol' Javascript objects (POJSOs) for models.
+AngularJs uses plain ol' JavaScript objects (POJSOs) for models.
 
 `var myModel = { id: 1, name: 'foo1' };`
 
 Bam! It was as simple as that - you have got yourself an AngularJs model.
 
 Changing the state of that model is also just as simple,
-as the suyntax is no different from manipulating POJSOs:
+as the syntax is no different from manipulating POJSOs:
 
 `myModel.name = 'myNewName';`
 
@@ -37,7 +37,7 @@ like so:
 
 &hellip; Simple!
 
-However, there are implications when usings POJSOs as models,
+However, there are implications when using POJSOs as models,
 when binding data between the models and views.
 It means that we need to do dirty checking -
 keeping a copy of each model in its previous state,
@@ -48,16 +48,16 @@ and working around these limitations requires a in-depth understanding of
 `$scope`, `$watch`, dirty checking, and run loops.
 
 That is a rather advanced topic, and you can read more about the implications of
-[using accessors vs using dirty checking here](http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks)
+[using accessors versus using dirty checking here](http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks)
 
 That being said, dirty checking is a pretty good value proposition in most cases,
-as the many web apps do not have very many models to deal with at once,
+as the many web applications do not have very many models to deal with at once,
 or have models that are complex enough,
 to incur the performance penalty.
 
 ### Sync'ing AngularJs Models
 
-Angular models are just POJSOs,
+AngularJs models are just POJSOs,
 thus when you need to sync them with the server,
 you are left to implement the means yourself.
 
@@ -77,7 +77,7 @@ arranged in order of least to most "managed".
 We will not go into the syntax of each method here,
 as each is fairly straight forward to use.
 The hardest part of this really lies in deciding which level of abstraction is
-the most appropriate for your app.
+the most appropriate for your application.
 
 As the developer, this is pretty good,
 as you have several great options to choose from.
@@ -86,20 +86,20 @@ as you have several great options to choose from.
 
 In EmberJs, the syntax used to express a model is more complex than in AngularJs,
 as POJSOs may not be used directly,
-and instead must be "wrapped" using an Ember object, like so:
+and instead must be "wrapped" using an EmberJs object, like so:
 
         var Foo = Ember.Object.extend();
         var myModel = Foo.create({ id: 1, name: 'foo1' });
 
 Noteworthy here is that we first defined a class for our model, `Foo`,
 and then created an instance of that class, `myModel`.
-We needed to do this because models in Ember are expected
+We needed to do this because models in EmberJs are expected
 to conform to a certain interface, in order to work with the rest of the framework.
 POJSOs are not going to provide this interface,
 hence we define a class for our model, before instantiating one.
 
 The most important, and frequently used parts of this interface,
-are accessing and changing porperties:
+are accessing and changing properties:
 
 `myModel.set('name', 'newFooName');` changes the state of the model.
 
@@ -111,7 +111,7 @@ One of the main reasons for this is that it is not possible to create
 observers for property changes on POJSOs (yet).
 As such, a wrapper class is used to observe property changes -
 whenever `.get()` and `.set()` get called.
-[Using accessors vs using dirty checking here](http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks)
+[Using accessors versus using dirty checking here](http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks)
 covers this topic in greater detail.
 Essentially wrapper objects with accessors (EmberJs' approach) and
 dirty checking (AngularJs' approach),
@@ -122,14 +122,14 @@ of observing state changes on models.
 
 The syntax above, was strictly speaking, not exactly a models,
 they are merely objects.
-This egeneral purpose wrapper is sufficient for use as models,
+This general purpose wrapper is sufficient for use as models,
 provided that you are happy to write your own AJAX for all operations.
 This [article shows one great way to do this](http://eviltrout.com/2013/03/23/ember-without-data.html).
 
 The canonical way to do this, is using Ember Data.
 Ember Data is essentially an [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping)
 that gives you the tools to define your models in Ember,
-and synchronise them with your RESTful API backend.
+and synchronise them with your RESTful API back end.
 
 To define a model, we have:
 
@@ -143,7 +143,7 @@ use `DS.Model.extend()`,
 and the attributes that the model is expected to have are defined;
 except for `id` which is assumed to exist.
 
-It also provides a means to define relationshsips between the different model classes:
+It also provides a means to define relationships between the different model classes:
 
     var Foo = DS.Model.extend({
         name: DS.attr('string'),
@@ -163,24 +163,24 @@ Ember Data has a `RESTAdapter` allow you to sync that state
 of these models with the backend via a RESTful API.
 This API must conform to a [strict format](http://emberjs.com/guides/models/the-rest-adapter/)
 that is quite similar to [JSON API](http://jsonapi.org/format/);
-notably the way that relationships and sideloading are defined.
+notably the way that relationships and side loading are defined.
 
 While this sounds like an everything-included solution,
 in reality, it is quite likely not be such a smooth ride.
 The format of the API that Ember Data expects is quite precise,
-and chances are the existing API that you have make your web app talk to
-is going to differ, and break your app.
+and chances are the existing API that you have make your web application talk to
+is going to differ, and break your application.
 Ember Data does provide the ability to customise and even write your own
 adapters, however, things can get very hairy very quickly -
 just take a look at this attempt to make
-[embedded instead of sideloaded data work with Ember Data](http://mozmonkey.com/2013/12/loading-json-with-embedded-records-into-ember-data-1-0-0-beta/).
-If your backend is written in Rails, hwoever, you are in luck,
+[embedded instead of side loaded data work with Ember Data](http://mozmonkey.com/2013/12/loading-json-with-embedded-records-into-ember-data-1-0-0-beta/).
+If your back end is written in Rails, however, you are in luck,
 as Ember Data includes an [`ActiveModelAdapter`](http://emberjs.com/api/data/classes/DS.ActiveModelAdapter.html)
 that will work out of the box.
 
-For those who are writing apps whose backend is not Rails,
+For those who are writing applications whose back end is not Rails,
 and are not starting from scratch,
-or are not in a position to change the backend API -
+or are not in a position to change the back end API -
 which I suspect is the majority of all developers -
 what options are available?
 
@@ -194,7 +194,7 @@ what options are available?
 
 Both Ember Model and Ember RESTless provide good alternatives to Ember Data
 if you want a "managed" approach, but want more flexibility than Ember Data allows.
-The Ember without Ember Data approach works well best when your app
+The Ember without Ember Data approach works well best when your application
 does not need a "managed" approach at all.
 
 Overall, when it comes to sync'ing models with a server,
@@ -210,7 +210,7 @@ a particular feature can be implemented
 ### How this might change with ES6
 
 There is currently [a draft proposal in ECMAScript 6](http://wiki.ecmascript.org/doku.php?id=harmony:observe,
-the standards specification for the next version of Javascript,
+the standards specification for the next version of JavaScript,
 for `Object.observe()`.
 The specification calls for native methods on all POJSOs to observe for
 changes made to their state.
@@ -254,14 +254,14 @@ The pros and cons of the approach chosen by each framework:
 
 - AngularJs uses dirty checking:
     - Dead simple syntax (identical to POJSOs)
-    - Incurs a heavy performance penalty when number of models ofr model complexity becomes large
+    - Incurs a heavy performance penalty when number of models for model complexity becomes large
 - EmberJs uses wrapper objects with accessors
     - More complex, verbose syntax
-    - Incurs a much lighter performance penalty when number of models ofr model complexity becomes large
+    - Incurs a much lighter performance penalty when number of models for model complexity becomes large
 
 When the draft specification for `Object.observe()` gets formalised,
 we will expect all of this to change,
-as it will obviate the need for both wrapper objects with acessors, and dirty checking.
+as it will obviate the need for both wrapper objects with accessors, and dirty checking.
 
 Models, however, are not very useful on their own.
 Users cannot interact with them.
