@@ -4,7 +4,7 @@ I would like to kick off this series of posts by defining what exactly we will b
 when comparing AngularJs with EmberJs.
 
 The space that these two operate in -
-Javascript frameworks used to develop single-page applications - is a rather complex one.
+JavaScript frameworks used to develop single-page applications - is a rather complex one.
 It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
 Furthermore, this area is a moving target, because SPAs are a fairly new new thing, 
 and still going through the initial stages of rapid development.
@@ -53,7 +53,7 @@ There we have it, all the criteria that this series of posts will cover!
 
 Which one is better at what?
 
-One framework is is going to better than the other on some things, and the other way around on the others.
+One framework is going to better than the other on some things, and the other way around on the others.
 
 It is worth pointing out here that this a fairly polarised topic, 
 with the communities of developers using each of these frameworks, 
@@ -64,7 +64,7 @@ Thus I feel that it is necessary to do a little bit of a disclaimer here,
 and state that I belong to neither camp.
 I have worked with jQuery mobile, and BackboneJs before;
 and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than [a Todo app](http://todomvc.com).
+but have not developed anything more complex than [a Todo application](http://todomvc.com).
 
 tl;dr= I am going to be fair and unbiased.
 
@@ -77,7 +77,7 @@ tl;dr= I am going to be fair and unbiased.
 - How fast can you get going and get productive with the framework?
 - Can you get by with Google and Stackoverflow?
 - Do you need to take a course to learn it?
-- How does this change as the app gets more complex?
+- How does this change as the application gets more complex?
 
 *Models*
 
@@ -124,13 +124,13 @@ tl;dr= I am going to be fair and unbiased.
 
 *Build tooling*
 
-- What build tools exist to build an app using each framework?
+- What build tools exist to build an application using each framework?
 - What limitations do the current build tools have, and what are they good at?
 - What future build tools are in the pipeline?
 
 *Opinionation*
 
-- How opinionated is the framework with regards to how to develop an app?
+- How opinionated is the framework with regards to how to develop an application?
 - How does this opinionation benefit and detract from the framework?
 
 *Development tooling*
@@ -148,8 +148,8 @@ tl;dr= I am going to be fair and unbiased.
 
 *Track record*
 
-- Who currently has apps in production built with each framework?
-- What is the profile of the apps developed with each framework?
+- Who currently has applications in production built with each framework?
+- What is the profile of the applications developed with each framework?
 
 *Contributions*
 
@@ -167,7 +167,7 @@ tl;dr= I am going to be fair and unbiased.
 
 *Testability*
 
-- How can one go about unit testing an app built using each framework?
-- How can one go about end-to-end testing an app built using each framework?
-- How testable are apps built using each framework?
+- How can one go about unit testing an application built using each framework?
+- How can one go about end-to-end testing an application built using each framework?
+- How testable are applications built using each framework?
 - What is the level of importance accorded to testability by the authors of each framework?

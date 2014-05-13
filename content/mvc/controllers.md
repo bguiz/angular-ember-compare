@@ -34,21 +34,21 @@ That is:
 ### Controllers in AngularJs
 
 Controllers in AngularJs are not, strictly speaking, controllers.
-In fact Angular does not call itself an MVC framework,
+In fact AngularJs does not call itself an MVC framework,
 [it calls itself an MVW (model-view-whatever) framework](http://plus.google.com/+AngularJS/posts/aZNVhj355G2) instead.
 That being said, that is only true from a academic purist's point of view;
 through a practical lens, they most certainly are.
 
 Syntax:
 
-		angular.module('app', []).controller('FooCtrl', function($scope) {
+		angular.module('application', []).controller('FooCtrl', function($scope) {
 			$scope.someProperty = 'More exclamation marks';
 			$scope.someAction = function() {
 				$scope.someProperty += '!';
 			};
 		});
 
-The `$scope` object is [proptypically inherited](https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance) from its parent's
+The `$scope` object is [prototypically inherited](https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance) from its parent's
 `$scope` object - in this case the main application object.
 It is made available through AngularJs' dependency injection framework.
 This in itself is a fascinating topic that warrants a discussion of its own,
@@ -58,7 +58,7 @@ Unfortunately, this is not one of the criteria for comparison.
 I would however, suggest this article on
 [understanding dependency injection](https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance)
 for a primer on the basics;
-and this article on [inheritance paterns](http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/)
+and this article on [inheritance patterns](http://blog.mgechev.com/2013/12/18/inheritance-services-controllers-in-angularjs/)
 as further reading.
 
 ### Two-way binding in AngularJs
@@ -72,7 +72,7 @@ Syntax:
 		</div>
 
 The template above is not a very useful one,
-by providing two different ways to modify the same propertyon the controller's
+by providing two different ways to modify the same property on the controller's
 `$scope`, however, it is a succinct demonstration of two-way binding.
 
 When the button is clicked, the controller modifies the model.
@@ -91,12 +91,12 @@ it detects a change and updates the model.
 The `<p>` tag, of course, is still bound to the model,
 and it listens for a change on the model,
 and updates its contents, as it did before.
-This is two-way bidning in action,
+This is two-way binding in action,
 with the first sequence from view to model,
 and the second sequence from model back to view.
 
 This magic that happens behind the scenes does come at a cost though.
-As apps become more complex, it becomes more important to know
+As applications become more complex, it becomes more important to know
 how two-way binding works.
 The canonical use case for when this becomes especially important
 occurs when you have extremely large or complex properties on the `$scope` -
@@ -108,7 +108,7 @@ and then manually notify the controller whenever the property has been updated.
 This is accomplished through [`$watch`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch) and `$apply`,
 and using them correctly is contingent upon understanding
 how two-way binding works, and how it works together with the digest cycle.
-These techniques, however, ar beyond the scope of this comparison.
+These techniques, however, are beyond the scope of this comparison.
 I would suggest this article [on performance tuning](http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/)
 as further reading on this technique, and several others.
 
@@ -118,14 +118,14 @@ EmberJs controllers conform to the pure MVC definition of them.
 
 Syntax:
 
-App.FooController = Ember.Controller.extend({
-    someProperty: 'More exclamation marks',
-    actions: {
-        someAction: function() {
-            this.set('someProperty', this.get('someProperty') + '!');
-        }
-    }
-});
+		App.FooController = Ember.Controller.extend({
+		    someProperty: 'More exclamation marks',
+		    actions: {
+		        someAction: function() {
+		            this.set('someProperty', this.get('someProperty') + '!');
+		        }
+		    }
+		});
 
 EmberJs enforces a clean separation between properties and actions
 within a controller -
@@ -142,8 +142,8 @@ and thus its state does *not* get reset each time.
 This is can be confusing when working with EmberJs for the first time.
 
 Another thing worth noting is that we had to name this controller `FooController`.
-In ANgularJs, we were free to name our controller anything we wished to -
-`BarCtrl` would have worked jsut as well as `FooCtrl`.
+In AngularJs, we were free to name our controller anything we wished to -
+`BarCtrl` would have worked just as well as `FooCtrl`.
 In EmberJs, however, we must take care to name our controllers -
 and most other types of objects -
 according to the specified naming convention.
@@ -188,7 +188,7 @@ there is an `{{input}}` Handlebars helper that does this for us.
 The implication of this is that getting two-way binding to work in EmberJs
 can be quite complicated, as there is more syntax to learn.
 
-### Imperative vs Declarative Syntax in Two-way Binding
+### Imperative versus Declarative Syntax in Two-way Binding
 
 In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
 between models and views is through declarative syntax in the templates.
@@ -210,7 +210,7 @@ The vast majority of those developing SPAs however,
 prefer to use two-way binding,
 and opt out of it in exceptional cases.
 
-### Imperative vs Declarative Syntax in Controllers
+### Imperative versus Declarative Syntax in Controllers
 
 Properties on AngularJs controllers are defined imperatively.
 
@@ -272,12 +272,12 @@ it is rather nice for the SPA framework to support this out of the box.
 
 ### Discussion
 
-When developing apps with [BackboneJs](http://backbonejs.org/),
+When developing applications with [BackboneJs](http://backbonejs.org/),
 the lack of two-way binding capability was the single biggest drain in productivity.
 One had to specify in the templates where the models were to be rendered.
 Subsequently one had to specify listeners for each change on the model,
 and each change on the view,
-and write codeto handle the change to propagate model changes to the view,
+and write code to handle the change to propagate model changes to the view,
 and view changes to the model.
 This was tedious, but the main problem that this created was not its verbosity.
 It was that there always was a chance of oversight,
@@ -294,20 +294,20 @@ will be propagated correctly.
 Getting two-way binding out of the box,
 as we do with both AngularJs and EmberJs,
 is a great boon to productivity in developing
-web apps - I cannot emphasise this enough.
+web applications - I cannot emphasise this enough.
 
-We also took a look at some software enginnering paradigms,
+We also took a look at some software engineering paradigms,
 like imperative versus declarative styles of programming,
 and the different approaches each framework takes on computed properties;
-and their impact upon computational effiency,
+and their impact upon computational efficiency,
 and ease to work with.
 
 We have now covered the trifecta of the parts of both AngularJs and EmberJs
 that allow us to organise code according to the MVC pattern.
 Both frameworks excel at supporting the MVC pattern,
-providing an excellent infrasructure upon which to build these.
+providing an excellent infrastructure upon which to build these.
 
-While MVC lies at the core of developing a single page app,
+While MVC lies at the core of developing a single page application,
 that is not all there is to it.
 Next we will take a look at two more crucial parts of the framework,
 routing and components.

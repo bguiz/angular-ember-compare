@@ -10,7 +10,7 @@ However, almost all of them include one more feature in the same vein:
 the template.
 Templating, strictly speaking, is one of the responsibilities of a view in MVC,
 however, they are large and complex enough to warrant a discussion on their own.
-This is because all web apps - both traditional and single page -
+This is because all web applications - both traditional and single page -
 ultimately need to render HTML, which is a document format.
 
 Templates are essentially files with special syntax that allow the developer
@@ -54,15 +54,15 @@ We shall take a brief look at views, and then focus on templates.
 
 ### Views in AngularJs
 
-In AngularJs, you never see any Javascript for views.
+In AngularJs, you never see any JavaScript for views.
 Instead, you simply invoke the `ngView` directive in the template.
 Any custom view logic must be implemented in the controller in charge of it.
 
 ### Views in EmberJs
 
-In EmberJs, you may customise a view in Javascript.
+In EmberJs, you may customise a view in JavaScript.
 As mentioned above, one reason we would want to do this is to
-integrate with the 3rd party libary that does not necessarily understand Ember.
+integrate with the 3rd party library that does not necessarily understand Ember.
 
         var myFooView = Ember.View.extend({
             didInsertElement: function() {
@@ -105,7 +105,7 @@ Syntax:
 
 AngularJs uses a DOM-based templating mechanism.
 This means that the templates are the rendered HTML.
-When the app runs, the elements are rendered with
+When the application runs, the elements are rendered with
 the original contents of the template.
 Subsequently, AngularJs kicks in, and traverse the entire DOM tree,
 inspecting for special decorations,
@@ -117,18 +117,18 @@ The special decorations that it looks out for are:
 
 - Directives
     - Elements or attributes that link to modules known to AngularJs
-    - AngularJs comes with several built indirectives,
+    - AngularJs comes with several built in directives,
       and all of them are prefixed with `ng-*`
-    - THe developer may also define his own custom directives
+    - The developer may also define his own custom directives
 - Markup
-    - Any part of the markup whcih appears between double squiggly braces,
+    - Any part of the markup which appears between double squiggly braces,
       `{{like this}}`
     - AngularJs evaluates the expression within these braces,
       and substitutes it for the result
 
 AngularJs allows for an extremely expressive syntax to be added to the
 expressions within the templates,
-including Javascript expression,
+including JavaScript expression,
 and filters using a UNIX-style pipe (`|`) syntax.
 
 ### Templates in EmberJs
@@ -138,18 +138,18 @@ Syntax:
         {{input type='text value=model.foo'}}
         <button {{action 'changeText'}}>{{model.buttonText}}</button>
 
-Ember uses a templating language, [Handlebars](http://handlebarsjs.com/).
+EmberJs uses a templating language, [Handlebars](http://handlebarsjs.com/).
 Its approach is fundamentally different to that of AngularJs',
 as it uses a string-based templating mechanism,
 as opposed to a DOM-based templating mechanism.
-This means that it parses the entire tempalte beforehand,
+This means that it parses the entire template beforehand,
 and generates a series of functions that contain
-the static inputs to the templates inline,
+the static inputs to the templates in-line,
 and accept parameters for the dynamic inputs to the templates.
 
 That explanation would be awfully hard to follow without context -
-so here is the compiled function that EmberJs + Handlebars would geenrate
-for the template sepcified above.
+so here is the compiled function that EmberJs + Handlebars would generate
+for the template specified above.
 
         function anonymous(Handlebars,depth0,helpers,partials,data) {
           this.compilerInfo = [4,'>= 1.0.0'];
@@ -174,7 +174,7 @@ for the template sepcified above.
         }
 
 Do not worry if that looks like gibberish to you -
-simply look how it alternatiely does `data.buffer.push("some string");`
+simply look how it alternately does `data.buffer.push("some string");`
 and `data.buffer.push(/* some expression */);`.
 Those are the static and dynamic inputs respectively.
 Ultimately, this function builds a string,
@@ -193,17 +193,17 @@ The string-based templating mechanism has some pros and cons:
 - Cons:
     - Requires an extra compilation step
     - In order for two-way bindings to work,
-      [additional DOM nodes need to be inserted](http://emberjs.com/guides/understanding-ember/keeping-templates-up-to-date/) - etamorph `<script>` tags in this case
+      [additional DOM nodes need to be inserted](http://emberjs.com/guides/understanding-ember/keeping-templates-up-to-date/) - metamorph `<script>` tags in this case
 
 All of these are pretty minor considerations,\
 except for additional DOM nodes being inserted.
-Litering the DOM with numerous `<script>` tags makes it quite cluttered and ugly,
+Littering the DOM with numerous `<script>` tags makes it quite cluttered and ugly,
 and makes inspecting it less fun.
 It makes one wonder, surely, there must be a better way to do this!
 
 The other implication of this is that two-way binding to *attributes*
 is simply not possible, using this syntax.
-Ember gets around this by defining a special alternative syntax, `{{bind-attr}}`.
+EmberJs gets around this by defining a special alternative syntax, `{{bind-attr}}`.
 All this put together makes it feel more like something tacked together,
 rather than a well engineered, elegant, solution.
 
@@ -216,29 +216,29 @@ or by [registering Handlebars helper functions](http://emberjs.com/guides/templa
 
 ### Considerations for Designers
 
-Developing a web app using a SPA framework requires skills in both
-Javascript programming and HTML + CSS design.
+Developing a web application using a SPA framework requires skills in both
+JavaScript programming and HTML + CSS design.
 Sometimes, these are the same person, but quite often, they are not,
-and peopel with different skill sets do need to collaborate.
+and people with different skill sets do need to collaborate.
 
 Templates are where most of the overlap is, and thus where the collaboration,
-between programers and designers needs to occur.
+between programmers and designers needs to occur.
 
-In an AngularJs app, the framework lets you put as much logic as you put your
+In an AngularJs application, the framework lets you put as much logic as you put your
 logic right into the template.
-In an EmberJs app, the templating engine, Handlebars,
+In an EmberJs application, the templating engine, Handlebars,
 does not allow you to put any logic into the templates,
-and you are forced to extract this into the Javascript code.
+and you are forced to extract this into the JavaScript code.
 
 Thus with EmberJs, the decision about where the separation occurs
 has already been made.
 However, with AngularJs, the decision on where to to draw the line
 is left up to the programmers and designers to work out themselves.
 
-### Additonal Libraries
+### Additional Libraries
 
 AngularJs has got a solid templating engine going for it,
-and thus there is no need to use any addtional libraries for rendering.
+and thus there is no need to use any additional libraries for rendering.
 
 EmberJs with Handlebars, on the other hand,
 has an offering that has several drawbacks,
@@ -268,7 +268,7 @@ Interestingly, this is also the area where programmers and designers will
 require the most collaboration.
 
 AngularJs and EmberJs take very different approaches towards templating,
-with the former using DOM-based temaplting,
+with the former using DOM-based templating,
 and the latter using string-based templating;
 and thus having a number of big limitations.
 
