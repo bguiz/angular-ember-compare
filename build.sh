@@ -14,5 +14,6 @@ done
 #If the gitbook commands fail, ensure that you have gitbook installed
 #npm install -g gitbook
 gitbook build ./content/ -f page -o ./dist/page
+gitbook build ./content/ -f pdf -o ./dist/pdf
 gitbook build ./content/ -f json -o ./dist/json
 gitbook build ./content/ -o ./dist/static
