@@ -27,12 +27,16 @@ This was the first time that this could be done entirely using JavaScript run wi
 At first, this was used to swap the contents of one `<div>` on the page verbatim with the returned response.
 Responses were originally HTML fragments to be used as such.
 This then evolved to XML to represent data that would be parsed by JavaScript in the browser.
-This went by the name of *Asynchronous JavaScript and XML*, or AJAX.
+This went by the name of *Asynchronous JavaScript and XML*,
+or [AJAX](http://en.wikipedia.org/wiki/Ajax_(programming)).
 Processing XML in JavaScript was a little unwieldy,
 and it was much easier to transmit JavaScript object literals instead.
 Douglas Crockford [specified the JSON format](http://en.wikipedia.org/wiki/JSON#History),
 which gained rapid following.
-Most AJAX nowadays uses JSON instead of XML, so we should really be calling in AJAJ, but the original name stuck.
+Most AJAX nowadays uses JSON instead of XML,
+so we should really be calling in *AJAJ* - but the original name stuck.
+
+[![Web 2.0](http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Web_2.0_Map.svg/320px-Web_2.0_Map.svg.png)](http://en.wikipedia.org/wiki/Web_2.0)
 
 This disrupted the status quo of one page load per request,
 and created an explosion in the amount of interactivity possible on a page.
@@ -73,14 +77,17 @@ Take a look at the source code of [BackboneJs](https://github.com/jashkenas/back
 to get a feel for how much work would be involved if rolling your own.
 
 There were several frameworks to come out before, but BackboneJs really nailed it.
-It combined the use of AJAX with MVC patterns in a JavaScript library that allowed front end developers to create a single-page application;
-an application where every page was simply JavaScript used to re-render (most of) the visible page in the client, and none of the requests navigated you away from `index.html`.
+It combined the use of AJAX with MVC patterns in a JavaScript library that
+allowed front end developers to create a single-page application -
+an application where every page simply used JavaScript to re-render
+(most of) the visible page in the client,
+and none of the requests navigated you away from `index.html`.
 
 This combination of AJAX and the MVC pattern is the cornerstone of single-page application frameworks.
 BackboneJs is certainly not the only single-page application framework,
 it merely was the first to gain widespread popularity.
-There a currently a [plethora of different frameworks](http://todomvc.com) looking to take its place,
-two of which are AngularJs and EmberJs.
+There a currently a [plethora of different frameworks](http://todomvc.com)
+looking to take its place, two of which are AngularJs and EmberJs.
 
 ### MVC in single-page application frameworks
 
@@ -90,17 +97,19 @@ However, with single-page applications,
 a lot of this logic has been shifted to the client,
 and the front end developer now needs to be well versed in this pattern.
 
-Most single-page application frameworks are designed around the MVC pattern, or variations of it.
-These variations are usually referred to as MV&lowast;frameworks.
+Most single-page application frameworks are designed around the MVC pattern,
+or variations of it.
+These variations are usually referred to as MV&lowast; frameworks.
 
-Models, views, and controllers form the core parts of most single-page application frameworks, but they optionally may include a few more -
-namely templates, routing, and components.
+Models, views, and controllers form the core parts of most single-page application frameworks,
+but they optionally may include a few more -
+templates, routing, and components.
 
 ## Discussion
 
-We have taken a very brief (and selective) look at the parts of web development history,
+We have taken a selective look at the parts of web development history,
 which have contributed ideas toward - and eventually led to -
 the rise of single-page applications, and their relationship to the MVC pattern.
 
-In the following posts, we will take a closer look at the MVC pattern,
+In the following articles, we will take a closer look at the MVC pattern,
 and what working with it is like in AngularJs and EmberJs.
