@@ -1,0 +1,21 @@
+{
+    "plugins": ["disqus", "ga"],
+
+    "pluginsConfig": {
+        "fontSettings": {
+            "theme": "sepia",
+            "family": "serif",
+            "size": 1
+        },
+        "disqus": {
+            "shortName": "bguiz"
+        },
+        "ga": {
+            "token": "UA-37884921-4"
+        }
+    },
+    "links": {
+        "sharing": {
+        }
+    }
+}
