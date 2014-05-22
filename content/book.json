@@ -1,5 +1,5 @@
 {
-    "plugins": ["disqus"],
+    "plugins": ["disqus", "ga"],
 
     "pluginsConfig": {
         "fontSettings": {
@@ -9,6 +9,9 @@
         },
         "disqus": {
             "shortName": "bguiz"
+        },
+        "ga": {
+            "token": "UA-37884921-4"
         }
     },
     "links": {
