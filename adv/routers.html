@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Routers | Angular-ember-compare</title>
+        <title>Routers | AngularJs vs EmberJs</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="bguiz">
-        <meta name="description" content="Book generated using GitBook">
+        <meta name="description" content="So you want to start building a single-page application.Which framework should you use to help build it?">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -19,8 +19,8 @@
         <link rel="prev" href="../adv/routing-overview.html" />
         
 
-        <meta property="og:title" content="Routers | Angular-ember-compare">
-        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:title" content="Routers | AngularJs vs EmberJs">
+        <meta property="og:site_name" content="AngularJs vs EmberJs">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
 
@@ -32,32 +32,73 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../gitbook/style.css">
-        
         
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="3.1" data-basepath=".." data-revision="1399992002300">
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="3.1" data-basepath=".." data-revision="1400760992393">
     <div class="book-header">
     <!-- Actions Left -->
-    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
 
-    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
-
+    
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
 
     <!-- Title -->
-    <h1><a href="../" >Angular-ember-compare</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >AngularJs vs EmberJs</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -65,33 +106,43 @@
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
+        
         <li>
-            <a href="https://github.com/bguiz" target="blank">About the author</a>
+            <a href="https://github.com/bguiz" target="blank" class="author-link">About the author</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/adv/routers.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/adv/routers.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
-        <li class="divider"></li>
+        
+
+        
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="intro/criteria.html">
+            <li class="chapter " data-level="1" data-path="intro/criteria.html">
                 
                 <a href="../intro/criteria.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                    <i class="fa fa-check"></i> <b>1.</b> Criteria
                 </a>
                 
                 
             </li>
         
-            <li  data-level="2" data-path="mvc/mvc-overview.html">
+            <li class="chapter " data-level="2" data-path="mvc/mvc-overview.html">
                 
                 <a href="../mvc/mvc-overview.html">
-                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                    <i class="fa fa-check"></i> <b>2.</b> MVC
                 </a>
                 
                 
@@ -100,7 +151,7 @@
                         <li  data-level="2.1" data-path="mvc/models.html">
                             
                             <a href="../mvc/models.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                                <i class="fa fa-check"></i> <b>2.1.</b> Models
                             </a>
                             
                         </li>
@@ -108,7 +159,7 @@
                         <li  data-level="2.2" data-path="mvc/views-templates.html">
                             
                             <a href="../mvc/views-templates.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                                <i class="fa fa-check"></i> <b>2.2.</b> Views and Templates
                             </a>
                             
                         </li>
@@ -116,7 +167,7 @@
                         <li  data-level="2.3" data-path="mvc/controllers.html">
                             
                             <a href="../mvc/controllers.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                                <i class="fa fa-check"></i> <b>2.3.</b> Controllers
                             </a>
                             
                         </li>
@@ -125,10 +176,10 @@
                 
             </li>
         
-            <li  data-level="3" data-path="adv/routing-overview.html">
+            <li class="chapter " data-level="3" data-path="adv/routing-overview.html">
                 
                 <a href="../adv/routing-overview.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                    <i class="fa fa-check"></i> <b>3.</b> Routing
                 </a>
                 
                 
@@ -137,7 +188,7 @@
                         <li  data-level="3.1" data-path="adv/routers.html">
                             
                             <a href="../adv/routers.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                                <i class="fa fa-check"></i> <b>3.1.</b> Routers
                             </a>
                             
                         </li>
@@ -146,30 +197,37 @@
                 
             </li>
         
-            <li  data-level="4" data-path="adv/components.html">
+            <li class="chapter " data-level="4" data-path="adv/components.html">
                 
                 <a href="../adv/components.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Components
+                    <i class="fa fa-check"></i> <b>4.</b> Components
                 </a>
                 
                 
             </li>
         
-            <li  data-level="5" data-path="roundup/roundup.html">
+            <li class="chapter " data-level="5" data-path="roundup/roundup.html">
                 
                 <a href="../roundup/roundup.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                    <i class="fa fa-check"></i> <b>5.</b> Round Up
                 </a>
                 
                 
             </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
         
     </ul>
 </div>
 
-    <div class="book-body" tabindex="-1">
+    <div class="book-body">
         <div class="body-inner">
-            <div class="page-wrapper">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
         <div class="inner" style="width: 77.77777777777777%;min-width: 66.66666666666667%;"></div>
@@ -207,18 +265,18 @@
 <h3 id="routing-in-angularjs">Routing in AngularJs</h3>
 <p>Setting up a router - the object responsible for providing routing capability -
 is extremely easy in AngularJs:</p>
-<pre><code>    App.config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$routeProvider</span>)</span> {</span>
-        <span class="hljs-variable">$routeProvider</span>
-            .when(<span class="hljs-string">'/foo'</span>, {
-                controller: <span class="hljs-string">'FooCtrl'</span>,
-                templateUrl: <span class="hljs-string">'foo.template.html'</span>
+<pre><code>    App.config(function($routeProvider) {
+        $routeProvider
+            .when(&#39;/foo&#39;, {
+                controller: &#39;FooCtrl&#39;,
+                templateUrl: &#39;foo.template.html&#39;
             })
-            .when(<span class="hljs-string">'/bar'</span>, {
-                controller: <span class="hljs-string">'BarCtrl'</span>,
-                templateUrl: <span class="hljs-string">'bar.template.html'</span>
+            .when(&#39;/bar&#39;, {
+                controller: &#39;BarCtrl&#39;,
+                templateUrl: &#39;bar.template.html&#39;
             })
             .otherwise({
-                redirectTo: <span class="hljs-string">'/foo'</span>
+                redirectTo: &#39;/foo&#39;
             });
     });
 </code></pre><p>The syntax explains itself (a very good indicator of great design),
@@ -284,11 +342,11 @@ are significantly more complex than those of AngularJs:</p>
 <p>This added complexity makes for a steeper learning curve at first,
 but pays off afterwards, as it supports a richer set of features.</p>
 <p>Syntax:</p>
-<pre><code>    App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foos'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'foo'</span>, { path: <span class="hljs-string">'/:foo_id'</span> });
+<pre><code>    App.Router.map(function() {
+        this.resource(&#39;foos&#39;, function() {
+            this.route(&#39;foo&#39;, { path: &#39;/:foo_id&#39; });
         });
-        <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'bar'</span>);
+        this.route(&#39;bar&#39;);
     });
 </code></pre><p>You might be wondering, but where are the controllers, views, and models named?
 To make sense of the syntax for the router,
@@ -297,7 +355,7 @@ it is first necessary to understand EmberJs&#39; philosophy on
 and in particular, its naming conventions.</p>
 <h3 id="convention-over-configuration-in-emberjs">Convention over Configuration in EmberJs</h3>
 <p>When you instantiate a new EmberJs application using</p>
-<pre><code>    var App = Ember.Application.<span class="hljs-operator"><span class="hljs-keyword">create</span>({});</span>
+<pre><code>    var App = Ember.Application.create({});
 </code></pre><p>The framework will create a <code>Router</code> object.
 This is the first or many naming conventions to come!</p>
 <p>We then call the <code>Router.map()</code> function,
@@ -343,13 +401,13 @@ in a nested manner - and this is how we configure the hierarchical states.</p>
 and by default, the URL for any <code>resource</code> or <code>route</code> is obtained by
 joining these strings together, in all nodes down the hierarchy.
 For example:</p>
-<pre><code>    App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-comment">// URL is /foo</span>
-        <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-comment">// URL is /foo/bar</span>
-            <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'foo.bar'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                <span class="hljs-comment">// URL is /foo/bar/baz</span>
-                <span class="hljs-keyword">this</span>.route(<span class="hljs-string">'baz'</span>);
+<pre><code>    App.Router.map(function() {
+        // URL is /foo
+        this.resource(&#39;foo&#39;, function() {
+            // URL is /foo/bar
+            this.resource(&#39;foo.bar&#39;, function() {
+                // URL is /foo/bar/baz
+                this.route(&#39;baz&#39;);
             });
         });
     });
@@ -446,8 +504,8 @@ and fetch these models from a server.
 Thus, typically the default routes are extended
 to implement a custom <code>model</code> hook.</p>
 <pre><code>    App.FoosRoute = Ember.Route.extend({
-        model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> [{name: <span class="hljs-string">'f1'</span>}, {name: <span class="hljs-string">'f2'</span>}, {name: <span class="hljs-string">'f3'</span>}];
+        model: function() {
+            return [{name: &#39;f1&#39;}, {name: &#39;f2&#39;}, {name: &#39;f3&#39;}];
         }
     });
 </code></pre><p>That controller always returns an array with hard-coded contents.
@@ -455,10 +513,10 @@ Useful for stubbing or prototyping, but for applications in production,
 most likely we will want to retrieve data from an external data source,
 such as an API server:</p>
 <pre><code>    App.FoosRoute = Ember.Route.extend({
-        model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">var</span> req = Ember.RSVP.resolve(Ember.$.getJSON(<span class="hljs-string">'/api/foos'</span>));
-            <span class="hljs-keyword">return</span> req.then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resolve</span><span class="hljs-params">(response)</span> {</span>
-                <span class="hljs-keyword">return</span> response.foos;
+        model: function() {
+            var req = Ember.RSVP.resolve(Ember.$.getJSON(&#39;/api/foos&#39;));
+            return req.then(function resolve(response) {
+                return response.foos;
             });
         }
     });
@@ -507,19 +565,40 @@ then this offers a much better proposition.</p>
         </div>
 
         
-        <a href="../adv/routing-overview.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../adv/routing-overview.html" class="navigation navigation-prev " aria-label="Previous page: Routing"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../adv/components.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../adv/components.html" class="navigation navigation-next " aria-label="Next page: Components"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
     </body>
 </html>

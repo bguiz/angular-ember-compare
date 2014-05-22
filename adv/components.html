@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Components | Angular-ember-compare</title>
+        <title>Components | AngularJs vs EmberJs</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="bguiz">
-        <meta name="description" content="Book generated using GitBook">
+        <meta name="description" content="So you want to start building a single-page application.Which framework should you use to help build it?">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -19,8 +19,8 @@
         <link rel="prev" href="../adv/routers.html" />
         
 
-        <meta property="og:title" content="Components | Angular-ember-compare">
-        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:title" content="Components | AngularJs vs EmberJs">
+        <meta property="og:site_name" content="AngularJs vs EmberJs">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
 
@@ -32,32 +32,73 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../gitbook/style.css">
-        
         
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="4" data-basepath=".." data-revision="1399992002300">
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="4" data-basepath=".." data-revision="1400760992393">
     <div class="book-header">
     <!-- Actions Left -->
-    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
 
-    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
-
+    
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
 
     <!-- Title -->
-    <h1><a href="../" >Angular-ember-compare</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >AngularJs vs EmberJs</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -65,33 +106,43 @@
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
+        
         <li>
-            <a href="https://github.com/bguiz" target="blank">About the author</a>
+            <a href="https://github.com/bguiz" target="blank" class="author-link">About the author</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/adv/components.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/adv/components.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
-        <li class="divider"></li>
+        
+
+        
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="intro/criteria.html">
+            <li class="chapter " data-level="1" data-path="intro/criteria.html">
                 
                 <a href="../intro/criteria.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                    <i class="fa fa-check"></i> <b>1.</b> Criteria
                 </a>
                 
                 
             </li>
         
-            <li  data-level="2" data-path="mvc/mvc-overview.html">
+            <li class="chapter " data-level="2" data-path="mvc/mvc-overview.html">
                 
                 <a href="../mvc/mvc-overview.html">
-                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                    <i class="fa fa-check"></i> <b>2.</b> MVC
                 </a>
                 
                 
@@ -100,7 +151,7 @@
                         <li  data-level="2.1" data-path="mvc/models.html">
                             
                             <a href="../mvc/models.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                                <i class="fa fa-check"></i> <b>2.1.</b> Models
                             </a>
                             
                         </li>
@@ -108,7 +159,7 @@
                         <li  data-level="2.2" data-path="mvc/views-templates.html">
                             
                             <a href="../mvc/views-templates.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                                <i class="fa fa-check"></i> <b>2.2.</b> Views and Templates
                             </a>
                             
                         </li>
@@ -116,7 +167,7 @@
                         <li  data-level="2.3" data-path="mvc/controllers.html">
                             
                             <a href="../mvc/controllers.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                                <i class="fa fa-check"></i> <b>2.3.</b> Controllers
                             </a>
                             
                         </li>
@@ -125,10 +176,10 @@
                 
             </li>
         
-            <li  data-level="3" data-path="adv/routing-overview.html">
+            <li class="chapter " data-level="3" data-path="adv/routing-overview.html">
                 
                 <a href="../adv/routing-overview.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                    <i class="fa fa-check"></i> <b>3.</b> Routing
                 </a>
                 
                 
@@ -137,7 +188,7 @@
                         <li  data-level="3.1" data-path="adv/routers.html">
                             
                             <a href="../adv/routers.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                                <i class="fa fa-check"></i> <b>3.1.</b> Routers
                             </a>
                             
                         </li>
@@ -146,30 +197,37 @@
                 
             </li>
         
-            <li  data-level="4" data-path="adv/components.html">
+            <li class="chapter " data-level="4" data-path="adv/components.html">
                 
                 <a href="../adv/components.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Components
+                    <i class="fa fa-check"></i> <b>4.</b> Components
                 </a>
                 
                 
             </li>
         
-            <li  data-level="5" data-path="roundup/roundup.html">
+            <li class="chapter " data-level="5" data-path="roundup/roundup.html">
                 
                 <a href="../roundup/roundup.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                    <i class="fa fa-check"></i> <b>5.</b> Round Up
                 </a>
                 
                 
             </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
         
     </ul>
 </div>
 
-    <div class="book-body" tabindex="-1">
+    <div class="book-body">
         <div class="body-inner">
-            <div class="page-wrapper">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
         <div class="inner" style="width: 88.88888888888889%;min-width: 77.77777777777777%;"></div>
@@ -250,32 +308,32 @@ You can create your own too, using
 and we will be doing that to define our own component.</p>
 <h4 id="-restrict-transclude-and-isolate-scope-in-angularjs-directives"><code>restrict</code>, <code>transclude</code>, and isolate <code>scope</code> in AngularJs Directives</h4>
 <p>The bare minimum syntax would be:</p>
-<pre><code>    App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">return</span> {
-            templateUrl: <span class="hljs-string">'components/foo.html'</span>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            templateUrl: &#39;components/foo.html&#39;
         };
     });
 </code></pre><p>&hellip; and we create a template file at <code>components/foo.html</code>:</p>
-<pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Foo component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre><code>    &lt;div&gt;
+        &lt;p&gt;Foo component&lt;/p&gt;
+    &lt;/div&gt;
 </code></pre><p>In order to use this, we add this to the template:</p>
-<pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">foo-component</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre><code>    &lt;div foo-component&gt;
+    &lt;/div&gt;
 </code></pre><p>All this does is take the the template at <code>components/foo.html</code>
 and render it within this <code>&lt;div&gt;</code>.
 This does not look very much like a component,
 and lacks a few features that we would expect of one.</p>
 <p>Now we make a a little more useful using <code>restrict</code>:</p>
-<pre><code>    App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">return</span> {
-            restrict: <span class="hljs-string">'E'</span>,
-            templateUrl: <span class="hljs-string">'components/foo.html'</span>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            templateUrl: &#39;components/foo.html&#39;
         };
     });
 </code></pre><p>Now, we may use it without a <code>&lt;div&gt;</code> tag:</p>
-<pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">foo-component</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">foo-component</span>&gt;</span>
+<pre><code>    &lt;foo-component&gt;
+    &lt;/foo-component&gt;
 </code></pre><p>Setting <code>restrict</code> to <code>E</code> means that AngularJs will allow this directive
 to be recognised <em>only</em> when the directive name is specified as an element.
 Setting it in an attribute, or as a comment, will no longer work.</p>
@@ -286,24 +344,24 @@ not be able to parse it.
 Self-closing tags, also known as void tags,
 are not allowed when defining custom element tags.</p>
 <p>Next, we add <code>transclude</code>, like so:</p>
-<pre><code>    App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">return</span> {
-            restrict: <span class="hljs-string">'E'</span>,
-            transclude: <span class="hljs-literal">true</span>,
-            templateUrl: <span class="hljs-string">'components/foo.html'</span>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
+            templateUrl: &#39;components/foo.html&#39;
         };
     });
 </code></pre><p>&hellip; and we modify the  template file at <code>components/foo.html</code>:</p>
-<pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-transclude</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Foo component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre><code>    &lt;div&gt;
+        &lt;div ng-transclude&gt;&lt;/div&gt;
+        &lt;p&gt;Foo component&lt;/p&gt;
+    &lt;/div&gt;
 </code></pre><p>Do not let the word transclude scare you -
 I think of it, simply, as <em>include with an outside transfer</em>.
 All it really means is that we can now do this in the DOM:</p>
-<pre><code>    <span class="hljs-tag">&lt;<span class="hljs-title">foo-component</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some text included from outside the component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">foo-component</span>&gt;</span>
+<pre><code>    &lt;foo-component&gt;
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    &lt;/foo-component&gt;
 </code></pre><p>And <code>&lt;p&gt;</code> tag containing &quot;Some text included from outside the component&quot;,
 will get rendered within the <code>&lt;div&gt;</code> tag with the <code>ng-transclude</code> attribute.</p>
 <p>The final step, and likely the most important one, is of scope isolation.
@@ -320,12 +378,12 @@ thus, if a component is to be useful in a number of different situations,
 where its parent&#39;s scopes may be different,
 that component should define exactly what it needs to be in its scope.</p>
 <p>The most basic syntax would be:</p>
-<pre><code>    App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">return</span> {
-            restrict: <span class="hljs-string">'E'</span>,
-            transclude: <span class="hljs-literal">true</span>,
-            scope: <span class="hljs-literal">true</span>,
-            templateUrl: <span class="hljs-string">'components/foo.html'</span>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
+            scope: true,
+            templateUrl: &#39;components/foo.html&#39;
         };
     });
 </code></pre><p>Setting <code>scope</code> to  <code>true</code> simply indicates that this directive will use its own
@@ -333,21 +391,21 @@ scope, that is brand new, and thus isolated from its parent&#39;s scope.
 This is not very useful,
 unless the template for this directive does not need to bind to anything.
 To create a more useful isolate scope:</p>
-<pre><code>    App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">return</span> {
-            restrict: <span class="hljs-string">'E'</span>,
-            transclude: <span class="hljs-literal">true</span>,
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
             scope: {
-                bar: <span class="hljs-string">'='</span>, <span class="hljs-comment">//two-way binding</span>
-                baz: <span class="hljs-string">'@'</span>, <span class="hljs-comment">//attribute binding</span>
+                bar: &#39;=&#39;, //two-way binding
+                baz: &#39;@&#39;, //attribute binding
             },
-            templateUrl: <span class="hljs-string">'components/foo.html'</span>
+            templateUrl: &#39;components/foo.html&#39;
         };
     });
 </code></pre><p>&hellip; and we use the component like this in the DOM:</p>
-<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">foo-component</span> <span class="hljs-attribute">bar</span>=<span class="hljs-value">myBar</span> <span class="hljs-attribute">baz</span>=<span class="hljs-value">"</span></span></span><span class="hljs-expression">{{<span class="hljs-variable">myBaz</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some text included from outside the component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">foo-component</span>&gt;</span></span>
+<pre><code>    &lt;foo-component bar=myBar baz=&quot;{{myBaz}}&quot;&gt;
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    &lt;/foo-component&gt;
 </code></pre><p>That would mean that the component&#39;s scope would contain:</p>
 <ul>
 <li><code>bar</code> which contains the value of <code>myBar</code> on the parent scope.
@@ -374,14 +432,14 @@ These resources cover them in greater depth:</p>
 <h3 id="components-in-emberjs">Components in EmberJs</h3>
 <p>The bare minimum syntax for an EmberJs component would be to simply create a template,
 according to the naming conventions:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{!<span class="hljs-variable">--</span> <span class="hljs-variable">components</span><span class="hljs-end-block">/the-foo --</span>}}</span><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>The Foo<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
+<pre><code>    {{!-- components/the-foo --}}
+    &lt;div&gt;
+        &lt;p&gt;The Foo&lt;/p&gt;
+    &lt;/div&gt;
 </code></pre><p>The naming convention is that they be prefixed with <code>components/</code>,
 and the name must contain at least one hyphen (<code>-</code>).</p>
 <p>In the DOM, we use a Handlebars helper with the same name as the component:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-variable">the-foo</span>}}</span><span class="xml"></span>
+<pre><code>    {{the-foo}}
 </code></pre><p>All this does however, is render one template within another -not very useful!
 We want to be able to do the same three things that we did with the AngularJs directive:</p>
 <ul>
@@ -390,15 +448,15 @@ We want to be able to do the same three things that we did with the AngularJs di
 <li>Pass in select models or attributes from the outer template to the component (scope and scope isolation)</li>
 </ul>
 <p>This is quite easily achieved:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{!<span class="hljs-variable">--</span> <span class="hljs-variable">components</span><span class="hljs-end-block">/the-foo --</span>}}</span><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>The Foo. Bar is: </span><span class="hljs-expression">{{<span class="hljs-variable">foo.bar</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        </span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">yield</span></span>}}</span><span class="xml">
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
+<pre><code>    {{!-- components/the-foo --}}
+    &lt;div&gt;
+        &lt;p&gt;The Foo. Bar is: {{foo.bar}}&lt;/p&gt;
+        {{yield}}
+    &lt;/div&gt;
 </code></pre><p>&hellip; and in the DOM:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-begin-block">#the-foo foo</span>=<span class="hljs-variable">model</span>}}</span><span class="xml">
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some text included from outside the component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    </span><span class="hljs-expression">{{<span class="hljs-end-block">/the-foo</span>}}</span><span class="xml"></span>
+<pre><code>    {{#the-foo foo=model}}
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    {{/the-foo}}
 </code></pre><p>In EmberJs, we use a string-based templating language, Handlebars,
 as opposed to a DOM-based templating language.
 Thus, we will not ever write, in the DOM,
@@ -409,8 +467,8 @@ simply by using the <code>{{yield}}</code> Handlebars helper.</p>
 <p>We pass in select attributes from the outer template into the component by
 defining those attributes within the Handlebars helper invoking the component.
 This is the only part which requires some custom code.</p>
-<pre><code>    <span class="hljs-filename">App.TheFooComponent = Ember.Component.extend({
-        attributeBindings</span>: [<span class="hljs-string">'foo'</span>]
+<pre><code>    App.TheFooComponent = Ember.Component.extend({
+        attributeBindings: [&#39;foo&#39;]
     });
 </code></pre><p>We create an object that extends <code>Ember.Component</code>,
 according to the naming conventions,
@@ -463,19 +521,40 @@ such as future cross-browser support and portability.</p>
         </div>
 
         
-        <a href="../adv/routers.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../adv/routers.html" class="navigation navigation-prev " aria-label="Previous page: Routers"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../roundup/roundup.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../roundup/roundup.html" class="navigation navigation-next " aria-label="Next page: Round Up"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
     </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Models | Angular-ember-compare</title>
+        <title>Models | AngularJs vs EmberJs</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="bguiz">
-        <meta name="description" content="Book generated using GitBook">
+        <meta name="description" content="So you want to start building a single-page application.Which framework should you use to help build it?">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -19,8 +19,8 @@
         <link rel="prev" href="../mvc/mvc-overview.html" />
         
 
-        <meta property="og:title" content="Models | Angular-ember-compare">
-        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:title" content="Models | AngularJs vs EmberJs">
+        <meta property="og:site_name" content="AngularJs vs EmberJs">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
 
@@ -32,32 +32,73 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../gitbook/style.css">
-        
         
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.1" data-basepath=".." data-revision="1399992002300">
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.1" data-basepath=".." data-revision="1400760992393">
     <div class="book-header">
     <!-- Actions Left -->
-    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
 
-    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
-
+    
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
 
     <!-- Title -->
-    <h1><a href="../" >Angular-ember-compare</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >AngularJs vs EmberJs</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -65,33 +106,43 @@
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
+        
         <li>
-            <a href="https://github.com/bguiz" target="blank">About the author</a>
+            <a href="https://github.com/bguiz" target="blank" class="author-link">About the author</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/models.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/models.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
-        <li class="divider"></li>
+        
+
+        
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="intro/criteria.html">
+            <li class="chapter " data-level="1" data-path="intro/criteria.html">
                 
                 <a href="../intro/criteria.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                    <i class="fa fa-check"></i> <b>1.</b> Criteria
                 </a>
                 
                 
             </li>
         
-            <li  data-level="2" data-path="mvc/mvc-overview.html">
+            <li class="chapter " data-level="2" data-path="mvc/mvc-overview.html">
                 
                 <a href="../mvc/mvc-overview.html">
-                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                    <i class="fa fa-check"></i> <b>2.</b> MVC
                 </a>
                 
                 
@@ -100,7 +151,7 @@
                         <li  data-level="2.1" data-path="mvc/models.html">
                             
                             <a href="../mvc/models.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                                <i class="fa fa-check"></i> <b>2.1.</b> Models
                             </a>
                             
                         </li>
@@ -108,7 +159,7 @@
                         <li  data-level="2.2" data-path="mvc/views-templates.html">
                             
                             <a href="../mvc/views-templates.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                                <i class="fa fa-check"></i> <b>2.2.</b> Views and Templates
                             </a>
                             
                         </li>
@@ -116,7 +167,7 @@
                         <li  data-level="2.3" data-path="mvc/controllers.html">
                             
                             <a href="../mvc/controllers.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                                <i class="fa fa-check"></i> <b>2.3.</b> Controllers
                             </a>
                             
                         </li>
@@ -125,10 +176,10 @@
                 
             </li>
         
-            <li  data-level="3" data-path="adv/routing-overview.html">
+            <li class="chapter " data-level="3" data-path="adv/routing-overview.html">
                 
                 <a href="../adv/routing-overview.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                    <i class="fa fa-check"></i> <b>3.</b> Routing
                 </a>
                 
                 
@@ -137,7 +188,7 @@
                         <li  data-level="3.1" data-path="adv/routers.html">
                             
                             <a href="../adv/routers.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                                <i class="fa fa-check"></i> <b>3.1.</b> Routers
                             </a>
                             
                         </li>
@@ -146,30 +197,37 @@
                 
             </li>
         
-            <li  data-level="4" data-path="adv/components.html">
+            <li class="chapter " data-level="4" data-path="adv/components.html">
                 
                 <a href="../adv/components.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Components
+                    <i class="fa fa-check"></i> <b>4.</b> Components
                 </a>
                 
                 
             </li>
         
-            <li  data-level="5" data-path="roundup/roundup.html">
+            <li class="chapter " data-level="5" data-path="roundup/roundup.html">
                 
                 <a href="../roundup/roundup.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                    <i class="fa fa-check"></i> <b>5.</b> Round Up
                 </a>
                 
                 
             </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
         
     </ul>
 </div>
 
-    <div class="book-body" tabindex="-1">
+    <div class="book-body">
         <div class="body-inner">
-            <div class="page-wrapper">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
         <div class="inner" style="width: 33.333333333333336%;min-width: 22.22222222222222%;"></div>
@@ -225,7 +283,7 @@ as the syntax is no different from manipulating POJSOs:</p>
 you will need to set them as a property of the <code>$scope</code> variable in a controller,
 like so:</p>
 <p><code>$scope.myModel = myModel;</code></p>
-<p>(more on <a href="mvc/controllers.md">Controllers</a>)</p>
+<p>(more on <a href="mvc/controllers.html">Controllers</a>)</p>
 <p>&hellip; Simple!</p>
 <p>However, there are implications when using POJSOs as models,
 when binding data between the models and views.
@@ -275,8 +333,8 @@ as you have several great options to choose from.</p>
 <p>In EmberJs, the syntax used to express a model is more complex than in AngularJs,
 as POJSOs may not be used directly,
 and instead must be &quot;wrapped&quot; using an EmberJs object, like so:</p>
-<pre><code>    <span class="hljs-keyword">var</span> Foo = Ember.<span class="hljs-built_in">Object</span>.extend();
-    <span class="hljs-keyword">var</span> myModel = Foo.create({ id: <span class="hljs-number">1</span>, name: <span class="hljs-string">'foo1'</span> });
+<pre><code>    var Foo = Ember.Object.extend();
+    var myModel = Foo.create({ id: 1, name: &#39;foo1&#39; });
 </code></pre><p>Noteworthy here is that we first defined a class for our model, <code>Foo</code>,
 and then created an instance of that class, <code>myModel</code>.
 We needed to do this because models in EmberJs are expected
@@ -310,27 +368,27 @@ Ember Data is essentially an <a href="https://en.wikipedia.org/wiki/Object-relat
 that gives you the tools to define your models in Ember,
 and synchronise them with your RESTful API back end.</p>
 <p>To define a model, we have:</p>
-<pre><code>    <span class="hljs-keyword">var</span> Foo = DS.Model.extend({
-        name: DS.attr(<span class="hljs-string">'string'</span>)
+<pre><code>    var Foo = DS.Model.extend({
+        name: DS.attr(&#39;string&#39;)
     });
-    <span class="hljs-keyword">var</span> myModel = Foo.create({ name: <span class="hljs-string">'foo1'</span> });
+    var myModel = Foo.create({ name: &#39;foo1&#39; });
 </code></pre><p>The primary difference here is that instead of <code>Ember.Object.extend()</code>,
 use <code>DS.Model.extend()</code>,
 and the attributes that the model is expected to have are defined;
 except for <code>id</code> which is assumed to exist.</p>
 <p>It also provides a means to define relationships between the different model classes:</p>
-<pre><code><span class="hljs-keyword">var</span> Foo = DS.Model.extend({
-    name: DS.attr(<span class="hljs-string">'string'</span>),
-    bars: DS.hasMany(<span class="hljs-string">'bar'</span>)
+<pre><code>var Foo = DS.Model.extend({
+    name: DS.attr(&#39;string&#39;),
+    bars: DS.hasMany(&#39;bar&#39;)
 });
-<span class="hljs-keyword">var</span> Bar = DS.Model.extend({
-    name: DS.attr(<span class="hljs-string">'string'</span>),
-    foo: DS.belongsTo(<span class="hljs-string">'foo'</span>)
+var Bar = DS.Model.extend({
+    name: DS.attr(&#39;string&#39;),
+    foo: DS.belongsTo(&#39;foo&#39;)
 });
-<span class="hljs-comment">//create or fetch some Bar models</span>
-<span class="hljs-keyword">var</span> myModel = Foo.create({
-    name: <span class="hljs-string">'foo1'</span>,
-    bars: [<span class="hljs-number">100</span>, <span class="hljs-number">101</span>] <span class="hljs-comment">//IDs of the Bar models</span>
+//create or fetch some Bar models
+var myModel = Foo.create({
+    name: &#39;foo1&#39;,
+    bars: [100, 101] //IDs of the Bar models
 });
 </code></pre><p>Ember Data has a <code>RESTAdapter</code> allow you to sync that state
 of these models with the backend via a RESTful API.
@@ -440,19 +498,40 @@ and we will be taking a look at them next.</p>
         </div>
 
         
-        <a href="../mvc/mvc-overview.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/mvc-overview.html" class="navigation navigation-prev " aria-label="Previous page: MVC"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../mvc/views-templates.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/views-templates.html" class="navigation navigation-next " aria-label="Next page: Views and Templates"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
     </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Controllers | Angular-ember-compare</title>
+        <title>Controllers | AngularJs vs EmberJs</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="bguiz">
-        <meta name="description" content="Book generated using GitBook">
+        <meta name="description" content="So you want to start building a single-page application.Which framework should you use to help build it?">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -19,8 +19,8 @@
         <link rel="prev" href="../mvc/views-templates.html" />
         
 
-        <meta property="og:title" content="Controllers | Angular-ember-compare">
-        <meta property="og:site_name" content="Angular-ember-compare">
+        <meta property="og:title" content="Controllers | AngularJs vs EmberJs">
+        <meta property="og:site_name" content="AngularJs vs EmberJs">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
 
@@ -32,32 +32,73 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../gitbook/style.css">
-        
         
     </head>
     <body>
         
-<div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1399992002300">
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1400760992393">
     <div class="book-header">
     <!-- Actions Left -->
-    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    
+    <a href="https://github.com/bguiz/angular-ember-compare" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
 
-    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
-
+    
+    <a href="https://github.com/bguiz/angular-ember-compare/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/bguiz/angular-ember-compare/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
 
     <!-- Title -->
-    <h1><a href="../" >Angular-ember-compare</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >AngularJs vs EmberJs</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -65,33 +106,43 @@
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
+        
         <li>
-            <a href="https://github.com/bguiz" target="blank">About the author</a>
+            <a href="https://github.com/bguiz" target="blank" class="author-link">About the author</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
-            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/controllers.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/bguiz/angular-ember-compare/edit/master/mvc/controllers.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
-        <li class="divider"></li>
+        
+
+        
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="intro/criteria.html">
+            <li class="chapter " data-level="1" data-path="intro/criteria.html">
                 
                 <a href="../intro/criteria.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Criteria
+                    <i class="fa fa-check"></i> <b>1.</b> Criteria
                 </a>
                 
                 
             </li>
         
-            <li  data-level="2" data-path="mvc/mvc-overview.html">
+            <li class="chapter " data-level="2" data-path="mvc/mvc-overview.html">
                 
                 <a href="../mvc/mvc-overview.html">
-                    <i class="fa fa-check"></i> <b>2)</b> MVC
+                    <i class="fa fa-check"></i> <b>2.</b> MVC
                 </a>
                 
                 
@@ -100,7 +151,7 @@
                         <li  data-level="2.1" data-path="mvc/models.html">
                             
                             <a href="../mvc/models.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> Models
+                                <i class="fa fa-check"></i> <b>2.1.</b> Models
                             </a>
                             
                         </li>
@@ -108,7 +159,7 @@
                         <li  data-level="2.2" data-path="mvc/views-templates.html">
                             
                             <a href="../mvc/views-templates.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Views and Templates
+                                <i class="fa fa-check"></i> <b>2.2.</b> Views and Templates
                             </a>
                             
                         </li>
@@ -116,7 +167,7 @@
                         <li  data-level="2.3" data-path="mvc/controllers.html">
                             
                             <a href="../mvc/controllers.html">
-                                <i class="fa fa-check"></i> <b>2.3)</b> Controllers
+                                <i class="fa fa-check"></i> <b>2.3.</b> Controllers
                             </a>
                             
                         </li>
@@ -125,10 +176,10 @@
                 
             </li>
         
-            <li  data-level="3" data-path="adv/routing-overview.html">
+            <li class="chapter " data-level="3" data-path="adv/routing-overview.html">
                 
                 <a href="../adv/routing-overview.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Routing
+                    <i class="fa fa-check"></i> <b>3.</b> Routing
                 </a>
                 
                 
@@ -137,7 +188,7 @@
                         <li  data-level="3.1" data-path="adv/routers.html">
                             
                             <a href="../adv/routers.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Routers
+                                <i class="fa fa-check"></i> <b>3.1.</b> Routers
                             </a>
                             
                         </li>
@@ -146,30 +197,37 @@
                 
             </li>
         
-            <li  data-level="4" data-path="adv/components.html">
+            <li class="chapter " data-level="4" data-path="adv/components.html">
                 
                 <a href="../adv/components.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Components
+                    <i class="fa fa-check"></i> <b>4.</b> Components
                 </a>
                 
                 
             </li>
         
-            <li  data-level="5" data-path="roundup/roundup.html">
+            <li class="chapter " data-level="5" data-path="roundup/roundup.html">
                 
                 <a href="../roundup/roundup.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Round Up
+                    <i class="fa fa-check"></i> <b>5.</b> Round Up
                 </a>
                 
                 
             </li>
+        
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
         
     </ul>
 </div>
 
-    <div class="book-body" tabindex="-1">
+    <div class="book-body">
         <div class="body-inner">
-            <div class="page-wrapper">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
         <div class="inner" style="width: 55.55555555555556%;min-width: 44.44444444444444%;"></div>
@@ -224,12 +282,12 @@ enabling all this to happen.</p>
 <p>Unlike some of their older SPA framework counterparts,
 both AngularJs and EmberJs support two-way binding.
 That is:</p>
-<pre><code><span class="hljs-number">1.</span> When <span class="hljs-operator">the</span> model state changes,
-   <span class="hljs-keyword">if</span> <span class="hljs-keyword">any</span> parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are bound <span class="hljs-built_in">to</span> <span class="hljs-operator">the</span> part <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model that has changed,
-   those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are re-rendered.
-<span class="hljs-number">2.</span> When <span class="hljs-operator">the</span> view state changes,
-   <span class="hljs-keyword">if</span> those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> view are bound <span class="hljs-built_in">to</span> parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model,
-   those parts <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> model are changed.
+<pre><code>1. When the model state changes,
+   if any parts of the view are bound to the part of the model that has changed,
+   those parts of the view are re-rendered.
+2. When the view state changes,
+   if those parts of the view are bound to parts of the model,
+   those parts of the model are changed.
 </code></pre><h3 id="controllers-in-angularjs">Controllers in AngularJs</h3>
 <p>Controllers in AngularJs are not, strictly speaking, controllers.
 In fact AngularJs does not call itself an MVC framework,
@@ -237,10 +295,10 @@ In fact AngularJs does not call itself an MVC framework,
 That being said, that is only true from a academic purist&#39;s point of view;
 through a practical lens, they most certainly are.</p>
 <p>Syntax:</p>
-<pre><code>    angular.module(<span class="hljs-string">'application'</span>, []).controller(<span class="hljs-string">'FooCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$scope</span>)</span> {</span>
-        <span class="hljs-variable">$scope</span>.someProperty = <span class="hljs-string">'More exclamation marks'</span>;
-        <span class="hljs-variable">$scope</span>.someAction = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-variable">$scope</span>.someProperty += <span class="hljs-string">'!'</span>;
+<pre><code>    angular.module(&#39;application&#39;, []).controller(&#39;FooCtrl&#39;, function($scope) {
+        $scope.someProperty = &#39;More exclamation marks&#39;;
+        $scope.someAction = function() {
+            $scope.someProperty += &#39;!&#39;;
         };
     });
 </code></pre><p>The <code>$scope</code> object is <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#angular-scope-inheritance" target="_blank">prototypically inherited</a> from its parent&#39;s
@@ -257,11 +315,11 @@ and this article on <a href="http://blog.mgechev.com/2013/12/18/inheritance-serv
 as further reading.</p>
 <h3 id="two-way-binding-in-angularjs">Two-way binding in AngularJs</h3>
 <p>Syntax:</p>
-<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"FooCtrl"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"someAction()"</span>&gt;</span>Press me<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"</span></span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
+<pre><code>    &lt;div ng-controller=&quot;FooCtrl&quot;&gt;
+        &lt;button ng-click=&quot;someAction()&quot;&gt;Press me&lt;/button&gt;
+        &lt;p&gt;{{someProperty}}&lt;/p&gt;
+        &lt;input type=&quot;text&quot; value=&quot;{{someProperty}}&quot;&gt;
+    &lt;/div&gt;
 </code></pre><p>The template above is not a very useful one,
 by providing two different ways to modify the same property on the controller&#39;s
 <code>$scope</code>, however, it is a succinct demonstration of two-way binding.</p>
@@ -303,10 +361,10 @@ as further reading on this technique, and several others.</p>
 <p>EmberJs controllers conform to the pure MVC definition of them.</p>
 <p>Syntax:</p>
 <pre><code>    App.FooController = Ember.Controller.extend({
-        someProperty: <span class="hljs-string">'More exclamation marks'</span>,
+        someProperty: &#39;More exclamation marks&#39;,
         actions: {
-            someAction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                <span class="hljs-keyword">this</span>.<span class="hljs-keyword">set</span>(<span class="hljs-string">'someProperty'</span>, <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'someProperty'</span>) + <span class="hljs-string">'!'</span>);
+            someAction: function() {
+                this.set(&#39;someProperty&#39;, this.get(&#39;someProperty&#39;) + &#39;!&#39;);
             }
         }
     });
@@ -338,11 +396,11 @@ However, this is often more effort than it is worth,
 and most developers will choose to stick to the default resolver.</p>
 <h3 id="two-way-binding-in-emberjs">Two-way binding in EmberJs</h3>
 <p>Syntax:</p>
-<pre><code><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> </span></span><span class="hljs-expression">{{<span class="hljs-variable"><span class="hljs-keyword">action</span></span> '<span class="hljs-variable">someAction</span>'}}</span><span class="xml"><span class="hljs-tag">&gt;</span>Exclaim harder<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">someProperty</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        </span><span class="hljs-expression">{{<span class="hljs-variable">input</span> <span class="hljs-variable">type</span>=<span class="hljs-string">"text' value=someProperty}}
-    &lt;/div&gt;</span></span>
+<pre><code>    &lt;div&gt;
+        &lt;button {{action &#39;someAction&#39;}}&gt;Exclaim harder&lt;/button&gt;
+        &lt;p&gt;{{someProperty}}&lt;/p&gt;
+        {{input type=&quot;text&#39; value=someProperty}}
+    &lt;/div&gt;
 </code></pre><p>Two-way binding in EmberJs works in a very similar fashion to
 the way it works in AngularJs -
 so we will only cover the differences.</p>
@@ -382,18 +440,18 @@ and opt out of it in exceptional cases.</p>
 <h3 id="imperative-versus-declarative-syntax-in-controllers">Imperative versus Declarative Syntax in Controllers</h3>
 <p>Properties on AngularJs controllers are defined imperatively.</p>
 <p>Properties on EmberJs controllers can be defined either imperatively or declaratively.</p>
-<pre><code>    <span class="hljs-keyword">var</span> FoosController = Ember.ArrayController.extend({
-        <span class="hljs-comment">//this is an imperatively defined property</span>
-        filterText: <span class="hljs-string">''</span>,
+<pre><code>    var FoosController = Ember.ArrayController.extend({
+        //this is an imperatively defined property
+        filterText: &#39;&#39;,
 
-        <span class="hljs-comment">//this is a declaratively defined property</span>
-        filteredModel: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">var</span> foos = <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'model'</span>);
-            <span class="hljs-keyword">var</span> filterText = <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'filterText'</span>);
-            <span class="hljs-keyword">return</span> foos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(foo)</span> {</span>
-                <span class="hljs-keyword">return</span> foo.name.indexOf(<span class="hljs-string">'filterText'</span>) &gt;= <span class="hljs-number">0</span>;
+        //this is a declaratively defined property
+        filteredModel: function() {
+            var foos = this.get(&#39;model&#39;);
+            var filterText = this.get(&#39;filterText&#39;);
+            return foos.filter(function(foo) {
+                return foo.name.indexOf(&#39;filterText&#39;) &gt;= 0;
             });
-        }.property(<span class="hljs-string">'model'</span>, <span class="hljs-string">'filterText'</span>)
+        }.property(&#39;model&#39;, &#39;filterText&#39;)
     });
 </code></pre><p>Here EmberJs makes use of <code>Function.prototype.property()</code>
 to define which properties are dependent upon changes on other properties.
@@ -407,13 +465,13 @@ and when these are referred to elsewhere -
 either in the templates or a <code>.get()</code> on the controller -
 we simply refer to it by name, and not call the function.
 In our example, we would use, in the templates:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> foo <span class="hljs-keyword">in</span> filteredModel</span>}}</span><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">foo.name</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
+<pre><code>    {{#each foo in filteredModel}}
+    &lt;p&gt;{{foo.name}}&lt;/p&gt;
+    {{/each}}
 </code></pre><p>Instead of:</p>
-<pre><code><span class="xml">    </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">each</span> foo <span class="hljs-keyword">in</span> filteredModel</span>()}}</span><span class="xml">
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">foo.name</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">each</span></span>}}</span><span class="xml"></span>
+<pre><code>    {{#each foo in filteredModel()}}
+    &lt;p&gt;{{foo.name}}&lt;/p&gt;
+    {{/each}}
 </code></pre><p>&hellip; which is different from AngularJs.
 This happens because we have marked that function as being a property;
 and is a great example of the
@@ -472,19 +530,40 @@ routing and components.</p>
         </div>
 
         
-        <a href="../mvc/views-templates.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/views-templates.html" class="navigation navigation-prev " aria-label="Previous page: Views and Templates"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../adv/routing-overview.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../adv/routing-overview.html" class="navigation navigation-next " aria-label="Next page: Routing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
     </body>
 </html>
