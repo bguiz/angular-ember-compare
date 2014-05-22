@@ -5,7 +5,7 @@ Which framework should you use to help build it?
 
 ![AngularJs vs EmberJs](img/angularjs-vs-emberjs.png)
 
-This series of posts takes a look at two of the most popular ones:
+This series of articles takes a look at two of the most popular ones:
 [AngularJs](http://angularjs.org/) and
 [EmberJs](http://emberjs.com/)
 

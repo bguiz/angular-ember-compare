@@ -13,6 +13,11 @@ done
 
 #If the gitbook commands fail, ensure that you have gitbook installed
 #npm install -g gitbook
+echo "Building single page"
 gitbook build ./content/ -f page -o ./dist/page
+echo "Building PDF"
+gitbook build ./content/ -f pdf -o ./dist/pdf
+echo "Building JSON"
 gitbook build ./content/ -f json -o ./dist/json
+echo "Building static site"
 gitbook build ./content/ -o ./dist/static

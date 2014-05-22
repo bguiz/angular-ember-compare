@@ -24,10 +24,10 @@ based on context.
 In both AngularJs and EmberJs, the static inputs are pure HTML -
 write them as you would a regular HTML document.
 Similarly, in both frameworks, the dynamic inputs are identified as any parts
-in between `{{` and `}}` (double squiggly brackets). <super>&lowast;</super>
+in between `{{` and `}}` (double squiggly brackets). <super>\*</super>
 
-<super>&lowast;</super> With AngularJs, in addition to this,
-some dynamic input may be identified by `ng-*` attributes,
+&nbsp;<super>\*</super> With AngularJs, in addition to this,
+some dynamic input may be identified by `ng-`\* attributes,
 and any custom designed directives added by the developer.
 
 ### Views
@@ -85,13 +85,13 @@ actions, since it is not aware of EmberJs.
 
 Templates are where most of the presentation logic occurs.
 Templates in AngularJs and EmberJs can look very similar -
-they are both HTML, with the dynamic parts escaped using double squiggly brackets. <super>&lowast;</super>
+they are both HTML, with the dynamic parts escaped using double squiggly brackets. <super>\*</super>
 
 However, that is a superficial similarity -
 the underlying approach taken by each is fundamentally different.
 
-<super>&lowast;</super> With AngularJs, in addition to this,
-some dynamic input may be identified by `ng-*` attributes,
+&nbsp;&nbsp;<super>\*</super> With AngularJs, in addition to this,
+some dynamic input may be identified by `ng-`\* attributes,
 and any custom designed directives added by the developer.
 
 ### Templates in AngularJs
@@ -118,7 +118,7 @@ The special decorations that it looks out for are:
 - Directives
     - Elements or attributes that link to modules known to AngularJs
     - AngularJs comes with several built in directives,
-      and all of them are prefixed with `ng-*`
+      and all of them are prefixed with `ng-`\*
     - The developer may also define his own custom directives
 - Markup
     - Any part of the markup which appears between double squiggly braces,
