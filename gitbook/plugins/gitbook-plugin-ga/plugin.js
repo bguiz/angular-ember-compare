@@ -7,7 +7,7 @@ require(["gitbook"], function(gitbook) {
     gitbook.events.bind("start", function(e, config) {
         config.ga = config.ga || {};
 
-        ga('create', config.ga.token, 'angularjs-emberjs-compare.bguiz.com');
+        ga('create', config.ga.token, 'bguiz.com');
         ga('send', 'pageview');
     });
 
