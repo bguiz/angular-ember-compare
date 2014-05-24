@@ -1,6 +1,16 @@
 require(["gitbook"], function(gitbook) {
 
-	var redditButton = '<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>';
+	var facebookButtonCreate = function(cfg) {
+		var loc = '//www.facebook.com/plugins/like.php?href='+
+			encodeURIComponent(cfg.url ? cfg.url : window.location.href) +
+			'width='+(cfg.width ? cfg.width : 120)+
+			'&layout='+(cfg.layout ? cfg.layout : 'button_count')+
+			'&action=like&show_faces=false&share=true&height=21'+
+			(cfg.appId ? '&appId='+cfg.appId : '');
+		var out = '<iframe src="' + loc + '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>';
+		return out;
+	};
+
 	var redditButtonCreate = function(cfg) {
 	  if ('https:' == document.location.protocol) {
 	      var base_url = 'https://redditstatic.s3.amazonaws.com'
@@ -11,7 +21,7 @@ require(["gitbook"], function(gitbook) {
 	  var write_string="<iframe src=\"" + base_url + "/button/button1.html?width=120&url=";
 
 	  if (cfg.url)  { 
-	      write_string += encodeURIComponent(reddit_url); 
+	      write_string += encodeURIComponent(cfg.url); 
 	  }
 	  else { 
 	      write_string += encodeURIComponent(window.location.href);
@@ -35,15 +45,17 @@ require(["gitbook"], function(gitbook) {
 	      write_string += '&newwindow=' + encodeURIComponent(cfg.newwindow);
 	  }
 	  write_string += "\" height=\"22\" width=\"120\" scrolling='no' frameborder='0'></iframe>";
-	  // document.write(write_string);
 	  return write_string;
 	}
 
 	var shareConfig;
 	var reloadShare = function() {
         if (shareConfig.reddit) {
-            // var out = '<script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>';
-        	var out = redditButtonCreate(shareConfig.reddit);
+            var out = redditButtonCreate(shareConfig.reddit);
+        	$(".gitbook-share").append($(out));
+        }
+        if (shareConfig.facebook) {
+        	var out = facebookButtonCreate(shareConfig.facebook);
         	$(".gitbook-share").append($(out));
         }
 	};
