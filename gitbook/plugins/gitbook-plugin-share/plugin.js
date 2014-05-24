@@ -54,10 +54,10 @@ require(["gitbook"], function(gitbook) {
             var out = redditButtonCreate(shareConfig.reddit);
         	$(".gitbook-share").append($(out));
         }
-        if (shareConfig.facebook) {
-        	var out = facebookButtonCreate(shareConfig.facebook);
-        	$(".gitbook-share").append($(out));
-        }
+        // if (shareConfig.facebook) {
+        // 	var out = facebookButtonCreate(shareConfig.facebook);
+        // 	$(".gitbook-share").append($(out));
+        // }
 	};
 
     gitbook.events.bind("start", function(e, config) {
