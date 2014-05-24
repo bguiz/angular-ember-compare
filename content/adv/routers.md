@@ -60,7 +60,7 @@ that would not be present in any of the "Games" pages.
 In AngularJs, you may apply the `ngView` directive to a DOM element.
 When the URL changes, the router determines the new MVC state of the application,
 and the contents of the `ngView` element are removed,
-and rendered using the new new MVC state.
+and rendered using the new MVC state.
 
 Since the router is driven by a *finite* state machine under the hood,
 there can only be one `ngView` rendered within the application at any time.

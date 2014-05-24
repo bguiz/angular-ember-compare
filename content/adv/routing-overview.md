@@ -107,7 +107,7 @@ accomplishes this is for the server to serve the same file -
 the `index.html` of the single page application -
 for all URL paths that match its routes.
 Subsequently the SPA itself will use the functions in the
-History API to alter the the URL in the address bar,
+History API to alter the URL in the address bar,
 *without* reloading the page.
 It also also listens for changes in the URL in the address bar,
 and intercept them *before* a new request is made on the server.

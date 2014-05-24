@@ -73,7 +73,7 @@ In order to use this, we add this to the template:
         <div foo-component>
         </div>
 
-All this does is take the the template at `components/foo.html`
+All this does is take the template at `components/foo.html`
 and render it within this `<div>`.
 This does not look very much like a component,
 and lacks a few features that we would expect of one.
