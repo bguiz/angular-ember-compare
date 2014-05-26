@@ -18,6 +18,7 @@ for thing in "model" "view" "controller" "routing" "component" ; do
     montage "${XCF_FOLDER}/angularjs.png" "${XCF_FOLDER}/${thing}.png" "${XCF_FOLDER}/emberjs.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/spa-${thing}.png"
 done
 montage "${XCF_FOLDER}/model.png" "${XCF_FOLDER}/view.png" "${XCF_FOLDER}/controller.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/model-view-controller.png"
+montage "${XCF_FOLDER}/angularjs.png" "${XCF_FOLDER}/emberjs.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/angularjs-emberjs.png"
 
 #If the gitbook commands fail, ensure that you have gitbook installed
 #npm install -g gitbook
