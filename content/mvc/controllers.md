@@ -1,5 +1,7 @@
 ## Controllers
 
+![Controllers in SPAs](/img/spa-controller.png)
+
 Controllers are the final piece of the MVC puzzle.
 They are the glue that binds models to views/ templates.
 Their responsibilities include manipulating models,
@@ -32,6 +34,8 @@ That is:
 	   those parts of the model are changed.
 
 ### Controllers in AngularJs
+
+![Controllers in AngularJs](/img/angularjs-controller.png)
 
 Controllers in AngularJs are not, strictly speaking, controllers.
 In fact AngularJs does not call itself an MVC framework,
@@ -113,6 +117,8 @@ I would suggest this article [on performance tuning](http://tech.small-improveme
 as further reading on this technique, and several others.
 
 ### Controllers in EmberJs
+
+![Controllers in EmberJs](/img/emberjs-controller.png)
 
 EmberJs controllers conform to the pure MVC definition of them.
 
@@ -263,7 +269,7 @@ In AngularJs, the way a computed property is defined is to create a function
 on the scope.
 If this property is used in a template, it gets called in every digest cycle.
 
-EmberJs' way of specifying computed properties is a lot more succinct than 
+EmberJs' way of specifying computed properties is a lot more succinct than
 the way it is done in AngularJs.
 This is also a lot more efficient than AngularJs' approach,
 as it very neatly side steps the need to recompute them in each digest cycle.

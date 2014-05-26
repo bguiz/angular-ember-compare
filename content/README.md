@@ -3,7 +3,7 @@
 So you want to start building a single-page application.
 Which framework should you use to help build it?
 
-![AngularJs vs EmberJs](img/angularjs-vs-emberjs.png)
+![AngularJs vs EmberJs](/img/angularjs-vs-emberjs.png)
 
 This series of articles takes a look at two of the most popular ones:
 [AngularJs](http://angularjs.org/) and
@@ -18,7 +18,7 @@ but often verbose and feature lacking,
 
 At first, I had wanted to compare all the SPAs.
 
-![Learn All the SPAs!](img/learn-all-the-spas.png)
+![Learn All the SPAs!](/img/learn-all-the-spas.png)
 
 However, that meant I would be spreading myself too thin.
 Besides, we already have [TodoMVC](http://todomvc.com/) for that.
