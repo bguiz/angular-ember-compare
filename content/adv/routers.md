@@ -2,6 +2,8 @@
 
 ### Routing in AngularJs
 
+![Routing in AngularJs](/img/angularjs-routing.png)
+
 Setting up a router - the object responsible for providing routing capability -
 is extremely easy in AngularJs:
 
@@ -83,6 +85,8 @@ Thus it appears that the AngularJs may have support for this in
 future versions, as there is community support for this.
 
 ### Routing in EmberJs
+
+![Routing in EmberJs](/img/emberjs-routing.png)
 
 The EmberJs router, and its associated routing concepts,
 are significantly more complex than those of AngularJs:

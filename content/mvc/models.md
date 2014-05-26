@@ -1,5 +1,7 @@
 ## Models
 
+![Models in SPAs](/img/spa-model.png)
+
 Models are objects that represent data that is used by the application.
 The combination of all models define the state of the application.
 SPA frameworks, like AngularJs and EmberJs,
@@ -9,6 +11,8 @@ their counterpart models on servers -
 usually rows in a database via a [RESTful](http://stackoverflow.com/a/671132/194982) API.
 
 ### Models in AngularJs
+
+![Models in AngularJs](/img/angularjs-model.png)
 
 AngularJs uses plain ol' JavaScript objects (POJSOs) for models.
 
@@ -83,6 +87,8 @@ As the developer, this is pretty good,
 as you have several great options to choose from.
 
 ### Models in EmberJs
+
+![Models in EmberJs](/img/emberjs-model.png)
 
 In EmberJs, the syntax used to express a model is more complex than in AngularJs,
 as POJSOs may not be used directly,

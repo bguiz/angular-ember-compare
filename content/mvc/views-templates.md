@@ -6,6 +6,8 @@ and organise their code.
 
 ### Templates
 
+![Views in SPAs](/img/spa-view.png)
+
 However, almost all of them include one more feature in the same vein:
 the template.
 Templating, strictly speaking, is one of the responsibilities of a view in MVC,
@@ -96,6 +98,8 @@ and any custom designed directives added by the developer.
 
 ### Templates in AngularJs
 
+![Views in AngularJs](/img/angularjs-view.png)
+
 Syntax:
 
         <body ng-controller="FooController">
@@ -132,6 +136,8 @@ including JavaScript expression,
 and filters using a UNIX-style pipe (`|`) syntax.
 
 ### Templates in EmberJs
+
+![Views in EmberJs](/img/emberjs-view.png)
 
 Syntax:
 
