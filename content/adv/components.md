@@ -1,5 +1,7 @@
 ## Components
 
+![Components in SPAs](/img/spa-component.png)
+
 Browsers used to display documents -
 that is content that had text formatting and images.
 Web pages used to be simply what you could create using a word processor,
@@ -34,6 +36,8 @@ but both AngularJs and EmberJs provide their own ways to create components
 that behave very similarly to web components,
 
 ### Components in AngularJs
+
+![Components in AngularJs](/img/angularjs-component.png)
 
 AngularJs does not provide a direct construct for defining custom components.
 It does, however, provide a lower-level construct - directives -
@@ -73,7 +77,7 @@ In order to use this, we add this to the template:
         <div foo-component>
         </div>
 
-All this does is take the the template at `components/foo.html`
+All this does is take the template at `components/foo.html`
 and render it within this `<div>`.
 This does not look very much like a component,
 and lacks a few features that we would expect of one.
@@ -205,6 +209,8 @@ These resources cover them in greater depth:
 - [Understanding Scopes - Directives](https://github.com/angular/angular.js/wiki/Understanding-Scopes#-directives)
 
 ### Components in EmberJs
+
+![Components in EmberJs](/img/emberjs-component.png)
 
 The bare minimum syntax for an EmberJs component would be to simply create a template,
 according to the naming conventions:

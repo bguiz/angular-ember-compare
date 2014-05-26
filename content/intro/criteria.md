@@ -6,7 +6,7 @@ when comparing AngularJs with EmberJs.
 The space that these two operate in -
 JavaScript frameworks used to develop single-page applications - is a rather complex one.
 It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new new thing,
+Furthermore, this area is a moving target, because SPAs are a fairly new thing,
 and still going through the initial stages of rapid development.
 
 Thus, the only certainty here is that there is no definitive answer.

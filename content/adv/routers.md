@@ -2,6 +2,8 @@
 
 ### Routing in AngularJs
 
+![Routing in AngularJs](/img/angularjs-routing.png)
+
 Setting up a router - the object responsible for providing routing capability -
 is extremely easy in AngularJs:
 
@@ -60,7 +62,7 @@ that would not be present in any of the "Games" pages.
 In AngularJs, you may apply the `ngView` directive to a DOM element.
 When the URL changes, the router determines the new MVC state of the application,
 and the contents of the `ngView` element are removed,
-and rendered using the new new MVC state.
+and rendered using the new MVC state.
 
 Since the router is driven by a *finite* state machine under the hood,
 there can only be one `ngView` rendered within the application at any time.
@@ -83,6 +85,8 @@ Thus it appears that the AngularJs may have support for this in
 future versions, as there is community support for this.
 
 ### Routing in EmberJs
+
+![Routing in EmberJs](/img/emberjs-routing.png)
 
 The EmberJs router, and its associated routing concepts,
 are significantly more complex than those of AngularJs:
