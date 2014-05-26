@@ -36,7 +36,7 @@ these higher-order differentiating factors are unlikely to sway you very much.
 
 The domain of the single page application is a relatively new one,
 and almost everyone developing them is still learning as they go along.
-I hope that this exploration of the the various trade-offs,
+I hope that this exploration of the various trade-offs,
 syntaxes, philosophies, and other differences between AngularJs and EmberJs
 has helped you to understand each of these frameworks better,
 and pick the one that suits your needs best.

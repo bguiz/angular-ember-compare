@@ -1,5 +1,5 @@
 {
-    "plugins": ["disqus", "ga"],
+    "plugins": ["-mixpanel", "share", "disqus", "ga"],
 
     "pluginsConfig": {
         "fontSettings": {
@@ -12,6 +12,11 @@
         },
         "ga": {
             "token": "UA-37884921-4"
+        },
+        "share": {
+            "reddit": {
+                "newwindow": 1
+            }
         }
     },
     "links": {
