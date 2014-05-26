@@ -1,5 +1,7 @@
 ## Routing
 
+![Routing in SPAs](/img/spa-routing.png)
+
 Routing is a mechanism which keeps the state of a web application in sync with its URL.
 That is, when its URL changes, the application is notified that it should transition to a new state.
 Conversely, when the application transitions to a new state, it updates the URL.

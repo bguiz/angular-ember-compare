@@ -11,12 +11,13 @@ for xcf in $( ls ${XCF_FOLDER}/*.xcf ) ; do
 	xcf2png "${XCF_FOLDER}/${xcf}" -o "${IMG_OUT_FOLDER}/${xcf%.*}.png"
 done
 
-for thing in "model" "view" "controller" ; do
+for thing in "model" "view" "controller" "routing" "component" ; do
     for spa in "angularjs" "emberjs" ; do
         montage "${XCF_FOLDER}/${spa}.png" "${XCF_FOLDER}/${thing}.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/${spa}-${thing}.png"
     done
     montage "${XCF_FOLDER}/angularjs.png" "${XCF_FOLDER}/${thing}.png" "${XCF_FOLDER}/emberjs.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/spa-${thing}.png"
 done
+montage "${XCF_FOLDER}/model.png" "${XCF_FOLDER}/view.png" "${XCF_FOLDER}/controller.png" -shadow -background None -geometry 200X200+2+1  "${IMG_OUT_FOLDER}/model-view-controller.png"
 
 #If the gitbook commands fail, ensure that you have gitbook installed
 #npm install -g gitbook
