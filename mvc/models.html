@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.1" data-basepath=".." data-revision="1400972682292">
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.1" data-basepath=".." data-revision="1401102601813">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -266,6 +266,7 @@
                     <section class="normal" id="section-gitbook_7">
                     
                         <h2 id="models">Models</h2>
+<p><img src="/img/spa-model.png" alt="Models in SPAs"></p>
 <p>Models are objects that represent data that is used by the application.
 The combination of all models define the state of the application.
 SPA frameworks, like AngularJs and EmberJs,
@@ -274,6 +275,7 @@ They also come with means to sync or map their models with
 their counterpart models on servers -
 usually rows in a database via a <a href="http://stackoverflow.com/a/671132/194982" target="_blank">RESTful</a> API.</p>
 <h3 id="models-in-angularjs">Models in AngularJs</h3>
+<p><img src="/img/angularjs-model.png" alt="Models in AngularJs"></p>
 <p>AngularJs uses plain ol&#39; JavaScript objects (POJSOs) for models.</p>
 <p><code>var myModel = { id: 1, name: &#39;foo1&#39; };</code></p>
 <p>Bam! It was as simple as that - you have got yourself an AngularJs model.</p>
@@ -334,6 +336,7 @@ the most appropriate for your application.</p>
 <p>As the developer, this is pretty good,
 as you have several great options to choose from.</p>
 <h3 id="models-in-emberjs">Models in EmberJs</h3>
+<p><img src="/img/emberjs-model.png" alt="Models in EmberJs"></p>
 <p>In EmberJs, the syntax used to express a model is more complex than in AngularJs,
 as POJSOs may not be used directly,
 and instead must be &quot;wrapped&quot; using an EmberJs object, like so:</p>
@@ -496,13 +499,6 @@ and we will be taking a look at them next.</p>
 
 
 <div class="gitbook-share">
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fangularjs-emberjs-compare.bguiz.com%2F&amp;width=120&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width: 120px; height:21px;" allowTransparency="true"></iframe>
-<div class="g-plusone" data-size="medium" data-href="http://angularjs-emberjs-compare.bguiz.com/"></div>
-<script type="text/javascript"> (function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/platform.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})(); </script>
 </div>
 
 
@@ -554,7 +550,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"url":"http://angularjs-emberjs-compare.bguiz.com/","newwindow":1},"facebook":{"url":"http://angularjs-emberjs-compare.bguiz.com/"},"googleplus":{"url":"http://angularjs-emberjs-compare.bguiz.com/","size":"medium"}}};
+    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"newwindow":1}}};
     gitbook.start(config);
 });
 </script>

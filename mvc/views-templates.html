@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.2" data-basepath=".." data-revision="1400972682292">
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.2" data-basepath=".." data-revision="1401102601813">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -270,6 +270,7 @@
 and most SPA frameworks use these concepts to help developers structure
 and organise their code.</p>
 <h3 id="templates">Templates</h3>
+<p><img src="/img/spa-view.png" alt="Views in SPAs"></p>
 <p>However, almost all of them include one more feature in the same vein:
 the template.
 Templating, strictly speaking, is one of the responsibilities of a view in MVC,
@@ -341,6 +342,7 @@ the underlying approach taken by each is fundamentally different.</p>
 some dynamic input may be identified by <code>ng-</code>* attributes,
 and any custom designed directives added by the developer.</p>
 <h3 id="templates-in-angularjs">Templates in AngularJs</h3>
+<p><img src="/img/angularjs-view.png" alt="Views in AngularJs"></p>
 <p>Syntax:</p>
 <pre><code>    &lt;body ng-controller=&quot;FooController&quot;&gt;
         &lt;input ng-model=&quot;foo&quot; value=&quot;bar&quot;&gt;
@@ -377,6 +379,7 @@ expressions within the templates,
 including JavaScript expression,
 and filters using a UNIX-style pipe (<code>|</code>) syntax.</p>
 <h3 id="templates-in-emberjs">Templates in EmberJs</h3>
+<p><img src="/img/emberjs-view.png" alt="Views in EmberJs"></p>
 <p>Syntax:</p>
 <pre><code>    {{input type=&#39;text value=model.foo&#39;}}
     &lt;button {{action &#39;changeText&#39;}}&gt;{{model.buttonText}}&lt;/button&gt;
@@ -501,13 +504,6 @@ the things that bind the models and the views together.</p>
 
 
 <div class="gitbook-share">
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fangularjs-emberjs-compare.bguiz.com%2F&amp;width=120&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width: 120px; height:21px;" allowTransparency="true"></iframe>
-<div class="g-plusone" data-size="medium" data-href="http://angularjs-emberjs-compare.bguiz.com/"></div>
-<script type="text/javascript"> (function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/platform.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})(); </script>
 </div>
 
 
@@ -559,7 +555,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"url":"http://angularjs-emberjs-compare.bguiz.com/","newwindow":1},"facebook":{"url":"http://angularjs-emberjs-compare.bguiz.com/"},"googleplus":{"url":"http://angularjs-emberjs-compare.bguiz.com/","size":"medium"}}};
+    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"newwindow":1}}};
     gitbook.start(config);
 });
 </script>

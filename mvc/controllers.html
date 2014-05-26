@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1400972682292">
+    <div class="book" data-github="bguiz/angular-ember-compare" data-level="2.3" data-basepath=".." data-revision="1401102601813">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -266,6 +266,7 @@
                     <section class="normal" id="section-gitbook_6">
                     
                         <h2 id="controllers">Controllers</h2>
+<p><img src="/img/spa-controller.png" alt="Controllers in SPAs"></p>
 <p>Controllers are the final piece of the MVC puzzle.
 They are the glue that binds models to views/ templates.
 Their responsibilities include manipulating models,
@@ -293,6 +294,7 @@ That is:</p>
    if those parts of the view are bound to parts of the model,
    those parts of the model are changed.
 </code></pre><h3 id="controllers-in-angularjs">Controllers in AngularJs</h3>
+<p><img src="/img/angularjs-controller.png" alt="Controllers in AngularJs"></p>
 <p>Controllers in AngularJs are not, strictly speaking, controllers.
 In fact AngularJs does not call itself an MVC framework,
 <a href="http://plus.google.com/+AngularJS/posts/aZNVhj355G2" target="_blank">it calls itself an MVW (model-view-whatever) framework</a> instead.
@@ -362,6 +364,7 @@ These techniques, however, are beyond the scope of this comparison.
 I would suggest this article <a href="http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/" target="_blank">on performance tuning</a>
 as further reading on this technique, and several others.</p>
 <h3 id="controllers-in-emberjs">Controllers in EmberJs</h3>
+<p><img src="/img/emberjs-controller.png" alt="Controllers in EmberJs"></p>
 <p>EmberJs controllers conform to the pure MVC definition of them.</p>
 <p>Syntax:</p>
 <pre><code>    App.FooController = Ember.Controller.extend({
@@ -483,7 +486,7 @@ and is a great example of the
 <p>In AngularJs, the way a computed property is defined is to create a function
 on the scope.
 If this property is used in a template, it gets called in every digest cycle.</p>
-<p>EmberJs&#39; way of specifying computed properties is a lot more succinct than 
+<p>EmberJs&#39; way of specifying computed properties is a lot more succinct than
 the way it is done in AngularJs.
 This is also a lot more efficient than AngularJs&#39; approach,
 as it very neatly side steps the need to recompute them in each digest cycle.
@@ -528,13 +531,6 @@ routing and components.</p>
 
 
 <div class="gitbook-share">
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fangularjs-emberjs-compare.bguiz.com%2F&amp;width=120&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width: 120px; height:21px;" allowTransparency="true"></iframe>
-<div class="g-plusone" data-size="medium" data-href="http://angularjs-emberjs-compare.bguiz.com/"></div>
-<script type="text/javascript"> (function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/platform.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})(); </script>
 </div>
 
 
@@ -586,7 +582,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"url":"http://angularjs-emberjs-compare.bguiz.com/","newwindow":1},"facebook":{"url":"http://angularjs-emberjs-compare.bguiz.com/"},"googleplus":{"url":"http://angularjs-emberjs-compare.bguiz.com/","size":"medium"}}};
+    var config = {"fontSettings":{"theme":"sepia","family":"serif","size":1},"disqus":{"shortName":"bguiz"},"ga":{"token":"UA-37884921-4"},"share":{"reddit":{"newwindow":1}}};
     gitbook.start(config);
 });
 </script>
