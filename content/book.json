@@ -15,7 +15,21 @@
         },
         "share": {
             "reddit": {
-                "newwindow": 1
+                "newwindow": 1,
+                "url": "http://angularjs-emberjs-compare.bguiz.com/"
+            },
+            "googleplus": {
+                "url": "http://angularjs-emberjs-compare.bguiz.com/"
+            },
+            "facebook": {
+                "url": "http://angularjs-emberjs-compare.bguiz.com/"
+            },
+            "linkedin": {
+                "url": "http://angularjs-emberjs-compare.bguiz.com/"
+            },
+            "twitter": {
+                "url": "http://angularjs-emberjs-compare.bguiz.com/",
+                "via": "bguiz"
             }
         }
     },
