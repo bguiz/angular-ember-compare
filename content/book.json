@@ -11,7 +11,11 @@
             "shortName": "bguiz"
         },
         "ga": {
-            "token": "UA-37884921-4"
+            "token": "UA-37884921-4",
+            "scroll": {
+                "debug": false,
+                "interval": 150
+            }
         },
         "share": {
             "reddit": {
