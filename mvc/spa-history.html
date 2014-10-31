@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>History of SPAs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../mvc/spa-mvc.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../mvc/mvc-overview.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -119,7 +119,7 @@
                 
     
         
-        <li class="chapter " data-level="2.1" data-path="mvc/spa-history.html">
+        <li class="chapter active" data-level="2.1" data-path="mvc/spa-history.html">
             
                 
                     <a href="../mvc/spa-history.html">
@@ -834,62 +834,81 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_21">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
+                        <h2 id="the-mvc-pattern">The MVC pattern</h2>
+<h3 id="a-brief-history-of-single-page-applications">A brief history of single-page applications</h3>
+<p><strong>Timeline</strong></p>
 <ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
+<li>One page load per navigation</li>
+<li>Add AJAX</li>
+<li>Web 2.0</li>
+<li>Add MVC patterns</li>
+<li>Single-page applications</li>
 </ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+<p>In the early days of the web, all web sites made one request to the server,
+and the server responded with the entire web page to be displayed.
+Query parameters, cookies, and request headers were just about all a web developer had
+in his or her toolkit with with interactivity could be accomplished.
+Web servers did all the grunt work rendering dynamic web pages.</p>
+<p>This all changed when Microsoft <a href="http://en.wikipedia.org/wiki/XMLHttpRequest#Support_in_Internet_Explorer_versions_5.2C_5.5.2C_and_6" target="_blank">released IE5 with <code>XMLHttpRequest</code></a>,
+which was a means to send a request to the server and receive the request.
+This was the first time that this could be done entirely using JavaScript run within a web page.</p>
+<p>At first, this was used to swap the contents of one <code>&lt;div&gt;</code> on the page verbatim with the returned response.
+Responses were originally HTML fragments to be used as such.
+This then evolved to XML to represent data that would be parsed by JavaScript in the browser.
+This went by the name of <em>Asynchronous JavaScript and XML</em>,
+or <a href="http://en.wikipedia.org/wiki/Ajax_(programming" target="_blank">AJAX</a>).
+Processing XML in JavaScript was a little unwieldy,
+and it was much easier to transmit JavaScript object literals instead.
+Douglas Crockford <a href="http://en.wikipedia.org/wiki/JSON#History" target="_blank">specified the JSON format</a>,
+which gained rapid following.
+Most AJAX nowadays uses JSON instead of XML,
+so we should really be calling in <em>AJAJ</em> - but the original name stuck.</p>
+<p><a href="http://en.wikipedia.org/wiki/Web_2.0" target="_blank"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Web_2.0_Map.svg/320px-Web_2.0_Map.svg.png" alt="Web 2.0"></a></p>
+<p>This disrupted the status quo of one page load per request,
+and created an explosion in the amount of interactivity possible on a page.</p>
+<p>Web developers did exactly that, making their sites very interactive,
+and thus was born the era of &quot;Web 2.0&quot; web sites.
+However the client-side JavaScript quite often ended up becoming a tangled mess of unstructured JavaScript -
+and later on a tangled mess of jQuery -
+whenever the sites tried to do something complex.</p>
+<p>However, server side developers had been using the MVC pattern for some time now,
+and there was no reason to not do so client side as well.
+After all, since web sites were no longer thin-clients,
+JavaScript was being used for more than a few simple updates to the DOM,
+it was taking over some or all of the core logic of the web site.
+It thus became necessary to add some organisation and structure to the JavaScript.</p>
+<p>The thing about JavaScript is that it is a strange beast.
+It has weird quirks that make it behave quite unexpectedly,
+such as <a href="http://bonsaiden.github.io/JavaScript-Garden/#core.semicolon" target="_blank">automatic semicolon insertion</a>,
+and an <a href="http://dorey.github.io/JavaScript-Equality-Table/unified/" target="_blank">unpredictable equality operator</a>.
+It also has some really advanced concepts like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures" target="_blank">closures</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain" target="_blank">prototypical inheritance</a>,
+which make it very powerful, but also make attaining true mastery a longer journey.
+Lastly, it supports both imperative and functional programming paradigms.</p>
+<p>With all these actors stewing in the same broth,
+there were many many different ways to accomplish the same things.
+There were many way to accomplish very similar things.
+Addy Osmani&#39;s <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#designpatternsjavascript" target="_blank">JavaScript Design Patterns</a> captures the most popular amongst them.
+This ultimately resulted in a &quot;Wild West&quot;, where everyone did their own thing.</p>
+<p>Building complex user interfaces and interfacing with a server is indeed an onerous task.
+It increasingly became important to use a framework when developing web applications.
+Take a look at the source code of <a href="https://github.com/jashkenas/backbone/" target="_blank">BackboneJs</a>,
+<a href="https://github.com/angular/angular.js/" target="_blank">AngularJs</a>, or
+<a href="https://github.com/emberjs/ember.js/" target="_blank">EmberJs</a>,
+to get a feel for how much work would be involved if rolling your own.</p>
+<p>There were several frameworks to come out before, but BackboneJs really nailed it.
+It combined the use of AJAX with MVC patterns in a JavaScript library that
+allowed front end developers to create a single-page application -
+an application where every page simply used JavaScript to re-render
+(most of) the visible page in the client,
+and none of the requests navigated you away from <code>index.html</code>.</p>
+<p>This combination of AJAX and the MVC pattern is the cornerstone of single-page application frameworks.
+BackboneJs is certainly not the only single-page application framework,
+it merely was the first to gain widespread popularity.
+There a currently a <a href="http://todomvc.com" target="_blank">plethora of different frameworks</a>
+looking to take its place, two of which are AngularJs and EmberJs.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +928,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/mvc-overview.html" class="navigation navigation-prev " aria-label="Previous page: MVC"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/spa-mvc.html" class="navigation navigation-next " aria-label="Next page: MVC in SPAs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

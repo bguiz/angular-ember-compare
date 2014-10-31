@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Components in EmberJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../roundup/roundup.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../components/components-angularjs-directives.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="4.3" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -709,7 +709,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="components/components-emberjs.html">
+        <li class="chapter active" data-level="4.3" data-path="components/components-emberjs.html">
             
                 
                     <a href="../components/components-emberjs.html">
@@ -834,62 +834,92 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_4">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
+                        <h3 id="components-in-emberjs">Components in EmberJs</h3>
+<p><img src="/img/emberjs-component.png" alt="Components in EmberJs"></p>
+<p>The bare minimum syntax for an EmberJs component would be to simply create a template,
+according to the naming conventions:</p>
+<pre><code>    {{!-- components/the-foo --}}
+    &lt;div&gt;
+        &lt;p&gt;The Foo&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre><p>The naming convention is that they be prefixed with <code>components/</code>,
+and the name must contain at least one hyphen (<code>-</code>).</p>
+<p>In the DOM, we use a Handlebars helper with the same name as the component:</p>
+<pre><code>    {{the-foo}}
+</code></pre><p>All this does however, is render one template within another -not very useful!
+We want to be able to do the same three things that we did with the AngularJs directive:</p>
 <ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
+<li>Use elements to represent the component in the DOM (element restriction)</li>
+<li>Display content from the outer template within the component (transclusion)</li>
+<li>Pass in select models or attributes from the outer template to the component (scope and scope isolation)</li>
 </ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+<p>This is quite easily achieved:</p>
+<pre><code>    {{!-- components/the-foo --}}
+    &lt;div&gt;
+        &lt;p&gt;The Foo. Bar is: {{foo.bar}}&lt;/p&gt;
+        {{yield}}
+    &lt;/div&gt;
+</code></pre><p>&hellip; and in the DOM:</p>
+<pre><code>    {{#the-foo foo=model}}
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    {{/the-foo}}
+</code></pre><p>In EmberJs, we use a string-based templating language, Handlebars,
+as opposed to a DOM-based templating language.
+Thus, we will not ever write, in the DOM,
+tags names that match the custom component names;
+instead we use Handlebars helpers, in this case <code>{{the-foo}}</code>.</p>
+<p>We display content from the outer template within the component,
+simply by using the <code>{{yield}}</code> Handlebars helper.</p>
+<p>We pass in select attributes from the outer template into the component by
+defining those attributes within the Handlebars helper invoking the component.
+This is the only part which requires some custom code.</p>
+<pre><code>    App.TheFooComponent = Ember.Component.extend({
+        attributeBindings: [&#39;foo&#39;]
+    });
+</code></pre><p>We create an object that extends <code>Ember.Component</code>,
+according to the naming conventions,
+and define which properties should be bound by the component
+using the <code>attributeBindings</code> property.</p>
+<p>All in all, extremely straight forward,
+the trickiest part is getting the naming conventions right!
+The <a href="http://emberjs.com/api/classes/Ember.Component.html" target="_blank">documentation for <code>Ember.Component</code></a>
+is a good reference.</p>
+<h3 id="discussion">Discussion</h3>
+<p>In comparing the various aspects of these two SPA frameworks so far,
+in every single point of comparison,
+EmberJs&#39; offering has been significantly more complicated -
+and harder to learn - than its AngularJs counterpart.
+With components, however, the opposite is true,
+with the learning curve for creating custom components in AngularJs
+being far steeper than for creating custom components in EmberJs.
+This is because AngularJs&#39; offering is low-level, and more flexible.
+In EmberJs, most decision have been made for you -
+they can be thought of as
+<a href="http://docs.google.com/presentation/d/1e0z1pT9JuEh8G5DOtib6XFDHK0GUFtrZrU3IfxJynaA/present?slide=id.g177e4bd2b_0400" target="_blank">&quot;element-restricted, isolate-scoped, transcluded directives&quot;</a>.</p>
+<p>While AngularJs does not provide a <em>component</em> per se,
+it does provide a means to create them by combining a number of lower level concepts,
+on AngularJs directives.
+By combining them together in a certain pattern,
+one can create components.
+However, the developer is also free to do something else entirely,
+and combine them in a different way, or treat some as optional,
+and this flexibility allows for more specific needs to be catered to.</p>
+<p>EmberJs components, on the other hand,
+provide something very close to the web components specification out of the box,
+and the developer merely has to extend <code>Ember.Component</code>
+to get all this functionality.</p>
+<p>Both AngularJs and EmberJs have plans to make their frameworks support the
+web components specifications, when it comes out of draft status.
+Miško Hevery has written about plans to <a href="https://groups.google.com/forum/#!msg/polymer-dev/4RSYaKmbtEk/uYnY3900wpIJ" target="_blank">make web components work seamlessly with AngularJs directives</a>.
+Yehuda Katz, <a href="https://gist.github.com/wycats/9144666b0c606d1838be" target="_blank">describes plans for Web Components in EmberJs</a>,
+and a concrete plan for &quot;how Ember could adopt semantics similar to web components.&quot;</p>
+<p>Knowing that both frameworks are aligned with the specifications is good,
+because applications that are developed with these frameworks will themselves
+will already be largely compliant with these standards,
+and gain the benefits from inherent from being so,
+such as future cross-browser support and portability.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +939,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../components/components-angularjs-directives.html" class="navigation navigation-prev " aria-label="Previous page: Restrict, Transclude, and Isolate Scope in AngularJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../roundup/roundup.html" class="navigation navigation-next " aria-label="Next page: Round Up"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

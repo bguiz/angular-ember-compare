@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>URLs - Hash Fragments | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/url-history-api.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/routing.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -495,7 +495,7 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="routing/url-hash-fragments.html">
+        <li class="chapter active" data-level="3.1" data-path="routing/url-hash-fragments.html">
             
                 
                     <a href="../routing/url-hash-fragments.html">
@@ -834,62 +834,53 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_40">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="urls-in-single-page-applications">URLs in Single-Page Applications</h3>
+<p>In single-page applications, the URL is technically always the same,
+because technically, we are always on the same page.
+We <em>pretend</em> to navigate between different pages,
+by using JavaScript to replace large sections of the DOM.</p>
+<p>However, this would mean that we would lose  the benefits of our application being URL-driven.
+Thankfully there are a couple of different techniques to enable routing to occur.</p>
+<h4 id="method-1-hash-fragments">Method 1: Hash Fragments</h4>
+<p>Hash fragments have been around since the early days of the Internet,
+pre-dating single-page applications, and even JavaScript!</p>
+<p>Their usage was very simple though.
+When you had a web page that was rather long, and you wished to link to a different
+section on the same page, rather than to a different page,
+you would do something like this, in your HTML:</p>
+<pre><code>    &lt;a href=&quot;#partOfPageManyScrollsAway&quot;&gt;
+        Clicking here will jump to a part of the page that is many scrolls away
+    &lt;/a&gt;
+</code></pre><p>&hellip; and somewhere else <em>in the same document</em>, we will have:</p>
+<pre><code>    &lt;a name=&quot;partOfPageManyScrollsAway&quot;&gt;
+        You sure got here quickly!
+    &lt;/a&gt;
+</code></pre><p>As you may have guessed, clicking on the first <code>&lt;a&gt;</code> tag
+would scroll the second <code>&lt;a&gt;</code> tag into view in the browser.</p>
+<p>&hellip; but that is not all!
+If you look in the address bar, you will find that the URL has been suffixed with
+<code>#partOfPageManyScrollsAway</code>.
+When you click on the back button,
+you go back to where you were originally within the page - the first <code>&lt;a&gt;</code> tag
+When you click the forward button now,
+you go back to the second <code>&lt;a&gt;</code> tag again.</p>
+<p>You can try this out for yourself!
+Go to any article of <a href="http://en.wikipedia.org" target="_blank">Wikipedia</a>
+and find citations in line with the text.
+Many of these are hyperlinks to other <code>&lt;a&gt;</code> tags
+that are at the bottom of the page, in the list of citations.
+Click on a few of these in a row, and then use the back and forward buttons.</p>
+<p>This was the only way (until recently),
+where the browser&#39;s URL could change without navigating to a different page,
+<strong>and</strong> forward and back buttons continue working (browser history preserved).
+Given this, the developers of SPA frameworks decided to use this as the means
+to store the URL of SPA&#39;s current route.
+That is, as far as the SPA was concerned, it own internal URL was the hash fragments.
+Thus, instead of using words and numbers in hash fragments,
+they simply used the URL path instead.
+For example: <code>#/foo/123</code> or <code>#/bar/123/edit</code></p>
 
 
 <div class="gitbook-share">
@@ -909,10 +900,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/routing.html" class="navigation navigation-prev " aria-label="Previous page: Routing"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/url-history-api.html" class="navigation navigation-next " aria-label="Next page: URLs - History API"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Models in AngularJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../mvc/models-angularjs-sync.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../mvc/models.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="2.3.1" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -168,7 +168,7 @@
                 
     
         
-        <li class="chapter " data-level="2.3.1" data-path="mvc/models-angularjs.html">
+        <li class="chapter active" data-level="2.3.1" data-path="mvc/models-angularjs.html">
             
                 
                     <a href="../mvc/models-angularjs.html">
@@ -834,62 +834,40 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_15">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="models-in-angularjs">Models in AngularJs</h3>
+<p><img src="/img/angularjs-model.png" alt="Models in AngularJs"></p>
+<p>AngularJs uses plain ol&#39; JavaScript objects (POJSOs) for models.</p>
+<p><code>var myModel = { id: 1, name: &#39;foo1&#39; };</code></p>
+<p>Bam! It was as simple as that - you have got yourself an AngularJs model.</p>
+<p>Changing the state of that model is also just as simple,
+as the syntax is no different from manipulating POJSOs:</p>
+<p><code>myModel.name = &#39;myNewName&#39;;</code></p>
+<p>Likewise, accessing state is just as easy:</p>
+<p><code>myModel.name</code> (evaluates to &quot;myNewName&quot;)</p>
+<p>Can it really be that simple? &hellip; Where is the catch?</p>
+<p>In order to get any use out of these models,
+you will need to set them as a property of the <code>$scope</code> variable in a controller,
+like so:</p>
+<p><code>$scope.myModel = myModel;</code></p>
+<p>(more on <a href="mvc/controllers.html">Controllers</a>)</p>
+<p>&hellip; Simple!</p>
+<p>However, there are implications when using POJSOs as models,
+when binding data between the models and views.
+It means that we need to do dirty checking -
+keeping a copy of each model in its previous state,
+and checking for differences at a particular interval.
+This incurs a heavy performance penalty when models are numerous,
+or when models get very complex;
+and working around these limitations requires a in-depth understanding of
+<code>$scope</code>, <code>$watch</code>, dirty checking, and run loops.</p>
+<p>That is a rather advanced topic, and you can read more about the implications of
+<a href="http://blog.bguiz.com/post/57373805814/accessors-vs-dirty-checking-in-javascript-frameworks" target="_blank">using accessors versus using dirty checking here</a></p>
+<p>That being said, dirty checking is a pretty good value proposition in most cases,
+as the many web applications do not have very many models to deal with at once,
+or have models that are complex enough,
+to incur the performance penalty.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +887,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/models.html" class="navigation navigation-prev " aria-label="Previous page: Models"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/models-angularjs-sync.html" class="navigation navigation-next " aria-label="Next page: Syncing AngularJs Models"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

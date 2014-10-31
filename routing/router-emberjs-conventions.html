@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Routing Conventions in EmberJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/state-emberjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/router-emberjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.8" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -607,7 +607,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.8" data-path="routing/router-emberjs-conventions.html">
+        <li class="chapter active" data-level="3.8" data-path="routing/router-emberjs-conventions.html">
             
                 
                     <a href="../routing/router-emberjs-conventions.html">
@@ -834,62 +834,46 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_33">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="convention-over-configuration-in-emberjs">Convention over Configuration in EmberJs</h3>
+<p>When you instantiate a new EmberJs application using</p>
+<pre><code>    var App = Ember.Application.create({});
+</code></pre><p>The framework will create a <code>Router</code> object.
+This is the first or many naming conventions to come!</p>
+<p>We then call the <code>Router.map()</code> function,
+and pass in a function that defines a hierarchy of routes,
+using <code>this.resource</code> for routes that have child nodes,
+and <code>this.route</code> for leaf nodes.
+Both <code>.resource()</code> and <code>.route()</code> take in a string as their first parameter,
+and it is the value of this string that EmberJs uses to determine which
+<code>Route</code>, <code>Controller</code>, <code>View</code>, and template objects it shall use.
+The way it works these out are not immediately obvious,
+and this guide serves as a good primer:
+<a href="http://emberjs.com/guides/routing/defining-your-routes/" target="_blank">EmberJs routes guide</a>.</p>
+<p>The key take away here is that the router object may be thought of as a
+<em>king</em> object in any EmberJs application.
+Whatever names it uses for its routes determine the names of
+all the other types of EmberJs objects.
+When starting out in EmberJs for the first time,
+this can be incredibly frustrating,
+as it takes a little getting used to at first,
+and until then a name that is slightly wrong means that EmberJs does not detect
+it at all, and simply falls back on using a default or generic implementation
+of that object.
+For example naming a controller <code>FooBarCtrl</code> instead of <code>FooBarController</code>,
+or naming a template <code>foo-bar</code> instead of <code>foo/bar</code>.</p>
+<p>Know that you are not alone when you are left scratching your head,
+thinking why your code does not appear to have any effect -
+instead refer to the
+<a href="http://emberjs.com/guides/routing/defining-your-routes/" target="_blank">routes guide</a>
+once more and double check that all the naming conventions have been adhered to.</p>
+<p>Convention over configuration can, and most likely will,
+be frustrating to any developer;
+but only up until the point that you get used to it.
+Once that happens, it becomes less of a hindrance,
+and more of a boon to productivity,
+as it does, by definition, mean less cookie cutter code that needs to be written.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +893,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/router-emberjs.html" class="navigation navigation-prev " aria-label="Previous page: Routing in EmberJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/state-emberjs.html" class="navigation navigation-next " aria-label="Next page: State Machine in EmberJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

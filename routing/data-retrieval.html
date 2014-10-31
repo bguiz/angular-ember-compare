@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Data Retrieval | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/router-angularjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/state-machines.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.4" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -543,7 +543,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="routing/data-retrieval.html">
+        <li class="chapter active" data-level="3.4" data-path="routing/data-retrieval.html">
             
                 
                     <a href="../routing/data-retrieval.html">
@@ -834,62 +834,67 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_32">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="data-retrieval-callbacks-and-promises">Data Retrieval: Callbacks and Promises</h3>
+<p>When we retrieve data over the network in a single page application,
+we use AJAX (asynchronous JavaScript and XML).
+The <code>XMLHttpRequest</code> global object,
+implemented natively in all browsers since IE5,
+provides the AJAX functions.
+Using the raw <code>XMLHttpRequest</code> objects, however, is rather unwieldy,
+and in order to avoid having to repeating a lot of cruft code each time
+this needs to be done, we use wrapper objects.
+AngularJs defines a the <code>$http</code> module that fills this role,
+while EmberJs uses <code>jQuery</code>&#39;s AJAX functions.</p>
+<p>JavaScript, however, is has been single threaded<sup>&lowast;</sup> from the get-go,
+and this poses a fundamental problem for AJAX, due to its asynchronous nature.
+If we were to block execution of the main JavaScript thread
+until AJAX requests returned, we would be in for a rather laggy experience on the web.
+There is thus a need to be be able to execute code asynchronously.
+There are two ways in which this is solved: callbacks and promises.</p>
+<p>Callbacks are the de facto way to run JavaScript asynchronously.
+As functions are first class objects in JavaScript,
+we simply pass in a function that should get executed when the asynchronous code
+returns.
+That function is referred to as the callback function.
+In the case of an AJAX request, the callback function would typically parse or
+do something else with the result returned from the server.</p>
+<p>That is pretty neat, but callbacks do have their limitations.
+Imagine if you wanted to do two tasks that are both asynchronous,
+but need the second one to execute only when the first one has completed.
+The way to do this would be for the callback function to nest another callback function.
+If there are three or more things like this,
+you begin to get some really messy code,
+characterised by its shape - it looks like a triangle on its side.</p>
+<p>Promises overcome this limitation,
+by wrapping callback function in promise objects, making it easier to reason
+about them in sequences or other types of series and groups.
+The more modern JavaScript libraries have embraced promises
+as the go to means of dealing with asynchronous code.
+AggularJs contains its own promise module,
+<a href="https://docs.angularjs.org/api/ng/service/$q" target="_blank"><code>$q</code></a>;
+and EmberJs has its own promise library,
+<a href="http://emberjs.com/api/classes/Ember.RSVP.html" target="_blank"><code>RSVP</code></a>.
+Both implementations follow a common specification, the
+<a href="http://promises-aplus.github.io/promises-spec/" target="_blank">Promises/A+ spec</a>,
+thus their syntax is almost identical.</p>
+<p><sup>&lowast;</sup> The next edition of the ECMAScript specification, ES6 Harmony,
+includes a <a href="http://wiki.ecmascript.org/doku.php?id=strawman:concurrency" target="_blank">proposal for concurrency</a>,
+and a <a href="http://wiki.ecmascript.org/doku.php?id=harmony:generators" target="_blank">draft for generators</a>.
+The latter, generators, has already been implemented in NodeJs,
+and is due to come to browsers shortly.</p>
+<h3 id="discussion">Discussion</h3>
+<p>We have taken a look at what routing is,
+and why it continues to be important and relevant in single page applications.
+We have also looked at the two different ways in which URLs
+work in single page applications: hash fragments and the HTML5 History API.</p>
+<p>Finally we have taken a look at the concept of state machines,
+and the crucial role that they play in enabling routing
+in both AngularJs and EmberJs.
+These frameworks use different types of state machines - finite and hierarchical.
+impacts the routing functionality that each can support,
+and we will examine this in greater detail in the next article.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +914,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/state-machines.html" class="navigation navigation-prev " aria-label="Previous page: State Machines"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/router-angularjs.html" class="navigation navigation-next " aria-label="Next page: Routing in AngularJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

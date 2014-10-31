@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Restrict, Transclude, and Isolate Scope in AngularJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../components/components-emberjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../components/components-angularjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="4.2" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -693,7 +693,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="components/components-angularjs-directives.html">
+        <li class="chapter active" data-level="4.2" data-path="components/components-angularjs-directives.html">
             
                 
                     <a href="../components/components-angularjs-directives.html">
@@ -834,62 +834,131 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_2">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
+                        <h4 id="restrict-transclude-and-isolate-scope-in-angularjs-directives"><code>restrict</code>, <code>transclude</code>, and isolate <code>scope</code> in AngularJs Directives</h4>
+<p>The bare minimum syntax would be:</p>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            templateUrl: &#39;components/foo.html&#39;
+        };
+    });
+</code></pre><p>&hellip; and we create a template file at <code>components/foo.html</code>:</p>
+<pre><code>    &lt;div&gt;
+        &lt;p&gt;Foo component&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre><p>In order to use this, we add this to the template:</p>
+<pre><code>    &lt;div foo-component&gt;
+    &lt;/div&gt;
+</code></pre><p>All this does is take the template at <code>components/foo.html</code>
+and render it within this <code>&lt;div&gt;</code>.
+This does not look very much like a component,
+and lacks a few features that we would expect of one.</p>
+<p>Now we make a a little more useful using <code>restrict</code>:</p>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            templateUrl: &#39;components/foo.html&#39;
+        };
+    });
+</code></pre><p>Now, we may use it without a <code>&lt;div&gt;</code> tag:</p>
+<pre><code>    &lt;foo-component&gt;
+    &lt;/foo-component&gt;
+</code></pre><p>Setting <code>restrict</code> to <code>E</code> means that AngularJs will allow this directive
+to be recognised <em>only</em> when the directive name is specified as an element.
+Setting it in an attribute, or as a comment, will no longer work.</p>
+<p>As a side note: Beware of the self-closing tag!
+While <code>&lt;div /&gt;</code> is perfectly legal HTML,
+<code>&lt;foo-component /&gt;</code> is not, and AngularJs&#39; templating engine will
+not be able to parse it.
+Self-closing tags, also known as void tags,
+are not allowed when defining custom element tags.</p>
+<p>Next, we add <code>transclude</code>, like so:</p>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
+            templateUrl: &#39;components/foo.html&#39;
+        };
+    });
+</code></pre><p>&hellip; and we modify the  template file at <code>components/foo.html</code>:</p>
+<pre><code>    &lt;div&gt;
+        &lt;div ng-transclude&gt;&lt;/div&gt;
+        &lt;p&gt;Foo component&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre><p>Do not let the word transclude scare you -
+I think of it, simply, as <em>include with an outside transfer</em>.
+All it really means is that we can now do this in the DOM:</p>
+<pre><code>    &lt;foo-component&gt;
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    &lt;/foo-component&gt;
+</code></pre><p>And <code>&lt;p&gt;</code> tag containing &quot;Some text included from outside the component&quot;,
+will get rendered within the <code>&lt;div&gt;</code> tag with the <code>ng-transclude</code> attribute.</p>
+<p>The final step, and likely the most important one, is of scope isolation.
+In any AngularJs template, the default behaviour is for the scope available
+on any element to be available on any of its child elements.
+This is because a child inherits its scope prototypically from its parent&#39;s scope.
+Scope isolation is about using a directive on a child element,
+telling it use a new scope.
+It also allows ways in which select parts of the parent scope
+may be passed into the child scope.
+This is a crucial thing to do when building components,
+as components are supposed to be modular;
+thus, if a component is to be useful in a number of different situations,
+where its parent&#39;s scopes may be different,
+that component should define exactly what it needs to be in its scope.</p>
+<p>The most basic syntax would be:</p>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
+            scope: true,
+            templateUrl: &#39;components/foo.html&#39;
+        };
+    });
+</code></pre><p>Setting <code>scope</code> to  <code>true</code> simply indicates that this directive will use its own
+scope, that is brand new, and thus isolated from its parent&#39;s scope.
+This is not very useful,
+unless the template for this directive does not need to bind to anything.
+To create a more useful isolate scope:</p>
+<pre><code>    App.directive(&#39;fooComponent&#39;, function() {
+        return {
+            restrict: &#39;E&#39;,
+            transclude: true,
+            scope: {
+                bar: &#39;=&#39;, //two-way binding
+                baz: &#39;@&#39;, //attribute binding
+            },
+            templateUrl: &#39;components/foo.html&#39;
+        };
+    });
+</code></pre><p>&hellip; and we use the component like this in the DOM:</p>
+<pre><code>    &lt;foo-component bar=myBar baz=&quot;{{myBaz}}&quot;&gt;
+        &lt;p&gt;Some text included from outside the component&lt;/p&gt;
+    &lt;/foo-component&gt;
+</code></pre><p>That would mean that the component&#39;s scope would contain:</p>
 <ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
+<li><code>bar</code> which contains the value of <code>myBar</code> on the parent scope.
+Whenever the parent scope or the component scope&#39;s value changes,
+the change propagates to the other (two-way binding)</li>
+<li><code>baz</code> which contains the evaluated value of the expression <code>myBaz</code>
+on the parent scope.
+When the value of the parent scope changes, the value in the child scope changes too;
+however, when the value in the child scope changes, the value in the parent scope will remain the same.
+This is useful when you know that the child scope should <em>not</em> be able to
+update the parent scope, and therefore do not need to expend the extra
+effort for two-way binding (it is more computationally expensive).</li>
 </ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+<p>The most important thing to note here is that by defining isolate scopes,
+we are effectively defining the interface required by the component,
+which is important when creating modular components.</p>
+<p>This has been a very simplified explanation of the concepts of
+<code>restrict</code>, <code>transclude</code>, and <code>scope</code> isolation in AngularJs directives,.
+These resources cover them in greater depth:</p>
+<ul>
+<li><a href="http://blog.ijasoneverett.com/2013/03/creating-components-with-angular-js/" target="_blank">Creating components with AngularJs</a></li>
+<li><a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes#-directives" target="_blank">Understanding Scopes - Directives</a></li>
+</ul>
 
 
 <div class="gitbook-share">
@@ -909,10 +978,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../components/components-angularjs.html" class="navigation navigation-prev " aria-label="Previous page: Components in AngularJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../components/components-emberjs.html" class="navigation navigation-next " aria-label="Next page: Components in EmberJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

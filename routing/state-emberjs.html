@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>State Machine in EmberJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/routes-emberjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/router-emberjs-conventions.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.9" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -623,7 +623,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.9" data-path="routing/state-emberjs.html">
+        <li class="chapter active" data-level="3.9" data-path="routing/state-emberjs.html">
             
                 
                     <a href="../routing/state-emberjs.html">
@@ -834,62 +834,105 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_38">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
+                        <h3 id="hierarchical-state-machine-in-emberjs-router">Hierarchical State Machine in EmberJs&#39; Router</h3>
+<p>EmberJs uses a hierarchical state machine in its router implementation.
+This is evident when inspecting the code that we use to configure the router:
+In AngularJs all the calls to <code>.when()</code> on <code>$routeProvider</code> are at the same level.
+However, in EmberJs, within <code>.map()</code> we call <code>.resource()</code> and <code>.route()</code>,
+in a nested manner - and this is how we configure the hierarchical states.</p>
+<p>The first argument in each <code>.resource()</code> and <code>.route()</code> is a string,
+and by default, the URL for any <code>resource</code> or <code>route</code> is obtained by
+joining these strings together, in all nodes down the hierarchy.
+For example:</p>
+<pre><code>    App.Router.map(function() {
+        // URL is /foo
+        this.resource(&#39;foo&#39;, function() {
+            // URL is /foo/bar
+            this.resource(&#39;foo.bar&#39;, function() {
+                // URL is /foo/bar/baz
+                this.route(&#39;baz&#39;);
+            });
+        });
+    });
+</code></pre><p>While assembling a URL like this is pretty easy - just string concatenation -
+assembling a composite MVC state from a hierarchy of routes is not quite that easy.
+Thankfully, EmberJs does this all for us, however,
+as developers it is important for us to understand what it does here,
+so as to use it correctly.</p>
+<p>First let us go back to hierarchical state machines.
+Recall that a hierarchical state machine is a finite state machine,
+where each state is allowed to contain, within it,
+an entire finite state machine of its own,
+and this is allowed to recur to produce multiple levels of hierarchy.
+Using the following hierarchy as an example:</p>
 <ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
+<li>info</li>
+<li>games<ul>
+<li>pacman</li>
+<li>snake</li>
 </ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+</li>
+<li>stories<ul>
+<li>watchmen</li>
+<li>holes</li>
+</ul>
+</li>
+</ul>
+<p>In this case, the top level finite states are <code>info</code>, <code>games</code>, and <code>stories</code>.
+Both of <code>games</code> and <code>stories</code> contain child states.
+When switching between top level states,
+or child states that belong to the same top level state,
+such as <code>info --&gt; games</code> or <code>games.pacman --&gt; games.snake</code>,
+we are moving within the same finite state machine,
+and thus the behaviour is not very complex.</p>
+<p>When moving across different finite state machines, however,
+the process is a little more complex.
+For example <code>games.pacman --&gt; stories.watchmen</code> means that three different
+transitions need to occur:</p>
+<ol>
+<li>exit state <code>games.pacman</code></li>
+<li>exit state <code>games</code> and enter state <code>stories</code></li>
+<li>enter state <code>stories.pacman</code></li>
+</ol>
+<p>It is important to visualise which states are active,
+before and after moving between one route and another.
+EmberJs keeps all the current routes, models, views, templates, and controllers,
+for all the state that do not change before and after the transition intact,
+tears down those that have been exited from,
+and sets up those that have been entered.</p>
+<p>The developer does not really have much control over this behaviour,
+and should be aware of when these actions occur,
+and add code to be executed upon life cycle hooks of each of them when necessary.
+<a href="http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_lifecycle-hooks" target="_blank">Life cycle Hooks in Views</a>
+Controllers are only instantiated once, and their life cycle is managed by
+<code>Route</code> objects - via
+<a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_aborting-transitions-within-code-model-code-code-beforemodel-code-code-aftermodel-code" target="_blank"><code>model</code>, <code>beforeModel</code>, and <code>afterModel</code></a>,  <code>setupController</code>, and
+<a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_preventing-transitions-via-code-willtransition-code" target="_blank"><code>willTransition</code></a>.</p>
+<p>Templates, being defined using markup instead of JavaScript,
+are quite different.
+For multiple templates to be active at once, in a hierarchy,
+each template must define where within it its child template should be placed.
+This is accomplished using the <code>{{outlet}}</code> Handlebars helper.
+Think of it as telling the template that,
+when there is a child state that is active on the current route,
+this is where it should be rendered.
+While this is a very simple thing to do,
+when combined with the power of EmberJs&#39; routing,
+it can be used to accomplish some types of layouts that would be otherwise hard to do,
+including the master-detail pattern, where the UI displays a list of item,
+with perhaps just the name in one section of the page (the master),
+and when each of these is clicked on,
+all the information about that item is displayed in another section of the page (the detail).</p>
+<p>This article by UX Magazine on
+<a href="http://uxmag.com/articles/rich-internet-application-screen-design" target="_blank">application screen design</a>
+lists quite a number of the most common screen layouts in user interfaces.
+Many of these are only possible when the software rendering them supports
+the concept of view hierarchies.</p>
+<p>I have put together this JsBin to
+<a href="http://jsbin.com/wiyin/4/edit?html,js,output" target="_blank">demonstrate hierarchical routing in EmberJs</a>,
+so as the short in-line code examples do not really do this justice.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +952,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/router-emberjs-conventions.html" class="navigation navigation-prev " aria-label="Previous page: Routing Conventions in EmberJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/routes-emberjs.html" class="navigation navigation-next " aria-label="Next page: Routes in EmberJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

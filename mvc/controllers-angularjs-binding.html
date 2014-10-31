@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Two-way Binding in AngularJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../mvc/controllers-emberjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../mvc/controllers-angularjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="2.5.2" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -404,7 +404,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.5.2" data-path="mvc/controllers-angularjs-binding.html">
+        <li class="chapter active" data-level="2.5.2" data-path="mvc/controllers-angularjs-binding.html">
             
                 
                     <a href="../mvc/controllers-angularjs-binding.html">
@@ -834,62 +834,52 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_9">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="two-way-binding-in-angularjs">Two-way binding in AngularJs</h3>
+<p>Syntax:</p>
+<pre><code>    &lt;div ng-controller=&quot;FooCtrl&quot;&gt;
+        &lt;button ng-click=&quot;someAction()&quot;&gt;Press me&lt;/button&gt;
+        &lt;p&gt;{{someProperty}}&lt;/p&gt;
+        &lt;input type=&quot;text&quot; value=&quot;{{someProperty}}&quot;&gt;
+    &lt;/div&gt;
+</code></pre><p>The template above is not a very useful one,
+by providing two different ways to modify the same property on the controller&#39;s
+<code>$scope</code>, however, it is a succinct demonstration of two-way binding.</p>
+<p>When the button is clicked, the controller modifies the model.
+The template contains a <code>&lt;p&gt;</code> tag whose contents are bound to the model,
+and the view listens for the change on the model and updates its contents.
+The template also contains another binding to the same model,
+in the <code>&lt;input&gt;</code> tag&#39;s <code>value</code> attribute,
+and this is also updated, in a similar manner.
+Both of these sequences are one way bindings, from model to view.</p>
+<p>Now, instead of modifying the model, we modify the view instead,
+by typing into the input field.
+The model listens for the change in the view,
+and when the input field is modified,
+it detects a change and updates the model.
+The <code>&lt;p&gt;</code> tag, of course, is still bound to the model,
+and it listens for a change on the model,
+and updates its contents, as it did before.
+This is two-way binding in action,
+with the first sequence from view to model,
+and the second sequence from model back to view.</p>
+<p>This magic that happens behind the scenes does come at a cost though.
+As applications become more complex, it becomes more important to know
+how two-way binding works.
+The canonical use case for when this becomes especially important
+occurs when you have extremely large or complex properties on the <code>$scope</code> -
+too complex for it to be included in the dirty checking
+which gets performed in each digest cycle.
+So instead of storing these properties on the <code>$scope</code>,
+we we store them outside of it,
+and then manually notify the controller whenever the property has been updated.
+This is accomplished through <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" target="_blank"><code>$watch</code></a> and <code>$apply</code>,
+and using them correctly is contingent upon understanding
+how two-way binding works, and how it works together with the digest cycle.
+These techniques, however, are beyond the scope of this comparison.
+I would suggest this article <a href="http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/" target="_blank">on performance tuning</a>
+as further reading on this technique, and several others.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +899,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/controllers-angularjs.html" class="navigation navigation-prev " aria-label="Previous page: Controllers in AngularJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/controllers-emberjs.html" class="navigation navigation-next " aria-label="Next page: Controllers in EmberJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Imperative vs Declarative Binding | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/routing.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../mvc/controllers-emberjs-binding.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="2.5.5" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -452,7 +452,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.5.5" data-path="mvc/controllers-binding-syntax.html">
+        <li class="chapter active" data-level="2.5.5" data-path="mvc/controllers-binding-syntax.html">
             
                 
                     <a href="../mvc/controllers-binding-syntax.html">
@@ -834,62 +834,110 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_10">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h3 id="imperative-versus-declarative-syntax-in-two-way-binding">Imperative versus Declarative Syntax in Two-way Binding</h3>
+<p>In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
+between models and views is through declarative syntax in the templates.
+We simply state what we properties we want to be bound in the template,
+and let the framework figure out the how -
+as a developer using either framework,
+we do not need to figure out the code necessary for this to work.</p>
+<p>By contrast, the lack of two-way binding in some other SPA frameworks,
+such as BackboneJs, means that the developer has to code all the sequences of
+actions for each property which he/ she wishes to be bound.
+This is the opposite of the declarative style enabled by AngularJs and EmberJs -
+it is an imperative style.</p>
+<p>Some developers prefer an imperative style of programming,
+and other developers prefer a declarative style of programming.
+It is up to you to pick which works best.
+The vast majority of those developing SPAs however,
+prefer to use two-way binding,
+and opt out of it in exceptional cases.</p>
+<h3 id="imperative-versus-declarative-syntax-in-controllers">Imperative versus Declarative Syntax in Controllers</h3>
+<p>Properties on AngularJs controllers are defined imperatively.</p>
+<p>Properties on EmberJs controllers can be defined either imperatively or declaratively.</p>
+<pre><code>    var FoosController = Ember.ArrayController.extend({
+        //this is an imperatively defined property
+        filterText: &#39;&#39;,
+
+        //this is a declaratively defined property
+        filteredModel: function() {
+            var foos = this.get(&#39;model&#39;);
+            var filterText = this.get(&#39;filterText&#39;);
+            return foos.filter(function(foo) {
+                return foo.name.indexOf(&#39;filterText&#39;) &gt;= 0;
+            });
+        }.property(&#39;model&#39;, &#39;filterText&#39;)
+    });
+</code></pre><p>Here EmberJs makes use of <code>Function.prototype.property()</code>
+to define which properties are dependent upon changes on other properties.
+What EmberJs does behind the scenes is create a
+<a href="http://en.wikipedia.org/wiki/Directed_graph" target="_blank">Digraph</a>,
+and whenever one of the watched properties changes,
+traverses the graph to recompute all the other affected properties.
+Pretty neat!</p>
+<p>Noteworthy as well is that we can define computed properties as functions,
+and when these are referred to elsewhere -
+either in the templates or a <code>.get()</code> on the controller -
+we simply refer to it by name, and not call the function.
+In our example, we would use, in the templates:</p>
+<pre><code>    {{#each foo in filteredModel}}
+    &lt;p&gt;{{foo.name}}&lt;/p&gt;
+    {{/each}}
+</code></pre><p>Instead of:</p>
+<pre><code>    {{#each foo in filteredModel()}}
+    &lt;p&gt;{{foo.name}}&lt;/p&gt;
+    {{/each}}
+</code></pre><p>&hellip; which is different from AngularJs.
+This happens because we have marked that function as being a property;
+and is a great example of the
+<a href="http://en.wikipedia.org/wiki/Uniform_access_principle" target="_blank">uniform access principle</a>.</p>
+<p>In AngularJs, the way a computed property is defined is to create a function
+on the scope.
+If this property is used in a template, it gets called in every digest cycle.</p>
+<p>EmberJs&#39; way of specifying computed properties is a lot more succinct than
+the way it is done in AngularJs.
+This is also a lot more efficient than AngularJs&#39; approach,
+as it very neatly side steps the need to recompute them in each digest cycle.
+While this can also be accomplished in AngularJs using <code>$watch</code>,
+it is rather nice for the SPA framework to support this out of the box.</p>
+<h3 id="discussion">Discussion</h3>
+<p>When developing applications with <a href="http://backbonejs.org/" target="_blank">BackboneJs</a>,
+the lack of two-way binding capability was the single biggest drain in productivity.
+One had to specify in the templates where the models were to be rendered.
+Subsequently one had to specify listeners for each change on the model,
+and each change on the view,
+and write code to handle the change to propagate model changes to the view,
+and view changes to the model.
+This was tedious, but the main problem that this created was not its verbosity.
+It was that there always was a chance of oversight,
+that one of these change propagations would be missed due to oversight,
+and lead to much head scratching down the road.</p>
+<p>What was missing is that BackboneJs did <em>not</em> provide a means to define a
+single-source of truth -
+quite often that the models and views would stray, and get out of sync.
+With two-way binding, however, the models are indeed the single source of truth,
+changes to the models made anywhere -
+be it code within a controller, or user interactions on a view -
+will be propagated correctly.
+Getting two-way binding out of the box,
+as we do with both AngularJs and EmberJs,
+is a great boon to productivity in developing
+web applications - I cannot emphasise this enough.</p>
+<p>We also took a look at some software engineering paradigms,
+like imperative versus declarative styles of programming,
+and the different approaches each framework takes on computed properties;
+and their impact upon computational efficiency,
+and ease to work with.</p>
+<p>We have now covered the trifecta of the parts of both AngularJs and EmberJs
+that allow us to organise code according to the MVC pattern.
+Both frameworks excel at supporting the MVC pattern,
+providing an excellent infrastructure upon which to build these.</p>
+<p>While MVC lies at the core of developing a single page application,
+that is not all there is to it.
+Next we will take a look at two more crucial parts of the framework,
+routing and components.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +957,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/controllers-emberjs-binding.html" class="navigation navigation-prev " aria-label="Previous page: Two-way Binding in EmberJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/routing.html" class="navigation navigation-next " aria-label="Next page: Routing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

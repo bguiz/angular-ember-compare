@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>State Machine in AngularJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/router-emberjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/router-angularjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.6" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -575,7 +575,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="routing/state-angularjs.html">
+        <li class="chapter active" data-level="3.6" data-path="routing/state-angularjs.html">
             
                 
                     <a href="../routing/state-angularjs.html">
@@ -834,62 +834,42 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_37">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
+                        <h3 id="finite-state-machine-in-angularjs-router">Finite State Machine in AngularJs&#39; Router</h3>
+<p>AngularJs&#39; choice of a finite state machine places a significant impact on
+its routing capability.</p>
+<p>In traditional websites, most pages would share common sections,
+such as the header, footer, navigation menu, and side bars.
+The more complex ones shared more than that -
+perhaps the site had several pages dedicated to &quot;Games&quot;,
+and several pages dedicated to &quot;Stories&quot;.
+All the &quot;Games&quot; pages would share a certain section,
+that would not be present in the &quot;Stories&quot; pages.
+Similarly, all the &quot;Stories&quot; pages would share a certain section,
+that would not be present in any of the &quot;Games&quot; pages.</p>
+<p>In AngularJs, you may apply the <code>ngView</code> directive to a DOM element.
+When the URL changes, the router determines the new MVC state of the application,
+and the contents of the <code>ngView</code> element are removed,
+and rendered using the new MVC state.</p>
+<p>Since the router is driven by a <em>finite</em> state machine under the hood,
+there can only be one <code>ngView</code> rendered within the application at any time.
+This, of course, precludes us from implementing the scenario above,
+with the &quot;Games&quot; and &quot;Stories&quot; sections in the scenario described above.</p>
+<p>AngularJs developers get around this in one of two ways:</p>
 <ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
+<li>Simply repeat the content in the templates, and code in the controllers,
+for the states with shared content</li>
+<li>Do not use AngularJs&#39; router, and instead use a 3rd party library,
+<a href="https://github.com/angular-ui/ui-router" target="_blank">ui-router</a>,
+which provides an alternative router that uses a hierarchical state machine.</li>
 </ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+<p>Some from the AngularJs core team have identified this as a problem,
+and have drafted this proposal for
+<a href="https://groups.google.com/forum/#!topic/angular-dev/mO6jmYhvsMk" target="_blank">router design in AngularJs 2.0</a>.
+It draws inspiration from <code>ui-router</code>, EmberJs&#39; router, and a few others.
+Thus it appears that the AngularJs may have support for this in
+future versions, as there is community support for this.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +889,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/router-angularjs.html" class="navigation navigation-prev " aria-label="Previous page: Routing in AngularJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/router-emberjs.html" class="navigation navigation-next " aria-label="Next page: Routing in EmberJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

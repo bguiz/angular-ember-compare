@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Components | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../components/components-angularjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/routes-emberjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="4" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -660,7 +660,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="components/components.html">
+        <li class="chapter active" data-level="4" data-path="components/components.html">
             
                 
                     <a href="../components/components.html">
@@ -834,62 +834,39 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_5">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h2 id="components">Components</h2>
+<p><img src="/img/spa-component.png" alt="Components in SPAs"></p>
+<p>Browsers used to display documents -
+that is content that had text formatting and images.
+Web pages used to be simply what you could create using a word processor,
+or see printed on a newspaper,
+expect that it was delivered over the Internet,
+and displayed on a computer screen.
+They are much more than that now, however.
+Web pages are interactive, and can respond to the user in ways
+that a newspaper cannot.
+Some are so advanced in these types of interactions that the phrase,
+&quot;web page&quot; no longer seems an apt description -
+we call them <em>web applications</em>, or <em>web applications</em>.</p>
+<p>The typical thing that we create with AngularJs and EmberJs are most certainly
+not web pages any longer,
+and fall squarely into the web application category.
+That being said, the HTML that we implement our applications in is still very much
+designed around syntax used to describe <em>document</em>s.
+This makes things tricky for the developer,
+because over the years, we have created workaround after workaround
+to continue making this document-oriented syntax continue working for us.</p>
+<p>Thankfully, the standards body that governs HTML recognises this,
+and is evolving its specifications to keep up with how HTML is being used.
+The <a href="http://www.w3.org/TR/components-intro/" target="_blank">Web Components Specification</a>
+is a draft specification, which describes a way in which we can
+create <em>components</em> that can be thought of as a building block,
+which contains a HTML template, CSS styles, and JavaScript behaviour.</p>
+<p>Web components, however, are not yet available -
+but both AngularJs and EmberJs provide their own ways to create components
+that behave very similarly to web components.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +886,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/routes-emberjs.html" class="navigation navigation-prev " aria-label="Previous page: Routes in EmberJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../components/components-angularjs.html" class="navigation navigation-next " aria-label="Next page: Components in AngularJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

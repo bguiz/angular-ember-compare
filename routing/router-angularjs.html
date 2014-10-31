@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Criteria | AngularJs vs EmberJs</title>
+        <title>Routing in AngularJs | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../intro/questions.html" />
+    <link rel="next" href="../routing/state-angularjs.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../routing/data-retrieval.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="3.5" data-basepath=".." data-revision="1414759060419">
     
 
 <div class="book-summary">
@@ -64,7 +64,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="1" data-path="intro/criteria.html">
+        <li class="chapter " data-level="1" data-path="intro/criteria.html">
             
                 
                     <a href="../intro/criteria.html">
@@ -559,7 +559,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.5" data-path="routing/router-angularjs.html">
+        <li class="chapter active" data-level="3.5" data-path="routing/router-angularjs.html">
             
                 
                     <a href="../routing/router-angularjs.html">
@@ -834,62 +834,45 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_6">
+                    <section class="normal" id="section-gitbook_36">
                     
-                        <h1 id="criteria">Criteria</h1>
-<p>I would like to kick off this series of articles by defining what exactly we will be comparing,
-when comparing AngularJs with EmberJs.</p>
-<p>The space that these two operate in -
-JavaScript frameworks used to develop single-page applications - is a rather complex one.
-It is complex because of the number of different issues, concepts, and even philosophies, that SPAs touch.
-Furthermore, this area is a moving target, because SPAs are a fairly new thing,
-and still going through the initial stages of rapid development.</p>
-<p>Thus, the only certainty here is that there is no definitive answer.
-We shall try, nonetheless.</p>
-<h2 id="why-criteria-are-necessary">Why criteria are necessary</h2>
-<p>Without facts, opinions will have their day in the park.
-We want to make this as objective as possible.</p>
-<p>Also it helps you, the reader, know if this series of articles is going to be worth your time reading.</p>
-<p>If - and I know this is a <em>silly</em> example - the better logo is of utmost importance, and you wish to choose your framework based on that;
-then these articles are not for you, because you will not see this being listed as one of the criteria below.</p>
-<p>That being said, if I have missed out on something out below,
-and you think it would benefit the discussion, <a href="https://twitter.com/bguiz" target="_blank">let me know</a>,
-or <a href="https://github.com/bguiz/angular-ember-compare" target="_blank">submit a pull request</a>.</p>
-<h2 id="what-the-criteria-are">What the criteria are</h2>
-<ul>
-<li>Learning curve</li>
-<li>Models</li>
-<li>Views</li>
-<li>Controllers</li>
-<li>Router</li>
-<li>Templating</li>
-<li>Components</li>
-<li>Dependency management</li>
-<li>Build tooling</li>
-<li>Opinionation</li>
-<li>Development tooling</li>
-<li>Dependencies</li>
-<li>Community</li>
-<li>Track record</li>
-<li>Contributions</li>
-<li>Maturity</li>
-<li>Level of abstraction/ structure</li>
-<li>Testability</li>
-</ul>
-<p>There we have it, all the criteria that this series of articles will cover!</p>
-<h2 id="a-note-on-fairness-and-polarisation">A note on fairness and polarisation</h2>
-<p>Which one is better at what?</p>
-<p>One framework is going to better than the other on some things, and the other way around on the others.</p>
-<p>It is worth pointing out here that this a fairly polarised topic,
-with the communities of developers using each of these frameworks,
-firmly believing that their framework of choice is the best thing since sliced bread
-(or at least <strong>way better</strong> than the other).</p>
-<p>Thus I feel that it is necessary to do a little bit of a disclaimer here,
-and state that I belong to neither camp.
-I have worked with jQuery mobile, and BackboneJs before;
-and prior to this I have been keeping abreast with both AngularJs and EmberJs,
-but have not developed anything more complex than <a href="http://todomvc.com" target="_blank">a Todo application</a>.</p>
-<p>tl;dr= I am going to be fair and unbiased.</p>
+                        <h2 id="routers">Routers</h2>
+<h3 id="routing-in-angularjs">Routing in AngularJs</h3>
+<p><img src="/img/angularjs-routing.png" alt="Routing in AngularJs"></p>
+<p>Setting up a router - the object responsible for providing routing capability -
+is extremely easy in AngularJs:</p>
+<pre><code>    App.config(function($routeProvider) {
+        $routeProvider
+            .when(&#39;/foo&#39;, {
+                controller: &#39;FooCtrl&#39;,
+                templateUrl: &#39;foo.template.html&#39;
+            })
+            .when(&#39;/bar&#39;, {
+                controller: &#39;BarCtrl&#39;,
+                templateUrl: &#39;bar.template.html&#39;
+            })
+            .otherwise({
+                redirectTo: &#39;/foo&#39;
+            });
+    });
+</code></pre><p>The syntax explains itself (a very good indicator of great design),
+but we shall go through it nonetheless.</p>
+<p>AngularJs comes with a built-in module,
+[<code>$routeProvider</code>](<a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider" target="_blank">https://docs.angularjs.org/api/ngRoute/provider/$routeProvider</a>,
+which is in charge of handling routing functionality in the application.
+This module merely needs to be configured by the developer.</p>
+<p>The <code>$routeProvider</code> module should be configured before the application is initialised,
+and any other code is run, and therefore this needs to be run during the application&#39;s
+<a href="http://www.angularjshub.com/examples/modules/configurationrunphases/" target="_blank">configuration phase</a>
+of the application&#39;s life cycle.</p>
+<p>The configuration consists of pairs of routing information,
+where each pair consists of a URL path, an an object from which an MVC state can be derived.
+These pairs are passed in by calling <code>.when()</code> on the <code>$routeProvider</code> object.
+The first parameter being the URL path, and the second parameter an object,
+which should give AngularJs enough information to derive an MVC state.
+Typically this would mean defining a controller and a template:
+a view is generated from a template,
+and the controller knows how to fetch or construct a model.</p>
 
 
 <div class="gitbook-share">
@@ -909,10 +892,10 @@ but have not developed anything more complex than <a href="http://todomvc.com" t
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../routing/data-retrieval.html" class="navigation navigation-prev " aria-label="Previous page: Data Retrieval"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/questions.html" class="navigation navigation-next " aria-label="Next page: Questions"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/state-angularjs.html" class="navigation navigation-next " aria-label="Next page: State Machine in AngularJs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
