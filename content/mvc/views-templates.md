@@ -1,7 +1,5 @@
 ### Templates
 
-![Views in SPAs](/img/spa-view.png)
-
 However, almost all of them include one more feature in the same vein:
 the template.
 Templating, strictly speaking, is one of the responsibilities of a view in MVC,
