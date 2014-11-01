@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Questions | AngularJs vs EmberJs</title>
+        <title>Discussion | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../mvc/mvc-overview.html" />
+    <link rel="next" href="../mvc/views.html" />
     
     
-    <link rel="prev" href="../intro/criteria.html" />
+    <link rel="prev" href="../mvc/models-es6.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1414840509183">
+    <div class="book" data-level="2.3.6" data-basepath=".." data-revision="1414840509183">
     
 
 <div class="book-summary">
@@ -81,7 +81,7 @@
                 
     
         
-        <li class="chapter active" data-level="1.1" data-path="intro/questions.html">
+        <li class="chapter " data-level="1.1" data-path="intro/questions.html">
             
                 
                     <a href="../intro/questions.html">
@@ -248,7 +248,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.3.6" data-path="mvc/models-discussion.html">
+        <li class="chapter active" data-level="2.3.6" data-path="mvc/models-discussion.html">
             
                 
                     <a href="../mvc/models-discussion.html">
@@ -914,111 +914,48 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_8">
+                    <section class="normal" id="section-gitbook_18">
                     
-                        <h1 id="criteria">Criteria</h1>
-<h2 id="lets-begin">Let&#39;s begin!</h2>
-<p>... for each of the criteria, here are the main questions that we will be taking a look at:</p>
-<p><em>Learning curve</em></p>
+                        <h3 id="discussion">Discussion</h3>
+<p>We have taken a look at how to use models, and how to sync them with a server,
+in both AngularJs and EmberJs.
+There are quite a few significant differences between them.</p>
+<p>As we will soon see,
+AngularJs and EmberJs have different philosophies regarding opinionation.
+AngularJs leans towards providing many different ways to accomplish a task,
+and let the developer choose which one fits their needs best.
+Providing multiple ways to do sync models with the server is exactly what
+you would expect.</p>
+<p>EmberJs, on the other hand, leans towards choosing the one best,
+or <a href="https://twitter.com/tomdale/status/285821254928322561" title="Omakase (お任せ, o-makase) is a Japanese phrase that means I&#39;ll leave it to you (from Japanese to entrust (任せる, makaseru))." target="_blank"><em>omakase</em></a>,
+way of doing something, and requiring all developers to follow that.
+In most facets of a SPA framework,
+the EmberJs team has come up with this <em>omakase</em> way to do things.
+However, it appears that they are still figuring out the best way
+for how to sync models with the server.
+Having different ways to accomplish this runs orthogonal to this philosophy.</p>
+<p>The most significant difference between AngularJs models and EmberJs models,
+is the mechanism that each framework uses to observe changes on them.
+The pros and cons of the approach chosen by each framework:</p>
 <ul>
-<li>How fast can you get going and get productive with the framework?</li>
-<li>Can you get by with Google and Stackoverflow?</li>
-<li>Do you need to take a course to learn it?</li>
-<li>How does this change as the application gets more complex?</li>
+<li>AngularJs uses dirty checking:<ul>
+<li>Dead simple syntax (identical to POJSOs)</li>
+<li>Incurs a heavy performance penalty when number of models for model complexity becomes large</li>
 </ul>
-<p><em>Models</em></p>
-<ul>
-<li>What syntax is used to express models?</li>
-<li>What additional libraries do you need to use models?</li>
-<li>How easy is it to get/ sync models between client and server?</li>
+</li>
+<li>EmberJs uses wrapper objects with accessors<ul>
+<li>More complex, verbose syntax</li>
+<li>Incurs a much lighter performance penalty when number of models for model complexity becomes large</li>
 </ul>
-<p><em>Views</em></p>
-<ul>
-<li>What syntax is used to express views?</li>
-<li>How do they interact with the controllers, models, and router?</li>
+</li>
 </ul>
-<p><em>Controllers</em></p>
-<ul>
-<li>What syntax is used to express controllers?</li>
-<li>Declarative or imperative?</li>
-<li>Support for two-way data binding, between the models and views?</li>
-</ul>
-<p><em>Router</em></p>
-<ul>
-<li>What syntax is used to express a router?</li>
-<li>Does the router support flat or hierarchical routes?</li>
-<li>What additional libraries do you need to use the router?</li>
-</ul>
-<p><em>Templating</em></p>
-<ul>
-<li>What is the templating syntax?</li>
-<li>Declarative or imperative?</li>
-<li>What additional libraries are used?</li>
-<li>Are the templates string based or DOM based?</li>
-<li>Are the templates easy to work with for designers who are not developers?</li>
-</ul>
-<p><em>Components</em></p>
-<ul>
-<li>What syntax is used to express a component?</li>
-<li>What level of abstraction do these components sit at?</li>
-<li>How well do these components align with the current draft specification for web components?</li>
-</ul>
-<p><em>Dependency management</em></p>
-<ul>
-<li>What syntax or convention is used to express that one module depends upon another?</li>
-<li>Does the framework encourage modular development to begin with?</li>
-<li>How robust is this means of managing dependencies between modules?</li>
-</ul>
-<p><em>Build tooling</em></p>
-<ul>
-<li>What build tools exist to build an application using each framework?</li>
-<li>What limitations do the current build tools have, and what are they good at?</li>
-<li>What future build tools are in the pipeline?</li>
-</ul>
-<p><em>Opinionation</em></p>
-<ul>
-<li>How opinionated is the framework with regards to how to develop an application?</li>
-<li>How does this opinionation benefit and detract from the framework?</li>
-</ul>
-<p><em>Development tooling</em></p>
-<ul>
-<li>What tools exist to allow easy debugging of the application?</li>
-</ul>
-<p><em>Dependencies</em></p>
-<ul>
-<li>What external libraries does each framework depend upon?</li>
-</ul>
-<p><em>Community</em></p>
-<ul>
-<li>Who develops the framework, and who backs it?</li>
-<li>What is the size of active users of the framework?</li>
-</ul>
-<p><em>Track record</em></p>
-<ul>
-<li>Who currently has applications in production built with each framework?</li>
-<li>What is the profile of the applications developed with each framework?</li>
-</ul>
-<p><em>Contributions</em></p>
-<ul>
-<li>What is the nature of the open source contributions to each framework?</li>
-</ul>
-<p><em>Maturity</em></p>
-<ul>
-<li>How long has each framework been around?</li>
-<li>How stable is each framework?</li>
-</ul>
-<p><em>Level of abstraction/ structure</em></p>
-<ul>
-<li>What levels of abstraction around the concept of single-page application does each framework provide?</li>
-<li>What implications do these levels of abstraction have on the development process?</li>
-</ul>
-<p><em>Testability</em></p>
-<ul>
-<li>How can one go about unit testing an application built using each framework?</li>
-<li>How can one go about end-to-end testing an application built using each framework?</li>
-<li>How testable are applications built using each framework?</li>
-<li>What is the level of importance accorded to testability by the authors of each framework?</li>
-</ul>
+<p>When the draft specification for <code>Object.observe()</code> gets formalised,
+we will expect all of this to change,
+as it will obviate the need for both wrapper objects with accessors, and dirty checking.</p>
+<p>Models, however, are not very useful on their own.
+Users cannot interact with them.
+In order to display models, we need views, the <em>V</em> in MVC,
+and we will be taking a look at them next.</p>
 
 
 <div class="gitbook-share">
@@ -1056,10 +993,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         </div>
 
         
-        <a href="../intro/criteria.html" class="navigation navigation-prev " aria-label="Previous page: Criteria"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/models-es6.html" class="navigation navigation-prev " aria-label="Previous page: ES6 and Models"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../mvc/mvc-overview.html" class="navigation navigation-next " aria-label="Next page: MVC"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/views.html" class="navigation navigation-next " aria-label="Next page: Views and Templates"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

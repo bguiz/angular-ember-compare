@@ -17,7 +17,7 @@
         
     
     
-    <link rel="next" href="../mvc/views.html" />
+    <link rel="next" href="../mvc/models-discussion.html" />
     
     
     <link rel="prev" href="../mvc/models-emberjs-sync.html" />
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.3.5" data-basepath=".." data-revision="1414759060419">
+    <div class="book" data-level="2.3.5" data-basepath=".." data-revision="1414840509183">
     
 
 <div class="book-summary">
@@ -247,6 +247,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.3.6" data-path="mvc/models-discussion.html">
+            
+                
+                    <a href="../mvc/models-discussion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                         Discussion
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -365,6 +381,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="2.4.7" data-path="mvc/views-discussion.html">
+            
+                
+                    <a href="../mvc/views-discussion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.7.</b>
+                        
+                         Discussion
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -461,6 +493,22 @@
                             <b>2.5.5.</b>
                         
                          Imperative vs Declarative Binding
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5.6" data-path="mvc/controllers-discussion.html">
+            
+                
+                    <a href="../mvc/controllers-discussion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.6.</b>
+                        
+                         Discussion
                     </a>
                 
             
@@ -654,6 +702,22 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="3.11" data-path="routing/routing-discussion.html">
+            
+                
+                    <a href="../routing/routing-discussion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                         Discussion
+                    </a>
+                
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -718,6 +782,22 @@
                             <b>4.3.</b>
                         
                          Components in EmberJs
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.4" data-path="components/components-discussion.html">
+            
+                
+                    <a href="../components/components-discussion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                         Discussion
                     </a>
                 
             
@@ -834,7 +914,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_9">
                     
                         <h3 id="how-this-might-change-with-es6">How this might change with ES6</h3>
 <p>There is currently <a href="http://wiki.ecmascript.org/doku.php?id=harmony:observe,
@@ -852,51 +932,29 @@ have already implemented <code>Object.observe()</code>,
 it is still under discussions, and is still presently a proposal,
 not yet an official specification, so actual implementation variations,
 and adoption across all devices, is still relatively unknown.</p>
-<h3 id="discussion">Discussion</h3>
-<p>We have taken a look at how to use models, and how to sync them with a server,
-in both AngularJs and EmberJs.
-There are quite a few significant differences between them.</p>
-<p>As we will soon see,
-AngularJs and EmberJs have different philosophies regarding opinionation.
-AngularJs leans towards providing many different ways to accomplish a task,
-and let the developer choose which one fits their needs best.
-Providing multiple ways to do sync models with the server is exactly what
-you would expect.</p>
-<p>EmberJs, on the other hand, leans towards choosing the one best,
-or <a href="https://twitter.com/tomdale/status/285821254928322561" title="Omakase (お任せ, o-makase) is a Japanese phrase that means I&#39;ll leave it to you (from Japanese to entrust (任せる, makaseru))." target="_blank"><em>omakase</em></a>,
-way of doing something, and requiring all developers to follow that.
-In most facets of a SPA framework,
-the EmberJs team has come up with this <em>omakase</em> way to do things.
-However, it appears that they are still figuring out the best way
-for how to sync models with the server.
-Having different ways to accomplish this runs orthogonal to this philosophy.</p>
-<p>The most significant difference between AngularJs models and EmberJs models,
-is the mechanism that each framework uses to observe changes on them.
-The pros and cons of the approach chosen by each framework:</p>
-<ul>
-<li>AngularJs uses dirty checking:<ul>
-<li>Dead simple syntax (identical to POJSOs)</li>
-<li>Incurs a heavy performance penalty when number of models for model complexity becomes large</li>
-</ul>
-</li>
-<li>EmberJs uses wrapper objects with accessors<ul>
-<li>More complex, verbose syntax</li>
-<li>Incurs a much lighter performance penalty when number of models for model complexity becomes large</li>
-</ul>
-</li>
-</ul>
-<p>When the draft specification for <code>Object.observe()</code> gets formalised,
-we will expect all of this to change,
-as it will obviate the need for both wrapper objects with accessors, and dirty checking.</p>
-<p>Models, however, are not very useful on their own.
-Users cannot interact with them.
-In order to display models, we need views, the <em>V</em> in MVC,
-and we will be taking a look at them next.</p>
 
 
 <div class="gitbook-share">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="bguiz">Tweet</a>
+<span class="reddit"></span>
+<span class="googleplus">
+<div class="g-plusone" data-size="medium" data-href="http://angularjs-emberjs-compare.bguiz.com/"></div>
+<script type="text/javascript"> (function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/platform.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})(); </script>
+</span>
+<span class="facebook">
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fangularjs-emberjs-compare.bguiz.com%2F&amp;width=120&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width: 150px; height:21px;" allowTransparency="true"></iframe>
+</span>
+<span class="linkedin">
+<script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+<script type="IN/Share" data-url="http://angularjs-emberjs-compare.bguiz.com/" data-counter="right"></script>
+</span>
+<span class="twitter">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://angularjs-emberjs-compare.bguiz.com/" data-via="bguiz">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</span>
 </div>
 
 
@@ -914,7 +972,7 @@ and we will be taking a look at them next.</p>
         <a href="../mvc/models-emberjs-sync.html" class="navigation navigation-prev " aria-label="Previous page: Syncing EmberJs Models"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../mvc/views.html" class="navigation navigation-next " aria-label="Next page: Views and Templates"><i class="fa fa-angle-right"></i></a>
+        <a href="../mvc/models-discussion.html" class="navigation navigation-next " aria-label="Next page: Discussion"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

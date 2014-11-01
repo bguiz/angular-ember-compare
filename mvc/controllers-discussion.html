@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Questions | AngularJs vs EmberJs</title>
+        <title>Discussion | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../mvc/mvc-overview.html" />
+    <link rel="next" href="../routing/routing.html" />
     
     
-    <link rel="prev" href="../intro/criteria.html" />
+    <link rel="prev" href="../mvc/controllers-binding-syntax.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1414840509183">
+    <div class="book" data-level="2.5.6" data-basepath=".." data-revision="1414840509183">
     
 
 <div class="book-summary">
@@ -81,7 +81,7 @@
                 
     
         
-        <li class="chapter active" data-level="1.1" data-path="intro/questions.html">
+        <li class="chapter " data-level="1.1" data-path="intro/questions.html">
             
                 
                     <a href="../intro/questions.html">
@@ -500,7 +500,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.5.6" data-path="mvc/controllers-discussion.html">
+        <li class="chapter active" data-level="2.5.6" data-path="mvc/controllers-discussion.html">
             
                 
                     <a href="../mvc/controllers-discussion.html">
@@ -914,111 +914,44 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_8">
+                    <section class="normal" id="section-gitbook_12">
                     
-                        <h1 id="criteria">Criteria</h1>
-<h2 id="lets-begin">Let&#39;s begin!</h2>
-<p>... for each of the criteria, here are the main questions that we will be taking a look at:</p>
-<p><em>Learning curve</em></p>
-<ul>
-<li>How fast can you get going and get productive with the framework?</li>
-<li>Can you get by with Google and Stackoverflow?</li>
-<li>Do you need to take a course to learn it?</li>
-<li>How does this change as the application gets more complex?</li>
-</ul>
-<p><em>Models</em></p>
-<ul>
-<li>What syntax is used to express models?</li>
-<li>What additional libraries do you need to use models?</li>
-<li>How easy is it to get/ sync models between client and server?</li>
-</ul>
-<p><em>Views</em></p>
-<ul>
-<li>What syntax is used to express views?</li>
-<li>How do they interact with the controllers, models, and router?</li>
-</ul>
-<p><em>Controllers</em></p>
-<ul>
-<li>What syntax is used to express controllers?</li>
-<li>Declarative or imperative?</li>
-<li>Support for two-way data binding, between the models and views?</li>
-</ul>
-<p><em>Router</em></p>
-<ul>
-<li>What syntax is used to express a router?</li>
-<li>Does the router support flat or hierarchical routes?</li>
-<li>What additional libraries do you need to use the router?</li>
-</ul>
-<p><em>Templating</em></p>
-<ul>
-<li>What is the templating syntax?</li>
-<li>Declarative or imperative?</li>
-<li>What additional libraries are used?</li>
-<li>Are the templates string based or DOM based?</li>
-<li>Are the templates easy to work with for designers who are not developers?</li>
-</ul>
-<p><em>Components</em></p>
-<ul>
-<li>What syntax is used to express a component?</li>
-<li>What level of abstraction do these components sit at?</li>
-<li>How well do these components align with the current draft specification for web components?</li>
-</ul>
-<p><em>Dependency management</em></p>
-<ul>
-<li>What syntax or convention is used to express that one module depends upon another?</li>
-<li>Does the framework encourage modular development to begin with?</li>
-<li>How robust is this means of managing dependencies between modules?</li>
-</ul>
-<p><em>Build tooling</em></p>
-<ul>
-<li>What build tools exist to build an application using each framework?</li>
-<li>What limitations do the current build tools have, and what are they good at?</li>
-<li>What future build tools are in the pipeline?</li>
-</ul>
-<p><em>Opinionation</em></p>
-<ul>
-<li>How opinionated is the framework with regards to how to develop an application?</li>
-<li>How does this opinionation benefit and detract from the framework?</li>
-</ul>
-<p><em>Development tooling</em></p>
-<ul>
-<li>What tools exist to allow easy debugging of the application?</li>
-</ul>
-<p><em>Dependencies</em></p>
-<ul>
-<li>What external libraries does each framework depend upon?</li>
-</ul>
-<p><em>Community</em></p>
-<ul>
-<li>Who develops the framework, and who backs it?</li>
-<li>What is the size of active users of the framework?</li>
-</ul>
-<p><em>Track record</em></p>
-<ul>
-<li>Who currently has applications in production built with each framework?</li>
-<li>What is the profile of the applications developed with each framework?</li>
-</ul>
-<p><em>Contributions</em></p>
-<ul>
-<li>What is the nature of the open source contributions to each framework?</li>
-</ul>
-<p><em>Maturity</em></p>
-<ul>
-<li>How long has each framework been around?</li>
-<li>How stable is each framework?</li>
-</ul>
-<p><em>Level of abstraction/ structure</em></p>
-<ul>
-<li>What levels of abstraction around the concept of single-page application does each framework provide?</li>
-<li>What implications do these levels of abstraction have on the development process?</li>
-</ul>
-<p><em>Testability</em></p>
-<ul>
-<li>How can one go about unit testing an application built using each framework?</li>
-<li>How can one go about end-to-end testing an application built using each framework?</li>
-<li>How testable are applications built using each framework?</li>
-<li>What is the level of importance accorded to testability by the authors of each framework?</li>
-</ul>
+                        <h3 id="discussion">Discussion</h3>
+<p>When developing applications with <a href="http://backbonejs.org/" target="_blank">BackboneJs</a>,
+the lack of two-way binding capability was the single biggest drain in productivity.
+One had to specify in the templates where the models were to be rendered.
+Subsequently one had to specify listeners for each change on the model,
+and each change on the view,
+and write code to handle the change to propagate model changes to the view,
+and view changes to the model.
+This was tedious, but the main problem that this created was not its verbosity.
+It was that there always was a chance of oversight,
+that one of these change propagations would be missed due to oversight,
+and lead to much head scratching down the road.</p>
+<p>What was missing is that BackboneJs did <em>not</em> provide a means to define a
+single-source of truth -
+quite often that the models and views would stray, and get out of sync.
+With two-way binding, however, the models are indeed the single source of truth,
+changes to the models made anywhere -
+be it code within a controller, or user interactions on a view -
+will be propagated correctly.
+Getting two-way binding out of the box,
+as we do with both AngularJs and EmberJs,
+is a great boon to productivity in developing
+web applications - I cannot emphasise this enough.</p>
+<p>We also took a look at some software engineering paradigms,
+like imperative versus declarative styles of programming,
+and the different approaches each framework takes on computed properties;
+and their impact upon computational efficiency,
+and ease to work with.</p>
+<p>We have now covered the trifecta of the parts of both AngularJs and EmberJs
+that allow us to organise code according to the MVC pattern.
+Both frameworks excel at supporting the MVC pattern,
+providing an excellent infrastructure upon which to build these.</p>
+<p>While MVC lies at the core of developing a single page application,
+that is not all there is to it.
+Next we will take a look at two more crucial parts of the framework,
+routing and components.</p>
 
 
 <div class="gitbook-share">
@@ -1056,10 +989,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         </div>
 
         
-        <a href="../intro/criteria.html" class="navigation navigation-prev " aria-label="Previous page: Criteria"><i class="fa fa-angle-left"></i></a>
+        <a href="../mvc/controllers-binding-syntax.html" class="navigation navigation-prev " aria-label="Previous page: Imperative vs Declarative Binding"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../mvc/mvc-overview.html" class="navigation navigation-next " aria-label="Next page: MVC"><i class="fa fa-angle-right"></i></a>
+        <a href="../routing/routing.html" class="navigation navigation-next " aria-label="Next page: Routing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
