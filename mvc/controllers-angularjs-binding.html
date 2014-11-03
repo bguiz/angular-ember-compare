@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.5.2" data-basepath=".." data-revision="1414840509183">
+    <div class="book" data-level="2.5.2" data-basepath=".." data-revision="1415019556056">
     
 
 <div class="book-summary">
@@ -923,9 +923,10 @@
         &lt;p&gt;{{someProperty}}&lt;/p&gt;
         &lt;input type=&quot;text&quot; value=&quot;{{someProperty}}&quot;&gt;
     &lt;/div&gt;
-</code></pre><p>The template above is not a very useful one,
+</code></pre><p>The template does not do very much, however,
 by providing two different ways to modify the same property on the controller&#39;s
 <code>$scope</code>, however, it is a succinct demonstration of two-way binding.</p>
+<p><strong>View to Model</strong></p>
 <p>When the button is clicked, the controller modifies the model.
 The template contains a <code>&lt;p&gt;</code> tag whose contents are bound to the model,
 and the view listens for the change on the model and updates its contents.
@@ -933,15 +934,16 @@ The template also contains another binding to the same model,
 in the <code>&lt;input&gt;</code> tag&#39;s <code>value</code> attribute,
 and this is also updated, in a similar manner.
 Both of these sequences are one way bindings, from model to view.</p>
+<p><strong>Model to View</strong></p>
 <p>Now, instead of modifying the model, we modify the view instead,
 by typing into the input field.
 The model listens for the change in the view,
 and when the input field is modified,
 it detects a change and updates the model.
 The <code>&lt;p&gt;</code> tag, of course, is still bound to the model,
-and it listens for a change on the model,
-and updates its contents, as it did before.
-This is two-way binding in action,
+and the view listens for a change on the model,
+and updates its contents, as it did before.</p>
+<p>This is two-way binding in action,
 with the first sequence from view to model,
 and the second sequence from model back to view.</p>
 <p>This magic that happens behind the scenes does come at a cost though.

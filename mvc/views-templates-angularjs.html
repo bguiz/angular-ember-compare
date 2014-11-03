@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.4.3" data-basepath=".." data-revision="1414840509183">
+    <div class="book" data-level="2.4.3" data-basepath=".." data-revision="1415019556056">
     
 
 <div class="book-summary">
@@ -926,11 +926,11 @@
 </code></pre><p>AngularJs uses a DOM-based templating mechanism.
 This means that the templates are the rendered HTML.
 When the application runs, the elements are rendered with
-the original contents of the template.
-Subsequently, AngularJs kicks in, and traverse the entire DOM tree,
-inspecting for special decorations,
-and then modifies the DOM according to the desired behaviour.
-In fact, if you are quick - or set some break points -
+the original contents of the template.</p>
+<p>Subsequently, AngularJs kicks in, and traverses the entire DOM tree,
+looking out for for special decorations,
+and then modifies the DOM according to these decorations.
+In fact, if you are quick (or set some break points)
 you will notice a flicker between the two.</p>
 <p>The special decorations that it looks out for are:</p>
 <ul>
@@ -938,7 +938,8 @@ you will notice a flicker between the two.</p>
 <li>Elements or attributes that link to modules known to AngularJs</li>
 <li>AngularJs comes with several built in directives,
 and all of them are prefixed with <code>ng-</code>*</li>
-<li>The developer may also define his own custom directives</li>
+<li>The developer may also define his own custom directives.
+<a href="/components/components-angularjs-directives.html">Example</a>.</li>
 </ul>
 </li>
 <li>Markup<ul>
@@ -951,7 +952,7 @@ and substitutes it for the result</li>
 </ul>
 <p>AngularJs allows for an extremely expressive syntax to be added to the
 expressions within the templates,
-including JavaScript expression,
+including a limited subset of JavaScript expressions,
 and filters using a UNIX-style pipe (<code>|</code>) syntax.</p>
 
 
