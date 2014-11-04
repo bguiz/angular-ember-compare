@@ -16,4 +16,4 @@ and thus having a number of big limitations.
 
 We have looked at both the *M* and the *V* in MVC,
 and next we will take a look at controllers,
-the things that bind the models and the views together.
+the which that bind models and views together.

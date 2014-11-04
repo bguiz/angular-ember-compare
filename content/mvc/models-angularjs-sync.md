@@ -8,19 +8,19 @@ The following are the most popular ways to accomplish this,
 arranged in order of least to most "managed".
 
 - `$http`
-    - An AngularJs directive that is very similar to `jQuery.ajax`.
-      Use this is you wish to sepcify interactions on a per request basis,
-      or when you need the most fine-grained level of control.
+    - An AngularJs directive that you would use in a manner similar to `jQuery.ajax`.
+      Use this is you wish to specify interactions on a per request basis,
+      such as when you need the most fine-grained level of control.
 - `$resource`
     - An AngularJs directive that wraps `$http`,
-      which allows you to group various `$http` requests together
+      which allows you to group various `$http` requests together.
 - [restangular](https://github.com/mgonto/restangular)
-    - A 3rd party library that makes it easy to sync models with a RESTful API
+    - A 3rd party library that makes it easy to sync models with a RESTful API.
 
-We will not go into the syntax of each method here,
+We will not go into the syntax for each method here,
 as each is fairly straight forward to use.
-The hardest part of this really lies in deciding which level of abstraction is
-the most appropriate for your application.
+The hardest part of this lies in deciding which level of abstraction is
+appropriate for your application.
 
-As the developer, this is pretty good,
+As a developer, this is pretty good,
 as you have several great options to choose from.

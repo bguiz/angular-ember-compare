@@ -5,18 +5,20 @@ we use AJAX (asynchronous JavaScript and XML).
 The `XMLHttpRequest` global object,
 implemented natively in all browsers since IE5,
 provides the AJAX functions.
-Using the raw `XMLHttpRequest` objects, however, is rather unwieldy,
+Using the raw `XMLHttpRequest` object, however, is rather unwieldy,
 and in order to avoid having to repeating a lot of cruft code each time
 this needs to be done, we use wrapper objects.
 AngularJs defines a the `$http` module that fills this role,
 while EmberJs uses `jQuery`'s AJAX functions.
 
-JavaScript, however, is has been single threaded<sup>&lowast;</sup> from the get-go,
+JavaScript, however, has been single threaded<sup>&lowast;</sup> from the get-go,
 and this poses a fundamental problem for AJAX, due to its asynchronous nature.
 If we were to block execution of the main JavaScript thread
 until AJAX requests returned, we would be in for a rather laggy experience on the web.
 There is thus a need to be be able to execute code asynchronously.
 There are two ways in which this is solved: callbacks and promises.
+
+#### Callbacks
 
 Callbacks are the de facto way to run JavaScript asynchronously.
 As functions are first class objects in JavaScript,
@@ -28,18 +30,21 @@ do something else with the result returned from the server.
 
 That is pretty neat, but callbacks do have their limitations.
 Imagine if you wanted to do two tasks that are both asynchronous,
-but need the second one to execute only when the first one has completed.
-The way to do this would be for the callback function to nest another callback function.
+but need the second one to execute only *after* the first one has completed.
+The way to do this would be for the callback function to nest another callback function within itself.
 If there are three or more things like this,
 you begin to get some really messy code,
 characterised by its shape - it looks like a triangle on its side.
+This known as "*callback hell*".
+
+#### Promises
 
 Promises overcome this limitation,
 by wrapping callback function in promise objects, making it easier to reason
 about them in sequences or other types of series and groups.
 The more modern JavaScript libraries have embraced promises
 as the go to means of dealing with asynchronous code.
-AggularJs contains its own promise module,
+AngularJs contains its own promise module,
 [`$q`](https://docs.angularjs.org/api/ng/service/$q);
 and EmberJs has its own promise library,
 [`RSVP`](http://emberjs.com/api/classes/Ember.RSVP.html).

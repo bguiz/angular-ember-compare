@@ -1,17 +1,18 @@
 ### Imperative versus Declarative Syntax in Two-way Binding
 
 In both AngularJs and EmberJs, the syntax used to accomplish two-way binding
-between models and views is through declarative syntax in the templates.
-We simply state what we properties we want to be bound in the template,
-and let the framework figure out the how -
-as a developer using either framework,
+between models and views is through **declarative syntax** in the templates.
+We simply **state the what**, properties we want to be bound in the template,
+and let the framework **figure out the how**, of how to make this happen.
+
+As a developer using either framework,
 we do not need to figure out the code necessary for this to work.
 
 By contrast, the lack of two-way binding in some other SPA frameworks,
 such as BackboneJs, means that the developer has to code all the sequences of
 actions for each property which he/ she wishes to be bound.
-This is the opposite of the declarative style enabled by AngularJs and EmberJs -
-it is an imperative style.
+This is the opposite of the declarative style enabled by AngularJs and EmberJs.
+It is an imperative style.
 
 Some developers prefer an imperative style of programming,
 and other developers prefer a declarative style of programming.
@@ -26,19 +27,21 @@ Properties on AngularJs controllers are defined imperatively.
 
 Properties on EmberJs controllers can be defined either imperatively or declaratively.
 
-        var FoosController = Ember.ArrayController.extend({
-            //this is an imperatively defined property
-            filterText: '',
+```javascript
+var FoosController = Ember.ArrayController.extend({
+    //this is an imperatively defined property
+    filterText: '',
 
-            //this is a declaratively defined property
-            filteredModel: function() {
-                var foos = this.get('model');
-                var filterText = this.get('filterText');
-                return foos.filter(function(foo) {
-                    return foo.name.indexOf('filterText') >= 0;
-                });
-            }.property('model', 'filterText')
+    //this is a declaratively defined property
+    filteredModel: function() {
+        var foos = this.get('model');
+        var filterText = this.get('filterText');
+        return foos.filter(function(foo) {
+            return foo.name.indexOf('filterText') >= 0;
         });
+    }.property('model', 'filterText')
+});
+```
 
 Here EmberJs makes use of `Function.prototype.property()`
 to define which properties are dependent upon changes on other properties.
@@ -54,24 +57,29 @@ either in the templates or a `.get()` on the controller -
 we simply refer to it by name, and not call the function.
 In our example, we would use, in the templates:
 
-        {{#each foo in filteredModel}}
-        <p>{{foo.name}}</p>
-        {{/each}}
+```handlebars
+{{#each foo in filteredModel}}
+<p>{{foo.name}}</p>
+{{/each}}
+```
 
 Instead of:
 
-        {{#each foo in filteredModel()}}
-        <p>{{foo.name}}</p>
-        {{/each}}
+```javascript
+{{#each foo in filteredModel()}}
+<p>{{foo.name}}</p>
+{{/each}}
+```
 
 &hellip; which is different from AngularJs.
-This happens because we have marked that function as being a property;
-and is a great example of the
+This happens because we have marked that function as being a property.
+This also serves as a great example of the
 [uniform access principle](http://en.wikipedia.org/wiki/Uniform_access_principle).
 
-In AngularJs, the way a computed property is defined is to create a function
+In AngularJs, the way to define a computed property is to create a function
 on the scope.
-If this property is used in a template, it gets called in every digest cycle.
+If this property is referenced in a template,
+it gets called in every digest cycle.
 
 EmberJs' way of specifying computed properties is a lot more succinct than
 the way it is done in AngularJs.

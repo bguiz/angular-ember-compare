@@ -4,19 +4,22 @@
 
 Syntax:
 
-        <body ng-controller="FooController">
-            <input ng-model="foo" value="bar">
-            <button ng-click="changeFoo()">{{buttonText}}</button>
-        </body>
+```html
+<body ng-controller="FooController">
+    <input ng-model="foo" value="bar">
+    <button ng-click="changeFoo()">{{buttonText}}</button>
+</body>
+```
 
 AngularJs uses a DOM-based templating mechanism.
-This means that the templates are the rendered HTML.
-When the application runs, the elements are rendered with
-the original contents of the template.
-Subsequently, AngularJs kicks in, and traverse the entire DOM tree,
-inspecting for special decorations,
-and then modifies the DOM according to the desired behaviour.
-In fact, if you are quick - or set some break points -
+This means that the templates **are** the rendered HTML.
+When the application runs, the elements are first rendered with
+the **original contents** of the template.
+
+Subsequently, AngularJs kicks in, and traverses the entire DOM tree,
+looking out for for special decorations,
+and then modifies the DOM according to these decorations.
+In fact, if you are quick (or cheat by setting some break points),
 you will notice a flicker between the two.
 
 The special decorations that it looks out for are:
@@ -25,7 +28,8 @@ The special decorations that it looks out for are:
     - Elements or attributes that link to modules known to AngularJs
     - AngularJs comes with several built in directives,
       and all of them are prefixed with `ng-`\*
-    - The developer may also define his own custom directives
+    - The developer may also define his own custom directives.
+      We cover this  in [components](/components/components-angularjs-directives.html).
 - Markup
     - Any part of the markup which appears between double squiggly braces,
       `{{like this}}`
@@ -34,5 +38,5 @@ The special decorations that it looks out for are:
 
 AngularJs allows for an extremely expressive syntax to be added to the
 expressions within the templates,
-including JavaScript expression,
+including a limited subset of JavaScript expressions,
 and filters using a UNIX-style pipe (`|`) syntax.

@@ -7,10 +7,12 @@ Subsequently one had to specify listeners for each change on the model,
 and each change on the view,
 and write code to handle the change to propagate model changes to the view,
 and view changes to the model.
+
 This was tedious, but the main problem that this created was not its verbosity.
-It was that there always was a chance of oversight,
-that one of these change propagations would be missed due to oversight,
-and lead to much head scratching down the road.
+It was that there **always was a chance of oversight**.
+A chance that one of these change propagations would be missed or forgotten,
+and lead to much head scratching,
+and detective work that could have otherwise been avoided, down the road.
 
 What was missing is that BackboneJs did *not* provide a means to define a
 single-source of truth -
@@ -37,5 +39,5 @@ providing an excellent infrastructure upon which to build these.
 
 While MVC lies at the core of developing a single page application,
 that is not all there is to it.
-Next we will take a look at two more crucial parts of the framework,
+Next we will take a look at two more crucial parts of each of these frameworks,
 routing and components.

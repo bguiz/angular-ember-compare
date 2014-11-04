@@ -2,11 +2,13 @@
 
 Syntax:
 
-        <div>
-            <button {{action 'someAction'}}>Exclaim harder</button>
-            <p>{{someProperty}}</p>
-            {{input type="text' value=someProperty}}
-        </div>
+```handlebars
+<div>
+    <button {{action 'someAction'}}>Exclaim harder</button>
+    <p>{{someProperty}}</p>
+    {{input type="text' value=someProperty}}
+</div>
+```
 
 Two-way binding in EmberJs works in a very similar fashion to
 the way it works in AngularJs -
@@ -28,4 +30,4 @@ As this is a very common use case for `<input>` tags,
 there is an `{{input}}` Handlebars helper that does this for us.
 
 The implication of this is that getting two-way binding to work in EmberJs
-can be quite complicated, as there is more syntax to learn.
+can be more complicated, as there is more syntax to learn.

@@ -10,8 +10,8 @@ Once past that hurdle, there is yet more additional complexity inherent in
 understanding hierarchical state machines and applying that
 when designing the structure of the routes (and therefore the rest of the application).
 
-AngularJs, on the other hand, provide a much simpler and easier means
+AngularJs, on the other hand, provides a much simpler and easier means
 to define routing for the application.
 If the application does not require all that added complexity,
 such as hierarchical views,
-then this offers a much better proposition.
+then this offers a much better output for effort proposition.

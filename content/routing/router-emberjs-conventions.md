@@ -5,7 +5,8 @@ When you instantiate a new EmberJs application using
         var App = Ember.Application.create({});
 
 The framework will create a `Router` object.
-This is the first or many naming conventions to come!
+It is always named `Router`, no ifs, no buts.
+This is the first of many **naming conventions** to come!
 
 We then call the `Router.map()` function,
 and pass in a function that defines a hierarchy of routes,
@@ -13,8 +14,8 @@ using `this.resource` for routes that have child nodes,
 and `this.route` for leaf nodes.
 Both `.resource()` and `.route()` take in a string as their first parameter,
 and it is the value of this string that EmberJs uses to determine which
-`Route`, `Controller`, `View`, and template objects it shall use.
-The way it works these out are not immediately obvious,
+`Route`, `Controller`, `View`, and template objects it should use.
+The way it works these out may not be immediately obvious,
 and this guide serves as a good primer:
 [EmberJs routes guide](http://emberjs.com/guides/routing/defining-your-routes/).
 
@@ -40,6 +41,7 @@ once more and double check that all the naming conventions have been adhered to.
 Convention over configuration can, and most likely will,
 be frustrating to any developer;
 but only up until the point that you get used to it.
-Once that happens, it becomes less of a hindrance,
+Once past that hurdle, it becomes less of a hindrance,
 and more of a boon to productivity,
-as it does, by definition, mean less cookie cutter code that needs to be written.
+as it does, by definition,
+result in having to write less cookie cutter code.
