@@ -13,8 +13,8 @@ which solves many of the problems mentioned above:
 It is DOM-aware, supports expressions, supports piping,
 and does all this without cluttering the DOM with `<script>` tags.
 
-[wycats on how HTMLbars improves on handlebars](http://gist.github.com/wycats/8116673)
-[ebryn - HTMLbars is a DOM-aware handlebars](http://talks.erikbryn.com/htmlbars/#/6)
+- [wycats - on how HTMLbars improves on handlebars](http://gist.github.com/wycats/8116673)
+- [ebryn - HTMLbars is a DOM-aware handlebars](http://talks.erikbryn.com/htmlbars/#/6)
 
 Unfortunately, HTMLBars is not yet ready,
 and we still have to use Handlebars for now.

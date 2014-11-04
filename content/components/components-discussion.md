@@ -4,17 +4,16 @@ In comparing the various aspects of these two SPA frameworks so far,
 in every single point of comparison,
 EmberJs' offering has been significantly more complicated -
 and harder to learn - than its AngularJs counterpart.
-With components, however, the opposite is true,
-with the learning curve for creating custom components in AngularJs
-being far steeper than for creating custom components in EmberJs.
+Components, however, are the odd one out, where the opposite is true.
+
 This is because AngularJs' offering is low-level, and more flexible.
-In EmberJs, most decision have been made for you -
+In EmberJs, most decisions have been made for you -
 they can be thought of as
 ["element-restricted, isolate-scoped, transcluded directives"](http://docs.google.com/presentation/d/1e0z1pT9JuEh8G5DOtib6XFDHK0GUFtrZrU3IfxJynaA/present?slide=id.g177e4bd2b_0400).
 
 While AngularJs does not provide a *component* per se,
-it does provide a means to create them by combining a number of lower level concepts,
-on AngularJs directives.
+it does provide a means to create them by combining a number of lower level concepts
+(restrict, transclude and isolate scope) with directives.
 By combining them together in a certain pattern,
 one can create components.
 However, the developer is also free to do something else entirely,
@@ -35,5 +34,5 @@ and a concrete plan for "how Ember could adopt semantics similar to web componen
 Knowing that both frameworks are aligned with the specifications is good,
 because applications that are developed with these frameworks will themselves
 will already be largely compliant with these standards,
-and gain the benefits from inherent from being so,
+and gain the benefits inherent from being so,
 such as future cross-browser support and portability.

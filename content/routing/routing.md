@@ -2,20 +2,21 @@
 
 ![Routing in SPAs](/img/spa-routing.png)
 
-Routing is a mechanism which keeps the state of a web application in sync with its URL.
+Routing is a mechanism which keeps the **state** of a web application **in sync** with its **URL**.
 That is, when its URL changes, the application is notified that it should transition to a new state.
 Conversely, when the application transitions to a new state, it updates the URL.
 
 If this sounds like familiar territory, that is because it is!
 Whenever using a traditional website -
 where the page refreshes upon each navigation -
-this is precisely what happened.
-One page, one URL.
+this is precisely what happens.
+One page for one URL.
 
 However, when building a single page application,
 we do not get this by default, and the SPA framework,
-such as AngularJs or EmberJs, needs to take care of this for us.
-Before we get into that however, let us take a step back,
+such as AngularJs or EmberJs,
+needs to mimic this behaviour without actually changing pages.
+Before we get into that, however, let us take a step back,
 to understand why routing is important,
 and why it continues to be relevant with the advent of single page applications.
 

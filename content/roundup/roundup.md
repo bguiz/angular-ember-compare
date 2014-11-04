@@ -28,7 +28,7 @@ and
 community,
 which should be considered too.
 Contact me on [twitter](http://twitter.com/bguiz)
-if you would like to to write more articles on those too.
+if you would like me to write more articles on those too.
 
 If you have already formed a strong preference based upon
 these basic building blocks alone,
@@ -39,4 +39,4 @@ and almost everyone developing them is still learning as they go along.
 I hope that this exploration of the various trade-offs,
 syntaxes, philosophies, and other differences between AngularJs and EmberJs
 has helped you to understand each of these frameworks better,
-and pick the one that suits your needs best.
+and enabled you to make an informed decision in picking the one that suits your needs, or your app's needs, best.

@@ -16,25 +16,29 @@ and fetch these models from a server.
 Thus, typically the default routes are extended
 to implement a custom `model` hook.
 
-        App.FoosRoute = Ember.Route.extend({
-            model: function() {
-                return [{name: 'f1'}, {name: 'f2'}, {name: 'f3'}];
-            }
-        });
+```javascript
+App.FoosRoute = Ember.Route.extend({
+    model: function() {
+        return [{name: 'f1'}, {name: 'f2'}, {name: 'f3'}];
+    }
+});
+```
 
 That controller always returns an array with hard-coded contents.
 Useful for stubbing or prototyping, but for applications in production,
 most likely we will want to retrieve data from an external data source,
 such as an API server:
 
-        App.FoosRoute = Ember.Route.extend({
-            model: function() {
-                var req = Ember.RSVP.resolve(Ember.$.getJSON('/api/foos'));
-                return req.then(function resolve(response) {
-                    return response.foos;
-                });
-            }
+```javascript
+App.FoosRoute = Ember.Route.extend({
+    model: function() {
+        var req = Ember.RSVP.resolve(Ember.$.getJSON('/api/foos'));
+        return req.then(function resolve(response) {
+            return response.foos;
         });
+    }
+});
+```
 
 Here we use [`jQuery.getJSON()`](http://api.jquery.com/jquery.getjson/)
 to perform the AJAX request.
@@ -48,9 +52,10 @@ In EmberJs, the `model` hook of any route is expected to return one of two types
 If a POJSO is returned, EmberJS uses that value immediately.
 If, on the other hand, a promise is returned,
 EmberJs waits until the promise resolves or rejects,
-and only then does it continue (initialise the controller and pass the model to it).
+and only then does it continue
+to initialise the controller and pass the model to it.
 
-Above we need to wrap the promise-like object returned by `jQuery.getJSON()`
+Above, we need to wrap the promise-like object returned by `jQuery.getJSON()`
 using `Ember.RSVP.resolve()` in order to obtain a promise object that EmberJs
 knows how to use correctly.
 This is yet another stumbling block for anyone starting with EmberJs,

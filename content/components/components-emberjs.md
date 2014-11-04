@@ -5,19 +5,23 @@
 The bare minimum syntax for an EmberJs component would be to simply create a template,
 according to the naming conventions:
 
-        {{!-- components/the-foo --}}
-        <div>
-            <p>The Foo</p>
-        </div>
+```handlebars
+{{!-- components/the-foo --}}
+<div>
+    <p>The Foo</p>
+</div>
+```
 
 The naming convention is that they be prefixed with `components/`,
 and the name must contain at least one hyphen (`-`).
 
 In the DOM, we use a Handlebars helper with the same name as the component:
 
-        {{the-foo}}
+```handlebars
+{{the-foo}}
+```
 
-All this does however, is render one template within another -not very useful!
+All this does however, is render one template within another - not very useful!
 We want to be able to do the same three things that we did with the AngularJs directive:
 
 - Use elements to represent the component in the DOM (element restriction)
@@ -26,17 +30,21 @@ We want to be able to do the same three things that we did with the AngularJs di
 
 This is quite easily achieved:
 
-        {{!-- components/the-foo --}}
-        <div>
-            <p>The Foo. Bar is: {{foo.bar}}</p>
-            {{yield}}
-        </div>
+```handlebars
+{{!-- components/the-foo --}}
+<div>
+    <p>The Foo. Bar is: {{foo.bar}}</p>
+    {{yield}}
+</div>
+```
 
 &hellip; and in the DOM:
 
-        {{#the-foo foo=model}}
-            <p>Some text included from outside the component</p>
-        {{/the-foo}}
+```handlebars
+{{#the-foo foo=model}}
+    <p>Some text included from outside the component</p>
+{{/the-foo}}
+```
 
 In EmberJs, we use a string-based templating language, Handlebars,
 as opposed to a DOM-based templating language.
@@ -51,9 +59,11 @@ We pass in select attributes from the outer template into the component by
 defining those attributes within the Handlebars helper invoking the component.
 This is the only part which requires some custom code.
 
-        App.TheFooComponent = Ember.Component.extend({
-            attributeBindings: ['foo']
-        });
+```javascript
+App.TheFooComponent = Ember.Component.extend({
+    attributeBindings: ['foo']
+});
+```
 
 We create an object that extends `Ember.Component`,
 according to the naming conventions,

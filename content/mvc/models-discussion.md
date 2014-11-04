@@ -6,14 +6,15 @@ There are quite a few significant differences between them.
 
 As we will soon see,
 AngularJs and EmberJs have different philosophies regarding opinionation.
-AngularJs leans towards providing many different ways to accomplish a task,
-and let the developer choose which one fits their needs best.
+AngularJs leans towards providing many different ways to accomplish any one task,
+letting the developer choose which one fits their needs best.
 Providing multiple ways to do sync models with the server is exactly what
 you would expect.
 
 EmberJs, on the other hand, leans towards choosing the one best,
 or [*omakase*](https://twitter.com/tomdale/status/285821254928322561 "Omakase (お任せ, o-makase) is a Japanese phrase that means I'll leave it to you (from Japanese to entrust (任せる, makaseru))."),
-way of doing something, and requiring all developers to follow that.
+way of doing a particular task,
+and requiring all developers to follow that.
 In most facets of a SPA framework,
 the EmberJs team has come up with this *omakase* way to do things.
 However, it appears that they are still figuring out the best way
@@ -26,7 +27,7 @@ The pros and cons of the approach chosen by each framework:
 
 - AngularJs uses dirty checking:
     - Dead simple syntax (identical to POJSOs)
-    - Incurs a heavy performance penalty when number of models for model complexity becomes large
+    - Incurs a heavy performance penalty when number of models is large, or when for models are complex
 - EmberJs uses wrapper objects with accessors
     - More complex, verbose syntax
     - Incurs a much lighter performance penalty when number of models for model complexity becomes large

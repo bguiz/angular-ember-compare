@@ -23,7 +23,10 @@ there can only be one `ngView` rendered within the application at any time.
 This, of course, precludes us from implementing the scenario above,
 with the "Games" and "Stories" sections in the scenario described above.
 
-AngularJs developers get around this in one of two ways:
+#### Workarounds
+
+The techniques employed by AngularJs developers to get around this
+generally fall into in one of two categories:
 
 - Simply repeat the content in the templates, and code in the controllers,
   for the states with shared content
@@ -34,6 +37,6 @@ AngularJs developers get around this in one of two ways:
 Some from the AngularJs core team have identified this as a problem,
 and have drafted this proposal for
 [router design in AngularJs 2.0](https://groups.google.com/forum/#!topic/angular-dev/mO6jmYhvsMk).
-It draws inspiration from `ui-router`, EmberJs' router, and a few others.
-Thus it appears that the AngularJs may have support for this in
-future versions, as there is community support for this.
+It draws inspiration from EmberJs' router, and a few others.
+Thus, it appears that AngularJs may have support for this in
+future versions, as there has been a significant community demand for this feature.

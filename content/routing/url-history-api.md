@@ -14,7 +14,7 @@ not without firing up the developer's console in a browser anyway.
 How the [History API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history)
 accomplishes this is for the server to serve the same file -
 the `index.html` of the single page application -
-for all URL paths that match its routes.
+for **all** URL paths that match its routes.
 Subsequently the SPA itself will use the functions in the
 History API to alter the URL in the address bar,
 *without* reloading the page.

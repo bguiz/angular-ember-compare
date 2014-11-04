@@ -14,12 +14,14 @@ but pays off afterwards, as it supports a richer set of features.
 
 Syntax:
 
-        App.Router.map(function() {
-            this.resource('foos', function() {
-                this.route('foo', { path: '/:foo_id' });
-            });
-            this.route('bar');
-        });
+```javascript
+App.Router.map(function() {
+    this.resource('foos', function() {
+        this.route('foo', { path: '/:foo_id' });
+    });
+    this.route('bar');
+});
+```
 
 You might be wondering, but where are the controllers, views, and models named?
 To make sense of the syntax for the router,
