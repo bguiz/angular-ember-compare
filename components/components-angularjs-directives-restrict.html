@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>State Machine in EmberJs | AngularJs vs EmberJs</title>
+        <title>Restrict | AngularJs vs EmberJs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.2.0">
@@ -17,10 +17,10 @@
         
     
     
-    <link rel="next" href="../routing/routes-emberjs.html" />
+    <link rel="next" href="../components/components-angularjs-directives-transclude.html" />
     
     
-    <link rel="prev" href="../routing/router-emberjs-conventions.html" />
+    <link rel="prev" href="../components/components-angularjs.html" />
     
 
         
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="3.9" data-basepath=".." data-revision="1415089392465">
+    <div class="book" data-level="4.1.1" data-basepath=".." data-revision="1415089392465">
     
 
 <div class="book-summary">
@@ -703,7 +703,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.9" data-path="routing/state-emberjs.html">
+        <li class="chapter " data-level="3.9" data-path="routing/state-emberjs.html">
             
                 
                     <a href="../routing/state-emberjs.html">
@@ -790,7 +790,7 @@
                 
     
         
-        <li class="chapter " data-level="4.1.1" data-path="components/components-angularjs-directives-restrict.html">
+        <li class="chapter active" data-level="4.1.1" data-path="components/components-angularjs-directives-restrict.html">
             
                 
                     <a href="../components/components-angularjs-directives-restrict.html">
@@ -984,112 +984,51 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_47">
+                    <section class="normal" id="section-gitbook_3">
                     
-                        <h3 id="hierarchical-state-machine-in-emberjs-router">Hierarchical State Machine in EmberJs&#39; Router</h3>
-<p>EmberJs uses a hierarchical state machine in its router implementation.
-This is evident when inspecting the code that we use to configure the router:
-In AngularJs all the calls to <code>.when()</code> on <code>$routeProvider</code> are at the same level.
-However, in EmberJs, within <code>.map()</code> we call <code>.resource()</code> and <code>.route()</code>,
-in a <strong>nested manner</strong> - and this is how we configure the hierarchy of states.</p>
-<p>The first argument in each <code>.resource()</code> and <code>.route()</code> is a string,
-and by default, the URL for any <code>resource</code> or <code>route</code> is obtained by
-joining these strings together, in all nodes down the hierarchy.
-For example:</p>
-<pre><code>    App.Router.map(function() {
-        // URL is /foo
-        this.resource(&#39;foo&#39;, function() {
-            // URL is /foo/bar
-            this.resource(&#39;foo.bar&#39;, function() {
-                // URL is /foo/bar/baz
-                this.route(&#39;baz&#39;);
-            });
-        });
-    });
-</code></pre><p>While assembling a URL like this is pretty easy - just string concatenation -
-assembling a <strong>composite MVC state</strong> from a <strong>hierarchy of routes</strong> is not quite that easy.
-Thankfully, EmberJs does this all for us, however,
-as developers it is important for us to understand what it does here,
-so as to use it correctly.</p>
-<p>First let us go back to hierarchical state machines.
-Recall that a hierarchical state machine is a finite state machine,
-where each state is allowed to contain, within it,
-an entire finite state machine of its own,
-and this is allowed to recur to produce multiple levels of hierarchy.
-Using the following hierarchy as an example:</p>
-<ul>
-<li>info</li>
-<li>games<ul>
-<li>pacman</li>
-<li>snake</li>
-</ul>
-</li>
-<li>stories<ul>
-<li>watchmen</li>
-<li>holes</li>
-</ul>
-</li>
-</ul>
-<p>In this case, the top level finite state machine contains the states <code>info</code>, <code>games</code>, and <code>stories</code>.
-Both of <code>games</code> and <code>stories</code> contain child finite state machines.
-Each of these child finite state machines contains two states.
-Thus both <code>games</code> and <code>stories</code> have two child states.</p>
-<p>When switching between top level states,
-or child states that belong to the same top level state,
-such as <code>info --&gt; games</code> or <code>games.pacman --&gt; games.snake</code>,
-we are moving within the same finite state machine,
-and thus the behaviour is not very complex.</p>
-<p>When moving across different finite state machines, however,
-the process is a little more complex.
-For example <code>games.pacman --&gt; stories.watchmen</code> means that three different
-transitions need to occur:</p>
-<ol>
-<li>exit state <code>games.pacman</code></li>
-<li>exit state <code>games</code> and enter state <code>stories</code></li>
-<li>enter state <code>stories.pacman</code></li>
-</ol>
-<p>It is important to visualise which states are active,
-before and after moving between one route and another.
-EmberJs keeps all the current routes, models, views, templates, and controllers intact,
-for all the states that <strong>do not change</strong> before and after the transition,
-tears down those that have been exited from,
-and sets up those that have been entered.</p>
-<p>The developer does not really control this behaviour,
-but should be aware of when these actions occur,
-and add code to be executed upon life cycle hooks of each of them when necessary.</p>
-<ul>
-<li><a href="http://emberjs.com/guides/understanding-ember/the-view-layer/#toc_lifecycle-hooks" target="_blank">Life cycle Hooks in Views</a></li>
-</ul>
-<p>Controllers are only instantiated once, and their life cycle is managed by
-<code>Route</code> objects, via:</p>
-<ul>
-<li><a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_aborting-transitions-within-code-model-code-code-beforemodel-code-code-aftermodel-code" target="_blank"><code>model</code>, <code>beforeModel</code>, and <code>afterModel</code></a>,</li>
-<li><code>setupController</code>, and</li>
-<li><a href="http://emberjs.com/guides/routing/preventing-and-retrying-transitions/#toc_preventing-transitions-via-code-willtransition-code" target="_blank"><code>willTransition</code></a>.</li>
-</ul>
-<p>Templates, being defined using markup instead of JavaScript,
-are quite different.
-For multiple templates to be active at once, in a hierarchy,
-each template must define where within it its child template should be placed.
-This is accomplished using the <code>{{outlet}}</code> Handlebars helper.
-Think of it as telling the template that,
-when there is a child state that is active on the current route,
-here is <em>where</em> it should be rendered.</p>
-<p>While this is a very simple thing to do,
-when combined with the power of EmberJs&#39; routing,
-it can be used to accomplish some types of user interface layouts that would be otherwise hard to do,
-including the <strong>master-detail pattern</strong>, where the UI displays a list of items,
-with perhaps just the name in one section of the page (the master),
-and when each of these is clicked on,
-all the information about that item is displayed in another section of the page (the detail).</p>
-<p>This article by UX Magazine on
-<a href="http://uxmag.com/articles/rich-internet-application-screen-design" target="_blank">application screen design</a>
-lists quite a number of the most common screen layouts in user interfaces.
-Many of these are only possible when the software rendering them supports
-the concept of view hierarchies.</p>
-<p>I have put together this JsBin to
-<a href="http://jsbin.com/wiyin/4/edit?html,js,output" target="_blank">demonstrate hierarchical routing in EmberJs</a>,
-as the short in-line code examples do not really do this justice.</p>
+                        <h4 id="restrict-transclude-and-isolate-scope-in-angularjs-directives"><code>restrict</code>, <code>transclude</code>, and isolate <code>scope</code> in AngularJs Directives</h4>
+<h4 id="restrict"><code>restrict</code></h4>
+<p>The bare minimum syntax would be:</p>
+<pre><code class="lang-javascript">App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> {
+        templateUrl: <span class="hljs-string">'components/foo.html'</span>
+    };
+});
+</code></pre>
+<p>&hellip; and we create a template file at <code>components/foo.html</code>:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Foo component<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>In order to use this, we add this to the template:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">foo-component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>All this does is take the template at <code>components/foo.html</code>
+and render it within this <code>&lt;div&gt;</code>.
+This does not look very much like a component,
+and lacks a few features that we would expect of one.</p>
+<p>Now we make it a little more useful using <code>restrict</code>:</p>
+<pre><code class="lang-javascript">App.directive(<span class="hljs-string">'fooComponent'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> {
+        restrict: <span class="hljs-string">'E'</span>,
+        templateUrl: <span class="hljs-string">'components/foo.html'</span>
+    };
+});
+</code></pre>
+<p>Now, we may use it without a <code>&lt;div&gt;</code> tag:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">foo-component</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">foo-component</span>&gt;</span>
+</code></pre>
+<p>Setting <code>restrict</code> to <code>E</code> means that AngularJs will allow this directive
+to be recognised <em>only</em> when the directive name is specified as an element.
+Setting it in an attribute, or as a comment, will no longer work.</p>
+<p>As a side note: Beware of the <em>self-closing tag</em>!
+While <code>&lt;div /&gt;</code> is perfectly legal HTML,
+<code>&lt;foo-component /&gt;</code> is <strong>not</strong>, and AngularJs&#39; templating engine will
+not be able to parse it.
+Self-closing tags, also known as <em>void tags</em>,
+are <strong>not</strong> allowed when defining custom element tags.</p>
 
 
 <div class="gitbook-share">
@@ -1127,10 +1066,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         </div>
 
         
-        <a href="../routing/router-emberjs-conventions.html" class="navigation navigation-prev " aria-label="Previous page: Routing Conventions in EmberJs"><i class="fa fa-angle-left"></i></a>
+        <a href="../components/components-angularjs.html" class="navigation navigation-prev " aria-label="Previous page: Components in AngularJs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../routing/routes-emberjs.html" class="navigation navigation-next " aria-label="Next page: Routes in EmberJs"><i class="fa fa-angle-right"></i></a>
+        <a href="../components/components-angularjs-directives-transclude.html" class="navigation navigation-next " aria-label="Next page: Transclude"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
