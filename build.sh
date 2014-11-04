@@ -2,8 +2,8 @@
 
 #If the gimp format conversion fails, ensure that you have xcftools installed
 #apt-get install xcftools
-XCF_FOLDER="content/gimp"
-IMG_OUT_FOLDER="content/img"
+XCF_FOLDER="manuscript/gimp"
+IMG_OUT_FOLDER="manuscript/img"
 mkdir -p ${IMG_OUT_FOLDER}
 for xcf in $( ls ${XCF_FOLDER}/*.xcf ) ; do
 	xcf=$(basename ${xcf})
@@ -23,10 +23,15 @@ montage "${XCF_FOLDER}/angularjs.png" "${XCF_FOLDER}/emberjs.png" -shadow -backg
 #If the gitbook commands fail, ensure that you have gitbook installed
 #npm install -g gitbook
 echo "Building static site"
-gitbook build ./content/ -o ./dist/static
+gitbook build ./manuscript/ -o ./dist/static
 # echo "Building PDF"
-# gitbook build ./content/ -f pdf -o ./dist/pdf
+# gitbook build ./manuscript/ -f pdf -o ./dist/pdf
 # echo "Building single page"
-# gitbook build ./content/ -f page -o ./dist/page
+# gitbook build ./manuscript/ -f page -o ./dist/page
 # echo "Building JSON"
-# gitbook build ./content/ -f json -o ./dist/json
+# gitbook build ./manuscript/ -f json -o ./dist/json
+
+# For leanpub
+echo "README.md" > manuscript/Book.txt
+# TODO find a better way than two chained seds (perhaps just one is enough)
+cat manuscript/SUMMARY.md | sed 's/.*\(([^)]*)\).*/\1/g' | sed 's/^.\(.*\).$/\1/' >> manuscript/Book.txt
