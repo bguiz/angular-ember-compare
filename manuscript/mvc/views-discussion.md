@@ -1,4 +1,4 @@
-### Discussion
+## Discussion
 
 In both AngularJs and EmberJs,
 the developer only touches views on the odd occasion.

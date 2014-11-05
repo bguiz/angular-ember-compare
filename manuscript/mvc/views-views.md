@@ -1,4 +1,4 @@
-### Views
+## Views
 
 So if templates handle all the rendering, what is left for the view to do?
 

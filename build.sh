@@ -1,10 +1,16 @@
 #!/bin/bash
 
+IMG_OUT_FOLDER="manuscript/images"
+mkdir -p ${IMG_OUT_FOLDER}
+
+#For images that do no need any processing
+PNG_FOLDER="manuscript/png"
+cp ${PNG_FOLDER}/*.png "${IMG_OUT_FOLDER}/"
+
 #If the gimp format conversion fails, ensure that you have xcftools installed
 #apt-get install xcftools
 XCF_FOLDER="manuscript/gimp"
-IMG_OUT_FOLDER="manuscript/img"
-mkdir -p ${IMG_OUT_FOLDER}
+
 for xcf in $( ls ${XCF_FOLDER}/*.xcf ) ; do
 	xcf=$(basename ${xcf})
 	echo "${XCF_FOLDER}/${xcf} --> ${IMG_OUT_FOLDER}/${xcf%.*}.png"

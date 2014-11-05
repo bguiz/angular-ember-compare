@@ -1,6 +1,6 @@
-### Models in AngularJs
+## Models in AngularJs
 
-![Models in AngularJs](/img/angularjs-model.png)
+![Models in AngularJs](/images/angularjs-model.png)
 
 AngularJs uses plain ol' JavaScript objects (POJSOs) for models.
 

@@ -1,6 +1,6 @@
-### Controllers in EmberJs
+## Controllers in EmberJs
 
-![Controllers in EmberJs](/img/emberjs-controller.png)
+![Controllers in EmberJs](/images/emberjs-controller.png)
 
 EmberJs controllers conform to the pure MVC definition of them.
 

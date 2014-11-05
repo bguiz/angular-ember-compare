@@ -1,8 +1,6 @@
-# Criteria
+## Questions
 
-## Let's begin!
-
-... for each of the criteria, here are the main questions that we will be taking a look at:
+For each of the criteria, here are the main questions that we will be taking a look at:
 
 *Learning curve*
 

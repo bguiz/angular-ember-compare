@@ -1,4 +1,4 @@
-### Two-way binding in AngularJs
+## Two-way binding in AngularJs
 
 Syntax:
 
@@ -14,7 +14,7 @@ The template does not do very much.
 However, it does provide two different ways to modify the same property on the controller's `$scope`,
 and thus it serves to succinctly demonstrate two-way binding.
 
-#### View to Model
+### View to Model
 
 When the button is clicked, the controller modifies the model.
 The template contains a `<p>` tag whose contents are bound to the model,
@@ -24,7 +24,7 @@ in the `<input>` tag's `value` attribute,
 and this is also updated, in a similar manner.
 Both of these sequences are one way bindings, from model to view.
 
-#### Model to View
+### Model to View
 
 Now, instead of modifying the model, we modify the view instead,
 by typing into the input field.
@@ -35,7 +35,7 @@ The `<p>` tag, of course, is still bound to the model,
 and the view listens for a change on the model,
 and updates its contents, as it did before.
 
-#### Behind the Scenes
+### Behind the Scenes
 
 This is two-way binding in action,
 with the first sequence from view to model,

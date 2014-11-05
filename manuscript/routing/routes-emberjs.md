@@ -1,4 +1,4 @@
-### Routes in EmberJs
+## Routes in EmberJs
 
 Routing in EmberJs is implemented through one `Router` object,
 and multiple `Route` objects.

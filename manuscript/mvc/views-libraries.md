@@ -1,4 +1,4 @@
-### Additional Libraries
+## Additional Libraries
 
 AngularJs has got a solid templating engine going for it,
 and thus there is no need to use any additional libraries for rendering.

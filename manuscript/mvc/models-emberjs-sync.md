@@ -1,4 +1,4 @@
-### Sync'ing EmberJs Models
+## Sync'ing EmberJs Models
 
 The syntax above, was, strictly speaking, not exactly a models,
 they are merely objects.

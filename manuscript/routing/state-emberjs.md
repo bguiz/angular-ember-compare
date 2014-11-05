@@ -1,4 +1,4 @@
-### Hierarchical State Machine in EmberJs' Router
+## Hierarchical State Machine in EmberJs' Router
 
 EmberJs uses a hierarchical state machine in its router implementation.
 This is evident when inspecting the code that we use to configure the router:

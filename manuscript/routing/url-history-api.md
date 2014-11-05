@@ -1,6 +1,4 @@
-### URLs in Single-Page Applications
-
-#### Method 2: History API
+### History API
 
 More recently, however, browsers have started implementing the HTML5 specification.
 The History API is part of this specification.

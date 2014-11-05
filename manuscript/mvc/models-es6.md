@@ -1,4 +1,4 @@
-### How this might change with ES6
+## How this might change with ES6
 
 There is currently [a draft proposal in ECMAScript 6](http://wiki.ecmascript.org/doku.php?id=harmony:observe),
 the standards specification for the next version of JavaScript,

@@ -29,6 +29,7 @@ mvc/controllers-emberjs-binding.md
 mvc/controllers-binding-syntax.md
 mvc/controllers-discussion.md
 routing/routing.md
+routing/url.md
 routing/url-hash-fragments.md
 routing/url-history-api.md
 routing/state-machines.md

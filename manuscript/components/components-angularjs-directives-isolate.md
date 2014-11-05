@@ -1,4 +1,4 @@
-#### Isolate `scope`
+### Isolate `scope`
 
 The final step, and likely the most important one, is of scope isolation.
 In any AngularJs template, the default behaviour is for the scope available

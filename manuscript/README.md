@@ -3,7 +3,7 @@
 So you want to start building a single-page application.
 Which framework should you use to help build it?
 
-![AngularJs vs EmberJs](/img/angularjs-emberjs.png)
+![AngularJs vs EmberJs](/images/angularjs-emberjs.png)
 
 This series of articles takes a look at two of the most popular ones:
 [AngularJs](http://angularjs.org/) and
@@ -18,7 +18,7 @@ but often verbose and feature lacking,
 
 At first, I had wanted to compare all the SPAs.
 
-![Learn All the SPAs!](/img/learn-all-the-spas.png)
+![Learn All the SPAs!](/images/learn-all-the-spas.png)
 
 However, that meant I would be spreading myself too thin.
 Besides, we already have [TodoMVC](http://todomvc.com/) for that.
@@ -39,3 +39,18 @@ and even how much structure there should be;
 making for quite an interesting comparison.
 
 Let us take a look!
+
+## Editions
+
+This book is free, and will always remain free.
+
+The **online edition** of this book is available at
+[angularjs-emberjs-compare.bguiz.com](http://angularjs-emberjs-compare.bguiz.com/).
+
+The **PDF, ePub, and Mobi editions** of this book are available at
+[Leanpub](https://leanpub.com/angularjs-emberjs-compare).
+
+If you liked this book, and wish to support it,
+please purchase a copy on Leanpub, for any price you like.
+100% of proceeds are donated to the
+[Electronic Frontier Foundation](https://www.eff.org/).

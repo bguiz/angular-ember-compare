@@ -1,3 +1,5 @@
+## Imperative versus Declarative Binding
+
 ### Imperative versus Declarative Syntax in Two-way Binding
 
 In both AngularJs and EmberJs, the syntax used to accomplish two-way binding

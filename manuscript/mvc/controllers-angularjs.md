@@ -1,6 +1,6 @@
-### Controllers in AngularJs
+## Controllers in AngularJs
 
-![Controllers in AngularJs](/img/angularjs-controller.png)
+![Controllers in AngularJs](/images/angularjs-controller.png)
 
 Controllers in AngularJs are not, strictly speaking, controllers.
 In fact AngularJs does not call itself an MVC framework,

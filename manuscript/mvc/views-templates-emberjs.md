@@ -1,8 +1,8 @@
-### Templates in EmberJs
+## Templates in EmberJs
 
-![Views in EmberJs](/img/emberjs-view.png)
+![Views in EmberJs](/images/emberjs-view.png)
 
-Syntax:
+### Syntax
 
 ```handlebars
 {{input type='text value=model.foo'}}
@@ -57,7 +57,7 @@ The difference between DOM-based templating mechanisms
 and string-based templating mechanisms may be thought of as
 an outside-in approach versus an inside-out approach.
 
-#### Pros and Cons
+### Pros and Cons
 
 The string-based templating mechanism has some pros and cons:
 
