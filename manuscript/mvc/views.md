@@ -1,6 +1,6 @@
-## Views and Templates
+# Views and Templates
 
-![Views in SPAs](/img/spa-view.png)
+![Views in SPAs](/images/spa-view.png)
 
 Models, views, and controllers are the *M*, *V* and *C* of MVC.
 Most SPA frameworks use these concepts to help developers structure

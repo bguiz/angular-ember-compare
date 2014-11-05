@@ -1,4 +1,4 @@
-### Convention over Configuration in EmberJs
+## Convention over Configuration in EmberJs
 
 When you instantiate a new EmberJs application using
 

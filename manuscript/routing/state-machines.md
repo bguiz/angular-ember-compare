@@ -1,4 +1,4 @@
-### Routing and State Machines
+## Routing and State Machines
 
 State machines are a mathematical concept which has found practical application
 in a number of things ranging from circuit board design to -
@@ -10,11 +10,15 @@ in this context:
 and
 - [hierarchical state machines](http://en.wikipedia.org/wiki/UML_state_machine#Hierarchically_nested_states).
 
+### Finite State
+
 A Finite State Machine is one that defines a number of states that
 an application (the *machine*), can be in.
 The application is only allowed to be in one state at any point of time.
 The finite state machine also must define a series of transitions,
 between one state and another, and the triggering conditions for each of them.
+
+### Hierarchical State
 
 A hierarchical state machine is a more **complex version** of a finite state machine.
 It allows any state to define an entire finite state machine within itself.
@@ -36,7 +40,7 @@ Both AngularJs and EmberJs have implemented their routers using state machines.
 The router objects store the URL and MVC state for each route in the application
 in a state machine.
 
-#### Managing Transitions and Demarcation
+### Managing Transitions and Demarcation
 
 The state machine is particularly useful in **managing transitions** between one
 route and another; in particular,

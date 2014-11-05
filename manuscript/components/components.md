@@ -1,6 +1,6 @@
-## Components
+# Components
 
-![Components in SPAs](/img/spa-component.png)
+![Components in SPAs](/images/spa-component.png)
 
 Browsers used to display documents -
 that is content that had formatted and images, and not very much else.

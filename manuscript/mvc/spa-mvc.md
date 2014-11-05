@@ -1,6 +1,4 @@
-## The MVC pattern
-
-### MVC in single-page application frameworks
+## MVC in single-page application frameworks
 
 Prior to single-page applications,
 logic for web applications was coded almost entirely on the server - **thin-client, thick-server**.

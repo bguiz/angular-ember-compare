@@ -1,4 +1,4 @@
-### Considerations for Designers
+## Considerations for Designers
 
 Developing a web application using a SPA framework requires skills in both
 JavaScript programming and HTML + CSS design.

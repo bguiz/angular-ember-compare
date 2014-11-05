@@ -1,6 +1,6 @@
-### Components in EmberJs
+## Components in EmberJs
 
-![Components in EmberJs](/img/emberjs-component.png)
+![Components in EmberJs](/images/emberjs-component.png)
 
 The bare minimum syntax for an EmberJs component would be to simply create a template,
 according to the naming conventions:

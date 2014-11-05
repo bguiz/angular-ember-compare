@@ -1,4 +1,4 @@
-### Discussion
+## Discussion
 
 In comparing the various aspects of these two SPA frameworks so far,
 in every single point of comparison,

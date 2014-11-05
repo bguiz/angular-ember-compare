@@ -1,8 +1,6 @@
-## Routers
+## Routing in AngularJs
 
-### Routing in AngularJs
-
-![Routing in AngularJs](/img/angularjs-routing.png)
+![Routing in AngularJs](/images/angularjs-routing.png)
 
 Setting up a router - the object responsible for providing routing capability -
 is extremely easy in AngularJs:

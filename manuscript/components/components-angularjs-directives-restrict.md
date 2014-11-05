@@ -1,6 +1,4 @@
-#### `restrict`, `transclude`, and isolate `scope` in AngularJs Directives
-
-#### `restrict`
+### `restrict` in AngularJs Directives
 
 The bare minimum syntax would be:
 

@@ -1,6 +1,6 @@
-### Routing in EmberJs
+## Routing in EmberJs
 
-![Routing in EmberJs](/img/emberjs-routing.png)
+![Routing in EmberJs](/images/emberjs-routing.png)
 
 The EmberJs router, and its associated routing concepts,
 are significantly more complex than those of AngularJs:

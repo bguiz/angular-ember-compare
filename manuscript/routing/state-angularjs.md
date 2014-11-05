@@ -1,4 +1,4 @@
-### Finite State Machine in AngularJs' Router
+## Finite State Machine in AngularJs' Router
 
 AngularJs' choice of a finite state machine places a significant impact on
 its routing capability.
@@ -23,7 +23,7 @@ there can only be one `ngView` rendered within the application at any time.
 This, of course, precludes us from implementing the scenario above,
 with the "Games" and "Stories" sections in the scenario described above.
 
-#### Workarounds
+### Workarounds
 
 The techniques employed by AngularJs developers to get around this
 generally fall into in one of two categories:

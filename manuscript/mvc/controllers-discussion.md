@@ -1,4 +1,4 @@
-### Discussion
+## Discussion
 
 When developing applications with [BackboneJs](http://backbonejs.org/),
 the lack of two-way binding capability was the single biggest drain in productivity.

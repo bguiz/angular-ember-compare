@@ -1,4 +1,4 @@
-### Templates
+## Templates
 
 Almost every SPA framework includes one more feature in the same vein as views: Templates.
 Templating, strictly speaking, is one of the responsibilities of a view in MVC,
@@ -14,7 +14,7 @@ change in between no matter the context.
 The dynamic inputs to the template are the bits that render HTML differently
 based on context.
 
-#### Similarities
+### Similarities
 
 In both AngularJs and EmberJs, the static inputs are pure HTML -
 write them as you would a regular HTML document.

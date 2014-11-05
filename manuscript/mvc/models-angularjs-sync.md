@@ -1,4 +1,4 @@
-### Sync'ing AngularJs Models
+## Sync'ing AngularJs Models
 
 AngularJs models are just POJSOs,
 thus when you need to sync them with the server,

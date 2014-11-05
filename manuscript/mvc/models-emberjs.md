@@ -1,6 +1,6 @@
-### Models in EmberJs
+## Models in EmberJs
 
-![Models in EmberJs](/img/emberjs-model.png)
+![Models in EmberJs](/images/emberjs-model.png)
 
 In EmberJs, the syntax used to express a model is more complex than in AngularJs,
 as POJSOs may not be used directly,

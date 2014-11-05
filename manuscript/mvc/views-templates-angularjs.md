@@ -1,8 +1,8 @@
-### Templates in AngularJs
+## Templates in AngularJs
 
-![Views in AngularJs](/img/angularjs-view.png)
+![Views in AngularJs](/images/angularjs-view.png)
 
-Syntax:
+### Syntax
 
 ```html
 <body ng-controller="FooController">

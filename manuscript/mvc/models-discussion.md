@@ -1,4 +1,4 @@
-### Discussion
+## Discussion
 
 We have taken a look at how to use models, and how to sync them with a server,
 in both AngularJs and EmberJs.

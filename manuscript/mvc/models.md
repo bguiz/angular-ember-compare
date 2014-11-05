@@ -1,6 +1,6 @@
-## Models
+# Models
 
-![Models in SPAs](/img/spa-model.png)
+![Models in SPAs](/images/spa-model.png)
 
 Models are objects that represent data that is used by the application.
 The combination of all models define the **state** of the application.

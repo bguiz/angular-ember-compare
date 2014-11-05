@@ -1,4 +1,4 @@
-### Two-way binding in EmberJs
+## Two-way binding in EmberJs
 
 Syntax:
 

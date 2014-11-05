@@ -1,6 +1,6 @@
-## Controllers
+# Controllers
 
-![Controllers in SPAs](/img/spa-controller.png)
+![Controllers in SPAs](/images/spa-controller.png)
 
 Controllers are the final piece of the MVC puzzle.
 They are the glue that binds models to views/ templates.
@@ -21,7 +21,7 @@ In this sequence of events, the controller is what sits in between
 the model and the view, passing the appropriate messages between them,
 enabling all this to happen.
 
-![Model-View-Controller interactions](http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/200px-MVC-Process.svg.png)
+![Model-View-Controller interactions](/images/200px-MVC-Process.svg.png)
 
 Unlike some of their older SPA framework counterparts,
 both AngularJs and EmberJs support **two-way** binding.

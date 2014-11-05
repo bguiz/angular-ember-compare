@@ -1,4 +1,4 @@
-### Data Retrieval: Callbacks and Promises
+## Data Retrieval: Callbacks and Promises
 
 When we retrieve data over the network in a single page application,
 we use AJAX (asynchronous JavaScript and XML).
@@ -18,7 +18,7 @@ until AJAX requests returned, we would be in for a rather laggy experience on th
 There is thus a need to be be able to execute code asynchronously.
 There are two ways in which this is solved: callbacks and promises.
 
-#### Callbacks
+### Callbacks
 
 Callbacks are the de facto way to run JavaScript asynchronously.
 As functions are first class objects in JavaScript,
@@ -37,7 +37,7 @@ you begin to get some really messy code,
 characterised by its shape - it looks like a triangle on its side.
 This known as "*callback hell*".
 
-#### Promises
+### Promises
 
 Promises overcome this limitation,
 by wrapping callback function in promise objects, making it easier to reason

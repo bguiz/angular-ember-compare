@@ -1,6 +1,4 @@
-## The MVC pattern
-
-### A brief history of single-page applications
+## A brief history of single-page applications
 
 **Time line**:
 
@@ -33,7 +31,7 @@ which gained rapid following.
 Most AJAX nowadays uses JSON instead of XML,
 so we should really be calling in *AJAJ* - but the original name stuck.
 
-[![Web 2.0](http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Web_2.0_Map.svg/320px-Web_2.0_Map.svg.png)](http://en.wikipedia.org/wiki/Web_2.0)
+[![Web 2.0](/images/320px-Web_2.0_Map.svg.png)](http://en.wikipedia.org/wiki/Web_2.0)
 
 This disrupted the status quo of one page load per request,
 and created an explosion in the amount of interactivity possible on a page.

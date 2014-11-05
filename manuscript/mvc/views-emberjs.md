@@ -1,4 +1,4 @@
-### Views in EmberJs
+## Views in EmberJs
 
 In EmberJs, you may customise a view in JavaScript.
 As mentioned above, one reason we would want to do this is to
