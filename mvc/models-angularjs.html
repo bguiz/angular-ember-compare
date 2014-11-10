@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="2.3.1" data-basepath=".." data-revision="1415181752179">
+    <div class="book" data-level="2.3.1" data-basepath=".." data-revision="1415621464595">
     
 
 <div class="book-summary">
@@ -1019,13 +1019,13 @@ as the syntax is no different from manipulating POJSOs:</p>
 <pre><code class="lang-javascript">myModel.name = <span class="hljs-string">'myNewName'</span>;
 </code></pre>
 <p>Likewise, accessing state is just as easy:</p>
-<pre><code class="lang-javascript">myModel.name` <span class="hljs-comment">// (evaluates to "myNewName")</span>
+<pre><code class="lang-javascript">myModel.name; <span class="hljs-comment">// (evaluates to "myNewName")</span>
 </code></pre>
 <p>Can it really be that simple? &hellip; Where is the catch?</p>
 <p>In order to get any use out of these models,
 you will need to set them as a property of the <code>$scope</code> variable in a controller,
 like so:</p>
-<pre><code class="lang-javascript">`$scope.myModel = myModel;`
+<pre><code class="lang-javascript">$scope.myModel = myModel;
 </code></pre>
 <p>(more on <a href="mvc/controllers-angularjs.html">Controllers</a>)</p>
 <p>&hellip; Simple!</p>
