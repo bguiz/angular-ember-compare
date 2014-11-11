@@ -1,7 +1,9 @@
 ## Discussion
 
 When developing applications with [BackboneJs](http://backbonejs.org/),
-the lack of two-way binding capability was the single biggest drain in productivity.
+the lack of two-way binding capability,
+or even just any form of automatic binding,
+was the single biggest drain in productivity.
 One had to specify in the templates where the models were to be rendered.
 Subsequently one had to specify listeners for each change on the model,
 and each change on the view,
@@ -14,8 +16,8 @@ A chance that one of these change propagations would be missed or forgotten,
 and lead to much head scratching,
 and detective work that could have otherwise been avoided, down the road.
 
-What was missing is that BackboneJs did *not* provide a means to define a
-single-source of truth -
+What was missing was that BackboneJs did *not* provide a means to define a
+**single-source of truth**   -
 quite often that the models and views would stray, and get out of sync.
 With two-way binding, however, the models are indeed the single source of truth,
 changes to the models made anywhere -
@@ -38,6 +40,6 @@ Both frameworks excel at supporting the MVC pattern,
 providing an excellent infrastructure upon which to build these.
 
 While MVC lies at the core of developing a single page application,
-that is not all there is to it.
+that is *not all* there is to it.
 Next we will take a look at two more crucial parts of each of these frameworks,
 routing and components.

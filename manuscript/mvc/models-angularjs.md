@@ -20,7 +20,7 @@ myModel.name = 'myNewName';
 Likewise, accessing state is just as easy:
 
 ```javascript
-myModel.name` // (evaluates to "myNewName")
+myModel.name; // (evaluates to "myNewName")
 ```
 
 Can it really be that simple? &hellip; Where is the catch?
@@ -30,7 +30,7 @@ you will need to set them as a property of the `$scope` variable in a controller
 like so:
 
 ```javascript
-`$scope.myModel = myModel;`
+$scope.myModel = myModel;
 ```
 
 (more on [Controllers](mvc/controllers-angularjs.md))
