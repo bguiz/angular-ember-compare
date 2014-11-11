@@ -11,6 +11,9 @@ taking care of most of the heavy lifting for us:
 - Two-way binding
 - Event handling/ proxying/ bubbling
 
+This will come as a breath of fresh air for those who have
+developed web apps using BackboneJs,
+as it is just one of those tedious things that you will not have to do any more.
 However, the developer will have to use views when they are doing something
 more advanced, such as:
 

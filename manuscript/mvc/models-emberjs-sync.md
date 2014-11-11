@@ -57,10 +57,11 @@ is going to differ, and break your application.
 Ember Data does provide the ability to customise and even write your own
 adapters, however, things can get very hairy very quickly -
 just take a look at this attempt to make
-[embedded instead of side loaded data work with Ember Data](http://mozmonkey.com/2013/12/loading-json-with-embedded-records-into-ember-data-1-0-0-beta/).
+[embedded instead of side loaded data work, using Ember Data](http://mozmonkey.com/2013/12/loading-json-with-embedded-records-into-ember-data-1-0-0-beta/).
 
 If your back end is written in Ruby on Rails, however,
-you are in luck, as Ember Data includes an [`ActiveModelAdapter`](http://emberjs.com/api/data/classes/DS.ActiveModelAdapter.html)
+you are in luck, as Ember Data includes an
+[`ActiveModelAdapter`](http://emberjs.com/api/data/classes/DS.ActiveModelAdapter.html)
 that should simply work out of the box.
 
 For those who are writing applications whose back end is **not** Ruby on Rails,
@@ -69,7 +70,7 @@ or are not in a position to change the back end API -
 which, I suspect, would constitute the majority of all developers -
 what options are available?
 
-- <strikethrough>Ember Data</strikethrough>
+- ~~Ember Data~~
 - [Ember Model](https://github.com/ebryn/ember-model):
   Follows the same syntax as Ember Data, and written by a member of the core team of EmberJs
 - [Ember RESTless](https://github.com/endlessinc/ember-restless):
