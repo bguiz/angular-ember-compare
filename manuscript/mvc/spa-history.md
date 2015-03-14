@@ -15,7 +15,7 @@ in his or her toolkit with which interactivity could be accomplished.
 Web servers did all the grunt work rendering dynamic web pages.
 
 This all changed when Microsoft [released IE5 with `XMLHttpRequest`](http://en.wikipedia.org/wiki/XMLHttpRequest#Support_in_Internet_Explorer_versions_5.2C_5.5.2C_and_6),
-which was a means to send a request to the server and receive the request.
+which was a means to send a request to the server and receive the response.
 This was the first time that this could be done entirely using JavaScript run within a web page.
 This was a **game changer**.
 

@@ -1,5 +1,5 @@
 {
-    "plugins": ["-mixpanel", "share", "disqus", "ga"],
+    "plugins": ["-mixpanel", "share", "leanpub-affiliate", "disqus" , "ga"],
 
     "pluginsConfig": {
         "fontSettings": {
@@ -35,6 +35,28 @@
                 "url": "http://angularjs-emberjs-compare.bguiz.com/",
                 "via": "bguiz"
             }
+        },
+        "leanpubAffiliate": {
+            "queryString": {
+                "a": "27hVMyWVn46xaZCi6E563X",
+                "subID": "gitbookPlugin"
+            },
+            "image": {
+                "display": true,
+                "width": 102,
+                "height": 150
+            },
+            "count": 3,
+            "total": 64,
+            "links": [
+                {
+                    "id":21391,
+                    "title":"AngularJs vs EmberJs",
+                    "author_string":"Brendan Graetz",
+                    "url":"http://leanpub.com/angularjs-emberjs-compare",
+                    "image":"https://s3.amazonaws.com/titlepages.leanpub.com/angularjs-emberjs-compare/medium?1416295405"
+                }
+            ]
         }
     },
     "links": {
